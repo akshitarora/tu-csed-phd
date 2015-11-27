@@ -60,21 +60,23 @@ require 'header.php';
                                         </div>
                                       </div>
                                       </div>
-                                      
-                                      <div class="form-group ">
+
+                                      <div class="form-group hidden">
                                           <label for="status" class="control-label col-lg-2">Status <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              
-                                              <select name="status">
-                                                  <option value="Coursework">Coursework</option>
-                                              </select>
+                                              <input id="status" type="text" name="status" class="form-control" value="Coursework" required>
                                           </div>
                                       </div>
                                       
                                       <div class="form-group ">
                                           <label for="sdob" class="control-label col-lg-2">Date of Birth <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input id="sdob" type="date" name="sdob" size="16" class="form-control" required>
+                                              <input id="sdob" type="date" name="sdob" size="16" max=
+                                              <?php 
+                                              $d = strtotime("-18 Years");
+                                              echo date("Y-m-d",$d);
+                                              ?>
+                                               class="form-control" required>
                                           </div>
                                       </div>
                                       
@@ -109,17 +111,17 @@ require 'header.php';
                                           </div>
                                       </div>
                                       
-                                      <div class="form-group ">
+                                      <div class="form-group hidden">
                                           <label for="sdurb" class="control-label col-lg-2">Date of URB <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input id="sdurb" type="date" name="sdurb" size="16" class="form-control">
+                                              <input id="sdurb" type="date" name="sdurb" size="16" value="NULL" class="form-control">
                                           </div>
                                       </div>
                                       
-                                      <div class="form-group ">
+                                      <div class="form-group hidden">
                                           <label for="sthesis" class="control-label col-lg-2">Thesis Title <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="sthesis" name="sthesis" type="text" required />
+                                              <input class="form-control" id="sthesis" name="sthesis" value="NULL" type="text" required />
                                           </div>
                                       </div>
                                       
@@ -136,63 +138,16 @@ require 'header.php';
                                               <input class="form-control" id="spassword" name="spassword" type="password" required />
                                           </div>
                                       </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="comm_id" class="control-label col-lg-2">Committee Id <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              
-<?php
-    $sql = "SELECT pno from doc_comm";
-    if ($result=mysqli_query($conn,$sql))
-  {
-  // Fetch one and one row
-        echo "<select name='comm_id'>";
-  while ($row=mysqli_fetch_row($result))
-    {
-      echo "<option value=";
-    printf ("%d",$row[0]);
-       echo ">" ;
-      echo $row[0];
-      echo "</option>";
-    }
-  // Free result set
-            mysqli_free_result($result);
-            echo "</select>";
-}  
-?>
-                                              
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
+                                      <div class="form-group hidden">
                                           <label for="slid" class="control-label col-lg-2">Slot Id <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              
-<?php
-    $sql1 = "SELECT slid from slots";
-    if ($result1=mysqli_query($conn,$sql1))
-  {
-        
-            echo "<select name='slid'>";
-  // Fetch one and one row
-  while ($row1=mysqli_fetch_row($result1))
-    {
-      echo "<option value=";
-    printf ("%d",$row1[0]);
-       echo ">";
-      echo $row1[0];
-      echo"</option>";
-    }
-  // Free result set
-            mysqli_free_result($result1);
-}  
-?>
-                                              </select>
+                                          <input class="form-control" name="slid" value="NULL" required>
                                           </div>
                                       </div>
+
                                       <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
-                                              <button class="btn btn-primary" type="submit">Save</button>
+                                              <button class="btn btn-primary" type="submit">Proceed to adding courses</button>
                                               <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
                                           </div>
                                       </div>

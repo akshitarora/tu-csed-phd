@@ -29,10 +29,14 @@ if(mysqli_query($conn,$sql)){
 $sql1 = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('student','$regno','$spassword','$sname','$sphone','$semail')";
 mysqli_query($conn,$sql1);
 $_SESSION["success_student_added"]=1;
-header('Location: /phd/admin/'); die();
+if($status=="Coursework"){
+	$_SESSION["regno"]=$regno;
+	header('Location: /phd/admin/course.php');
+} else {
+header('Location: /phd/admin/'); die();}
 mysqli_close($conn);
 } else {
     $_SESSION["success_student_added"]=2;
-header('Location: /phd/admin/'); die();
+	header('Location: /phd/admin/'); die();
 }
 ?>

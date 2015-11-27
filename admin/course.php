@@ -29,6 +29,10 @@ require 'connection.php';
                                 <label for="regno" class="control-label col-lg-2">Registration Number<span class="required">*</span></label>
                                 <div class="col-lg-10">
 <?php
+if(isset($_SESSION["regno"])&& !empty($_SESSION["regno"])) {
+	echo "<input class='form-control hidden' name='regno' type='text' value=".$_SESSION["regno"]." required>";
+	echo $_SESSION["regno"];
+} else {
     $sql = "SELECT regno from student";
     if ($result=mysqli_query($conn,$sql))
   {
@@ -46,6 +50,7 @@ require 'connection.php';
             mysqli_free_result($result);
             echo "</select>";
 }  
+}
 ?>
                                 </div>
                             </div>
@@ -150,6 +155,7 @@ require 'connection.php';
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                 <button class="btn btn-primary" type="submit">Save</button>
+                                <a href="course.php"><button class="btn btn-primary" type="button">Add Another Course</button></a>
                                 <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
                                 </div>
                             </div>
