@@ -7,82 +7,14 @@ require 'header.php';
 <body>
   <!-- container section start -->
   <section id="container" class="">
-      <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
-            </div>
-            <a href="index.php" class="logo"><span class="lite">Admin</span></a>
-           <div class="top-nav notification-row">                
-                <ul class="nav pull-right top-menu">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="img/now/<?php      $path = "img/now/".$_SESSION["id"]."1_small.jpg";  if(file_exists($path)) {    echo $_SESSION["id"];} else {         echo "avatar";     }?>1_small.jpg">
-                            </span>
-                            <span class="username"><?php echo $_SESSION["name"];?></span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> My Profile</a>
-                            </li>
-                            <li>
-                                <a href="signout.php"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!-- notificatoin dropdown end-->
-            </div>
-      </header>      
+      <?php require 'topbar.php';?>      
       <!--header end-->
       <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
-                  <li>
-                      <a class="" href="index.php">
-                          <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu active">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Add People</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li class="active"><a class="" href="student_add.php">Students</a></li>
-                          <li><a class="" href="faculty_add.php">Faculty Members</a></li>
-                          <li><a class="" href="admin_add.php">Admins</a></li>
-                      </ul>
-                      
-                  </li>
-                  <li class="sub-menu">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Research Work</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="journal_add.php">Journal Article</a></li>
-                          <li><a class="" href="book_add.php">Book Chapters</a></li>
-                          <li><a class="" href="conf_add.php">Conference Papers</a></li>
-                      </ul>
-                  </li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
+      <?php require 'sidebar.php';?>
       <!--sidebar end-->
-
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
+      <section class="wrapper">
 		  <div class="row">
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="fa fa-files-o"></i>Add new Student</h3>
@@ -115,7 +47,6 @@ require 'header.php';
                                               <input class="form-control" id="sname" name="sname" type="text" required />
                                           </div>
                                       </div>
-                                      
                                       <div class="form-group ">
                                           <label class="control-label col-lg-2">Full / Part Time <span class="required">*</span></label>
                                     <div class="col-lg-10">
