@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); error_reporting(0);
 ?>
 <?php
 		if(!isset($_SESSION["loggedin"]) && !$_SESSION["role"]=="admin"){
