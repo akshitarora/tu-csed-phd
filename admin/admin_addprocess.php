@@ -21,11 +21,11 @@ $sql = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('admin
 if(mysqli_query($conn,$sql))
 {
 $_SESSION["success_admin_added"]=1;
-header('Location: http://localhost/phd/admin/'); die();
+header('Location: /phd/admin/'); die();
 mysqli_close($conn);
 }
 else {
     $_SESSION["success_admin_added"]=2;
-header('Location: http://localhost/phd/admin/'); die();
+header('Location: /phd/admin/'); die();
 }
 ?>

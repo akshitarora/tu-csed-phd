@@ -30,9 +30,6 @@ if(!isset($_POST['uname']) || !isset($_POST['password'])) {
     }
     $uname = test_input($_POST['uname']);
     $password = test_input($_POST['password']);
-    //$password = crypt($password);
-    //$role = "admin";
-    //echo $uname; echo $password;
     $conn = new mysqli("localhost", "root", "","phd");
     $sql = "SELECT * FROM login WHERE _id='$uname'";
     if(mysqli_query($conn,$sql)) {
@@ -46,13 +43,13 @@ if(!isset($_POST['uname']) || !isset($_POST['password'])) {
             $_SESSION["name"]=$row["full_name"];
             if($row["role"]=="admin"){
                 $_SESSION["role"]="admin";
-                header('Location: http://localhost/phd/admin');die();}
+                header('Location: /phd/admin');die();}
             else if($row["role"]=="student"){
                 $_SESSION["role"]="student";
-                header('Location: http://localhost/phd/student/');die();}
+                header('Location: /phd/student/');die();}
             else if($row["role"]=="faculty"){
                 $_SESSION["role"]="faculty";
-                header('Location: http://localhost/phd/faculty/');die();}
+                header('Location: /phd/faculty/');die();}
             else {
                 ?>
 <html>
