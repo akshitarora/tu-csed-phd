@@ -69,6 +69,21 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
         unset($_SESSION["success_admin_added"]);
     }
                     ?>
+                    <?php 
+    if($_SESSION["success_course_added"]==1){ ?>
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> Course has been added!
+                    </div>
+                    <?php unset($_SESSION["success_admin_added"]);
+                    }
+    else if($_SESSION["success_course_added"]==2){ ?>
+                    <div class="alert alert-danger">
+                        <strong>Sorry!</strong> Unable to process information right now. Please contact the administrator at akshit [dot] arora1995 [at] gmail [dot] com .
+                    </div>
+                    <?php
+        unset($_SESSION["success_course_added"]);
+    }
+                    ?>
                     <!--ALERTS END -->
 					<h3 class="page-header"><i class="fa fa-laptop"></i>Welcome <?php echo $_SESSION["name"];?>!</h3><br>
                   </div>
@@ -154,37 +169,6 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                               </div>
                           </div>
                       </form><br><br>
-                      <!--
-                      <center><h4>List of all Ph.D. students</h4></center><br>
-                      <div class="col-sm-12 bootcards-list" id="list" data-title="students">
-                          
-<?php /*
-    $conn = new mysqli("localhost", "root", "","phd");
-    $sql = "SELECT * from student";
-    if ($result=mysqli_query($conn,$sql))
-  {
-        echo "<div class='panel panel-default'>";
-        echo "<div class='list-group'>";
-  // Fetch one and one row
-  while ($row=mysqli_fetch_assoc($result))
-    {
-      echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";
-      
-      echo "<img src='img/now/avatar1.png' class='img-rounded pull-left'/>
-        <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["semail"]; echo "</p>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["status"]; echo "</p>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["full_part"]; echo " time</p>";
-      
-      echo "</a>";
-    }
-        echo "</div>";
-        echo "</div>";
-  // Free result set
-  mysqli_free_result($result);
-}  */
-?>
-                  </div>-->
                   </div>
                   <div class="col-lg-6 form">
                       <center><h4>Search Faculty</h4></center><br>
@@ -242,37 +226,7 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                                   <center><button class="btn btn-primary" type="submit">Search</button></center>
                               </div>
                           </div>
-                      </form><br><br><!--
-                      <center><h4>List of all Faculty</h4></center><br>
-                      <div class="col-sm-12 bootcards-list" id="list" data-title="students">
-                          
-<?php /*
-    $conn = new mysqli("localhost", "root", "","phd");
-    $sql = "SELECT * from faculty";
-    if ($result=mysqli_query($conn,$sql))
-  {
-        echo "<div class='panel panel-default'>";
-        echo "<div class='list-group'>";
-  // Fetch one and one row
-  while ($row=mysqli_fetch_assoc($result))
-    {
-      echo "<a class='list-group-item' href='cinfo_2.php?f_code="; echo $row["faculty_code"]; echo "'>";
-      
-      echo "<img src='img/now/avatar1.png' class='img-rounded pull-left'/>
-        <h4 class='list-group-item-heading'>&nbsp;";echo $row["fname"]; echo "</h4>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["designation"]; echo "</p>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["email"]; echo "</p>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["department"]; echo "</p>";
-      
-      echo "</a>";
-    }
-        echo "</div>";
-        echo "</div>";
-  // Free result set
-  mysqli_free_result($result);
-} */ 
-?>
-                  </div>-->
+                      </form><br><br><
               </div>
               </div>
           </section>
