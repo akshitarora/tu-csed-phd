@@ -30,7 +30,7 @@ mysqli_close($conn);
 }
 else {
     $_SESSION["success_course_added"]=2;
-    echo $sql;
-//header('Location: /phd/admin/'); die();
+    //echo $sql;
+	header('Location: /phd/admin/'); die();
 }
 ?>

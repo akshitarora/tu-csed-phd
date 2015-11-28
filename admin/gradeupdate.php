@@ -1,6 +1,7 @@
 <?php
 require 'auth.php';
 require 'connection.php';
+error_reporting(0);
 function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -10,23 +11,18 @@ function test_input($data) {
 }
 $regno = test_input($_POST['regno']);
 $cname = test_input($_POST['cname']);
-
 $semcode = test_input($_POST['semcode']);
-$department = test_input($_POST['department']);
-$class = test_input($_POST['class']);
+$grade = test_input($_POST['grade']);
 
-$sql = "INSERT INTO courses(sregno,cname,coordinator,credits,semcode,department,class,L,T,P) 
-VALUES(".$regno.",'".$cname."','".$coordinator."',".$credits.",'".$semcode."','".$department."','".$class."',".$creditsL.",
-	".$creditsT.",".$creditsP.");";
+$sql = "UPDATE courses SET grade='".$grade."' WHERE sregno=".$regno." AND cname='".$cname."' AND semcode='".$semcode."';";
 if(mysqli_query($conn,$sql))
 {
-$_SESSION["success_course_added"]=1;
+$_SESSION["success_grade_added"]=1;
 header('Location: /phd/admin/'); die();
 mysqli_close($conn);
 }
 else {
-    $_SESSION["success_course_added"]=2;
-    echo $sql;
-//header('Location: /phd/admin/'); die();
+    $_SESSION["success_grade_added"]=2;
+	header('Location: /phd/admin/'); die();
 }
 ?>

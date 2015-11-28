@@ -74,7 +74,8 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                     <div class="alert alert-success">
                         <strong>Success!</strong> Course has been added!
                     </div>
-                    <?php unset($_SESSION["success_admin_added"]);
+                    <?php 
+                    unset($_SESSION["success_course_added"]);
                     }
     else if($_SESSION["success_course_added"]==2){ ?>
                     <div class="alert alert-danger">
@@ -82,6 +83,22 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                     </div>
                     <?php
         unset($_SESSION["success_course_added"]);
+    }
+                    ?>
+                    <?php 
+    if($_SESSION["success_grade_added"]==1){ ?>
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> Grade has been updated!
+                    </div>
+                    <?php 
+                    unset($_SESSION["success_grade_added"]);
+                    }
+    else if($_SESSION["success_grade_added"]==2){ ?>
+                    <div class="alert alert-danger">
+                        <strong>Sorry!</strong> Unable to process information right now. Please contact the administrator at akshit [dot] arora1995 [at] gmail [dot] com .
+                    </div>
+                    <?php
+        unset($_SESSION["success_grade_added"]);
     }
                     ?>
                     <!--ALERTS END -->

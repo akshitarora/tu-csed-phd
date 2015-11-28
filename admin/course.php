@@ -57,7 +57,26 @@ if(isset($_SESSION["regno"])&& !empty($_SESSION["regno"])) {
                             <div class="form-group">
                             	<label for="cname" class="control-label col-lg-2">Course Name<span class="required">*</span></label>
                             	<div class="col-lg-10">
-                            		<input class="form-control" name="cname" type="text" required>
+<?php
+$sql = "SELECT DISTINCT cname from courses";
+    if ($result=mysqli_query($conn,$sql))
+  {
+    echo "<input list='courses' name='cname'>";
+    echo "<datalist id='courses'>";
+  // Fetch one and one row
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value=";
+    echo $row[0];
+       echo ">" ;
+       echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</datalist>";
+}  
+?>
                             	</div>
                             </div>
                             <div class="form-group ">
@@ -155,7 +174,6 @@ if(isset($_SESSION["regno"])&& !empty($_SESSION["regno"])) {
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                 <button class="btn btn-primary" type="submit">Save</button>
-                                <a href="course.php"><button class="btn btn-primary" type="button">Add Another Course</button></a>
                                 <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
                                 </div>
                             </div>

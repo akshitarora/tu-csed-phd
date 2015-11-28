@@ -43,7 +43,7 @@
                   <li>
                       <a class="" href="grade.php">
                           <i class="icon_document_alt"></i>
-                          <span>Add Grades</span>
+                          <span>Update Grades</span>
                       </a>
                   </li>
               </ul>
