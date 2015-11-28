@@ -25,4 +25,5 @@ else {
     $_SESSION["success_grade_added"]=2;
 	header('Location: /phd/admin/'); die();
 }
+//test commit
 ?>
