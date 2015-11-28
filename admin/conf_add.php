@@ -10,46 +10,7 @@ require 'header.php';
       <?php require 'topbar.php';?>      
       <!--header end-->
       <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
-                  <li>
-                      <a class="" href="index.php">
-                          <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Add People</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="student_add.php">Students</a></li>
-                          <li><a class="" href="faculty_add.php">Faculty Members</a></li>
-                          <li ><a class="" href="admin_add.php">Admins</a></li>
-                          
-                      </ul>
-                      
-                  </li>
-                  <li class="sub-menu active">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Research Work</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="journal_add.php">Journal Article</a></li>
-                          <li><a class="" href="book_add.php">Book Chapters</a></li>
-                          <li class="active"><a class="" href="conf_add.php">Conference Papers</a></li>
-                      </ul>
-                  </li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
+      <?php require'sidebar.php';?>
       <!--sidebar end-->
 
       <!--main content start-->
@@ -130,20 +91,7 @@ require 'header.php';
   <!-- container section end -->
 
     <!-- javascripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- nice scroll -->
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-    <!-- jquery validate js -->
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-
-    <!-- custom form validation script for this page-->
-    <script src="js/form-validation-script.js"></script>
-    <!--custom script for all page-->
-    <script src="js/scripts.js"></script>    
-
-
+    <?php require 'js.php';?>
   </body>
 </html>
 <?php

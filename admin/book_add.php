@@ -10,105 +10,56 @@ require 'header.php';
       <?php require 'topbar.php';?>      
       <!--header end-->
       <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
-                  <li>
-                      <a class="" href="index.php">
-                          <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Add People</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="student_add.php">Students</a></li>
-                          <li><a class="" href="faculty_add.php">Faculty Members</a></li>
-                          <li ><a class="" href="admin_add.php">Admins</a></li>
-                          
-                      </ul>
-                      
-                  </li>
-                  <li class="sub-menu active">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Research Work</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="journal_add.php">Journal Article</a></li>
-                          <li class="active"><a class="" href="book_add.php">Book Chapters</a></li>
-                          <li><a class="" href="conf_add.php">Conference Papers</a></li>
-                      </ul>
-                  </li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
+      <?php require'sidebar.php';?>
       <!--sidebar end-->
-
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
+      <section class="wrapper">
 		  <div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-files-o"></i>New Administrator</h3>
+					<h3 class="page-header"><i class="fa fa-files-o"></i>Add Book</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-						<li><i class="icon_document_alt"></i>Add Administrator</li>
+						<li><i class="icon_document_alt"></i>Add Book</li>
 					</ol>
 				</div>
 			</div>
-              <!-- Form validations -->              
+      <!-- Form validations -->              
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Administrator Details
+                              Book Details
                           </header>
                           <div class="panel-body">
                               <div class="form">
-                                  <form class="form-validate form-horizontal" method="post" action="admin_addprocess.php">
-                                      <div class="form-group ">
-                                          <label for="full_name" class="control-label col-lg-2">Full Name<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="full_name" name="full_name" type="text" required />
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="_id" class="control-label col-lg-2">Username<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="_id" name="_id" type="text" placeholder="for portal login" required />
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="email" class="control-label col-lg-2">E-Mail<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control " id="email" type="email" name="email" required />
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group">
-                                          <label for="phone" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="phone" name="phone" type="text" placeholder="+91xxxxxxxxxx" required />
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="password" class="control-label col-lg-2">Password<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="password" name="password" type="password" required />
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
+                                  <form class="form-validate form-horizontal" method="post" action="book_addprocess.php">
+                                    <div class="form-group ">
+                                <label for="regno" class="control-label col-lg-2">Registration Number<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT regno from student";
+    if ($result=mysqli_query($conn,$sql))
+  {
+  // Fetch one and one row
+        echo "<select name='regno'>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value=";
+      printf ("%d",$row[0]);
+      echo ">" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+                                  
+                                    <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
                                               <button class="btn btn-primary" type="submit">Save</button>
                                               <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
@@ -130,20 +81,7 @@ require 'header.php';
   <!-- container section end -->
 
     <!-- javascripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- nice scroll -->
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-    <!-- jquery validate js -->
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-
-    <!-- custom form validation script for this page-->
-    <script src="js/form-validation-script.js"></script>
-    <!--custom script for all page-->
-    <script src="js/scripts.js"></script>    
-
-
+    <?php require 'js.php';?>
   </body>
 </html>
 <?php
