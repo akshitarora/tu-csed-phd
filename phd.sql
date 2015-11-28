@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2015 at 01:21 PM
+-- Generation Time: Nov 28, 2015 at 07:57 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -42,22 +42,25 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `sregno` int(20) NOT NULL,
   `cname` varchar(100) NOT NULL,
-  `coordinator_fid` int(11) NOT NULL,
+  `coordinator` varchar(400) NOT NULL,
   `credits` float NOT NULL,
+  `L` float NOT NULL,
+  `T` float NOT NULL,
+  `P` float NOT NULL,
   `semcode` varchar(10) NOT NULL,
   `department` varchar(4) NOT NULL,
-  `class` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `class` varchar(10) NOT NULL,
+  `grade` varchar(4) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`cid`, `timestamp`, `sregno`, `cname`, `coordinator_fid`, `credits`, `semcode`, `department`, `class`) VALUES
-(1, '2015-11-17 06:57:09', 1000000002, 'Database Management Systems', 2, 4, '1516ODDSEM', 'COE', 'UG'),
-(2, '2015-11-17 06:51:09', 1000000002, 'Analysis and Design of Algorithms', 4, 4, '1516ODDSEM', 'COE', 'UG'),
-(3, '2015-11-17 06:57:09', 2147483647, 'Computer Graphics', 5, 4, '1516ODDSEM', 'COE', 'UG'),
-(4, '2015-11-17 05:57:09', 1000000002, 'Linux Apache MySQL PHP', 6, 4, '1516ODDSEM', 'COE', 'UG');
+INSERT INTO `courses` (`cid`, `timestamp`, `sregno`, `cname`, `coordinator`, `credits`, `L`, `T`, `P`, `semcode`, `department`, `class`, `grade`) VALUES
+(1, '2015-11-17 06:57:09', 1000000002, 'Database Management Systems', '', 4, 0, 0, 0, '1516ODDSEM', 'COE', 'UG', 'A'),
+(3, '2015-11-17 06:57:09', 2147483647, 'Computer Graphics', '', 4, 0, 0, 0, '1516ODDSEM', 'COE', 'UG', NULL),
+(10, '2015-11-28 12:54:46', 1000000013, 'HTML', 'Dr. Parteek Bhatia', 5.5, 2, 1.5, 2, '1516ODDSEM', 'ECE', 'PG', NULL);
 
 -- --------------------------------------------------------
 
@@ -133,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `full_name` varchar(200) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `email` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
@@ -147,7 +150,10 @@ INSERT INTO `login` (`sno`, `role`, `_id`, `password`, `full_name`, `phone`, `em
 (8, 'admin', 'abhinav', '$1$ka3.d...$E5grU9yN5OdZ9kIX/y2QQ1', 'Abhinav Garg', '9988121169', 'abhinav_garg01@gmail.com'),
 (9, 'admin', 'chahak', '$1$kE/.dW4.$eISfw.X5KbfzkzEfgy6Vf/', 'Chahak Gupta', '+919041114525', 'chahak@gupta.com'),
 (10, 'student', '1000000003', '$1$uJ2.f25.$NKKDbTzpkycwYp2T66kiC/', 'AksA', '7696061995', 'akshitarora@gmail.com'),
-(13, 'faculty', 'sam', '$1$.b5.tP..$Kx9t7aNgdw3zvfhFUnS840', 'shod', '9827344939', 'sam@gmail.com');
+(13, 'faculty', 'sam', '$1$.b5.tP..$Kx9t7aNgdw3zvfhFUnS840', 'shod', '9827344939', 'sam@gmail.com'),
+(14, 'admin', 'bart', '$1$1v...B4.$JOkZUT3/9TOzcd/yIVV6w1', 'bartaz', '+914561237895', 'bart@me.com'),
+(15, 'student', '1000000007', '$1$zt/.At3.$Tq5gpU7kswfbYXkS/5RFS/', 'testing', '+916875984092', 'testing@testing.com'),
+(16, 'student', '1000000013', '$1$pl2.8E4.$ECQSRnOX.T.rq4P4d2IzA1', 'testing1', '+91859684959', 'aks@gm.com');
 
 -- --------------------------------------------------------
 
@@ -295,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `comm_id` int(11) DEFAULT NULL,
   `slid` varchar(300) DEFAULT NULL,
   `def` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
@@ -304,8 +310,10 @@ CREATE TABLE IF NOT EXISTS `student` (
 INSERT INTO `student` (`sid`, `timestamp`, `regno`, `sname`, `full_part`, `status`, `sdob`, `semail`, `sbranch`, `sdoa`, `sdurb`, `sthesis`, `sphone`, `comm_id`, `slid`, `def`) VALUES
 (1, '2015-10-05 16:59:26', 2147483647, 'Pradeep Arora', 'full', 'Coursework', '1989-08-05', 'engg.pardeeparora@gmail.com', 'COE', '2010-08-01', '2012-04-27', 'Mobile Agent Based Regression Test Case Generation', '988838670', 1, '1', 1),
 (2, '2015-10-05 17:02:30', 950903030, 'Kirti Wanjale', 'full', 'Coursework', '1989-07-21', 'kwanjale@yahoo.com', 'COE', '2010-06-05', '2010-10-20', 'Design of framework for Intelligent Particle Filter Based CBIR System', '955293391', 1, '1', 1),
-(4, '2015-10-14 08:01:04', 1000000002, 'Akshit Arora', 'full', 'Coursework', '2013-10-29', 'akshitarora@gmail.com', 'ECE', '2013-11-30', '2013-10-29', 'Mobile Netowrk', '1000000005', 0, '1', 1),
-(5, '2015-10-15 17:50:17', 1000000003, 'AksA', 'part', 'Coursework', '2015-01-01', 'akshitarora@gmail.com', 'fdjs', '2015-01-02', '2015-01-01', 'lsdk', '7696061995', 0, '0', 1);
+(4, '2015-10-14 08:01:04', 1000000002, 'Akshit Arora', 'full', 'URB Pending', '2013-10-29', 'akshitarora@gmail.com', 'ECE', '2013-11-30', '2013-10-29', 'Mobile Netowrk', '1000000005', 0, '1', 1),
+(5, '2015-10-15 17:50:17', 1000000003, 'AksA', 'part', 'Coursework', '2015-01-01', 'akshitarora@gmail.com', 'fdjs', '2015-01-02', '2015-01-01', 'lsdk', '7696061995', 0, '0', 1),
+(6, '2015-11-27 16:23:49', 1000000007, 'testing', 'full', 'Coursework', '1994-02-02', 'testing@testing.com', 'COE', '2013-02-02', '0000-00-00', 'NULL', '+916875984092', NULL, 'NULL', 1),
+(7, '2015-11-28 12:42:41', 1000000013, 'testing1', 'full', 'Coursework', '1993-11-30', 'aks@gm.com', 'ECE', '2012-10-30', '0000-00-00', 'NULL', '+91859684959', 0, 'NULL', 1);
 
 -- --------------------------------------------------------
 
@@ -334,7 +342,7 @@ INSERT INTO `stu_course` (`SrNo`, `sno`, `cid`) VALUES
 -- Indexes for table `courses`
 --
 ALTER TABLE `courses`
-  ADD PRIMARY KEY (`cid`);
+  ADD PRIMARY KEY (`cid`), ADD UNIQUE KEY `sregno` (`sregno`,`cname`);
 
 --
 -- Indexes for table `doc_comm`
@@ -416,7 +424,7 @@ ALTER TABLE `stu_course`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `doc_comm`
 --
@@ -431,7 +439,7 @@ ALTER TABLE `faculty`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `outside_faculty`
 --
@@ -461,7 +469,7 @@ ALTER TABLE `research_journal`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `stu_course`
 --
