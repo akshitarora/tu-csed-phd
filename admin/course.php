@@ -131,7 +131,7 @@ if(isset($_SESSION["regno"])&& !empty($_SESSION["regno"])) {
   while ($row=mysqli_fetch_row($result))
     {
       echo "<option value=";
-    printf ("%d",$row[0]);
+    echo $row[0];
        echo ">" ;
       echo $row[0];
       echo "</option>";
@@ -144,7 +144,7 @@ if(isset($_SESSION["regno"])&& !empty($_SESSION["regno"])) {
                             	</div>
                             </div>
                             <div class="form-group">
-                            	<label for="class" class="control-label col-lg-2">Course Name<span class="required">*</span></label>
+                            	<label for="class" class="control-label col-lg-2">Class<span class="required">*</span></label>
                             	<div class="col-lg-10">
                             		<select name="class">
                                         <option value="UG">Undergraduate</option>

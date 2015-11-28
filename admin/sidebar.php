@@ -40,6 +40,12 @@
                           <span>Add Courses</span>
                       </a>
                   </li>
+                  <li>
+                      <a class="" href="grade.php">
+                          <i class="icon_document_alt"></i>
+                          <span>Add Grades</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>
