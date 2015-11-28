@@ -29,7 +29,7 @@ require 'connection.php';
                                 <label for="regno" class="control-label col-lg-2">Registration Number<span class="required">*</span></label>
                                 <div class="col-lg-10">
 <?php
-    $sql = "SELECT DISTINCT sregno from courses";
+    $sql = "SELECT DISTINCT sregno from courses WHERE grade IS NULL";
     if ($result=mysqli_query($conn,$sql))
   {
   // Fetch one and one row
@@ -53,7 +53,7 @@ require 'connection.php';
                             	<label for="cname" class="control-label col-lg-2">Course Name<span class="required">*</span></label>
                             	<div class="col-lg-10">
 <?php
-    $sql = "SELECT DISTINCT cname from courses";
+    $sql = "SELECT DISTINCT cname from courses WHERE grade IS NULL";
     if ($result=mysqli_query($conn,$sql))
   {
   // Fetch one and one row
@@ -77,7 +77,7 @@ require 'connection.php';
                             	<label for="semcode" class="control-label col-lg-2">Semester Code<span class="required">*</span></label>
                             	<div class="col-lg-10">
 <?php
-    $sql = "SELECT DISTINCT semcode from courses";
+    $sql = "SELECT DISTINCT semcode from courses WHERE grade IS NULL";
     if ($result=mysqli_query($conn,$sql))
   {
         echo "<select name='semcode'>";
@@ -105,6 +105,7 @@ require 'connection.php';
                                         <option value="C">C</option>
                                         <option value="D">D</option>
                                         <option value="E">E</option>
+                                        <option value="F">F</option>
                                         <option value="X">X</option>
                                     </select>
                             	</div>

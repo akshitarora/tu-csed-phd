@@ -7,11 +7,9 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
   <section id="container" class="">
       <?php require 'topbar.php';?>      
       <!--header end-->
-      
       <!--sidebar start-->
       <?php require 'sidebar.php';?>
       <!--sidebar end-->
-      
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
@@ -176,7 +174,12 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                           <div class="form-group ">
                               <label for="sdob" class="control-label col-lg-2">Date of Birth</label>
                               <div class="col-lg-10">
-                                  <input id="sdob" type="date" name="sdob" size="16" class="form-control" />
+                                  <input id="sdob" type="date" name="sdob" size="16" max=
+                                  <?php 
+                                  $d = strtotime("-18 Years");
+                                  echo date("Y-m-d",$d);
+                                  ?>
+                                  class="form-control" required>
                               </div>
                           </div>
                           
@@ -221,9 +224,12 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                           
                           <div class="form-group ">
                               <label for="sdob" class="control-label col-lg-2">Date of Birth</label>
-                              <div class="col-lg-10">
-                                  <input id="sdob" type="date" name="dob" size="16" class="form-control" />
-                              </div>
+                              <input id="sdob" type="date" name="dob" size="16" max=
+                                  <?php 
+                                  $d = strtotime("-18 Years");
+                                  echo date("Y-m-d",$d);
+                                  ?>
+                                  class="form-control" required>
                           </div>
                           
                           <div class="form-group ">
