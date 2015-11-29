@@ -99,6 +99,23 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
         unset($_SESSION["success_grade_added"]);
     }
                     ?>
+                    <!--Generalizing dashboard alerts-->
+                    <?php 
+    if($_SESSION["success"]==1){ ?>
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> <?php echo $_SESSION["message"];?>
+                    </div>
+                    <?php 
+                    unset($_SESSION["success"]); unset($_SESSION["message"]);
+                    }
+    else if($_SESSION["success"]==2){ ?>
+                    <div class="alert alert-danger">
+                        <strong>Sorry!</strong> Unable to process information right now. Please contact the administrator at akshit [dot] arora1995 [at] gmail [dot] com .
+                    </div>
+                    <?php
+        unset($_SESSION["success"]);unset($_SESSION["message"]);
+    }
+                    ?>
                     <!--ALERTS END -->
 					<h3 class="page-header"><i class="fa fa-laptop"></i>Welcome <?php echo $_SESSION["name"];?>!</h3><br>
                   </div>

@@ -14,13 +14,13 @@ require 'connection.php';
 			<h3 class="page-header"><i class="fa fa-files-o"></i>Update Grade</h3>
 			<ol class="breadcrumb">
 				<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-				<li><i class="icon_document_alt"></i><a href="course.php">Update Grade</a></li>
+				<li><i class="icon_document_alt"></i><a href="grade.php">Update Grade</a></li>
 			</ol>
 		</div>
 		<div class="row">
 			<section class="panel">
 				<header class="panel-heading">
-                    Course Details
+                    Grade Details
                 </header>
                 <div class="panel-body">
                 	<div class="form">

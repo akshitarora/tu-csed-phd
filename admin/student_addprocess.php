@@ -22,18 +22,30 @@ $sthesis = test_input($_POST['sthesis']);
 $spassword = test_input($_POST['spassword']);
 $spassword = crypt($spassword);
 $sphone = test_input($_POST['sphone']);
-$slid = test_input($_POST['slid']);
+$chair = test_input($_POST['chair']);
+$supervisor1 = test_input($_POST['supervisor1']);
+$supervisor2 = test_input($_POST['supervisor2']);
+$cognate1 = test_input($_POST['cognate1']);
+$cognate2 = test_input($_POST['cognate2']);
+$outside = test_input($_POST['outside']);
+$percent = test_input($_POST['percent']);
 $conn = new mysqli("localhost", "root", "","phd");
-$sql = "INSERT INTO student(regno,sname,full_part,status,sdob,semail,sbranch,sdoa,sdurb,sthesis,sphone,comm_id,slid)    VALUES('$regno','$sname','$full_part','$status','$sdob','$semail','$sbranch','$sdoa','$sdurb','$sthesis','$sphone','$comm_id','$slid');";
+$sql = "INSERT INTO student(regno,sname,full_part,status,sdob,semail,sbranch,sdoa,sdurb,sthesis,sphone,chair,supervisor1,supervisor2,cognate1,cognate2,outside)    VALUES('$regno','$sname','$full_part','$status','$sdob','$semail','$sbranch','$sdoa','$sdurb','$sthesis','$sphone','$chair','$supervisor1','$supervisor2','$cognate1','$cognate2','$outside');";
 if(mysqli_query($conn,$sql)){
 $sql1 = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('student','$regno','$spassword','$sname','$sphone','$semail')";
 mysqli_query($conn,$sql1);
 $_SESSION["success_student_added"]=1;
 if($status=="Coursework"){
 	$_SESSION["regno"]=$regno;
+    $percent = 0;
+    $sql2 = "INSERT INTO progress(sid,percentage,urbdate) VALUES('$regno',".$percent.",'$sdoa');";
+    mysqli_query($conn,$sql2);
 	header('Location: /phd/admin/course.php');
 } else {
-header('Location: /phd/admin/'); die();}
+    $sql2 = "INSERT INTO progress(sid,percentage,urbdate) VALUES('$regno',".$percent.",'$sdurb');";
+    mysqli_query($conn,$sql2);
+header('Location: /phd/admin/'); die();
+}
 mysqli_close($conn);
 } else {
     $_SESSION["success_student_added"]=2;

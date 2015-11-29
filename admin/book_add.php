@@ -20,7 +20,8 @@ require 'header.php';
 					<h3 class="page-header"><i class="fa fa-files-o"></i>Add Book</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-						<li><i class="icon_document_alt"></i>Add Book</li>
+            <li><i class="icon_document_alt"></i><a href=#>Research Paper</a></li>
+						<li><i class="icon_document_alt"></i><a href="book_add.php">Add Book</a></li>
 					</ol>
 				</div>
 			</div>
@@ -58,7 +59,51 @@ require 'header.php';
 ?>
                                   </div>
                                   </div>
-                                  
+                                  <div class="form-group ">
+                                    <label for="title" class="control-label col-lg-2">Chapter Title<span class="required">*</span></label>
+                                    <div class="col-lg-10">
+                                      <input class="form-control" id="title" name="title" type="text" required />
+                                    </div>
+                                  </div>
+                                  <div class="form-group ">
+                                    <label for="authors" class="control-label col-lg-2">Authors<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                          <input class="form-control" id="authors" name="authors" type="text" required />
+                                        </div>
+                                   </div>
+                                   <div class="form-group ">
+                                    <label for="publisher" class="control-label col-lg-2">Publisher<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                          <input class="form-control" name="publisher" type="text" required />
+                                        </div>
+                                   </div>
+                                   <div class="form-group ">
+                                          <label for="pages" class="control-label col-lg-2">Page Numbers<span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <input class="form-control" id="pages" name="pages" type="text" required />
+                                          </div>
+                                    </div>
+                                    <div class="form-group ">
+                                          <label for="bpy" class="control-label col-lg-2">Book Publish Year<span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <input class="form-control" id="bpy" name="bpy" type="number" min=0 required />
+                                          </div>
+                                    </div>
+                                    <div class="form-group ">
+                                    <label for="isbn" class="control-label col-lg-2">Book ISBN<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                          <input class="form-control" name="isbn" type="text" required/>
+                                        </div>
+                                   </div>
+                                   <div class="form-group ">
+                                          <label for="status" class="control-label col-lg-2">Status<span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <select name="status">
+                                                  <option value="Published">Published</option>
+                                                  <option value="Accepted">Accepted</option>
+                                              </select>
+                                          </div>
+                                      </div>
                                     <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
                                               <button class="btn btn-primary" type="submit">Save</button>

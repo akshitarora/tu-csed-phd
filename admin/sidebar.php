@@ -46,6 +46,12 @@
                           <span>Update Grades</span>
                       </a>
                   </li>
+                  <li>
+                      <a class="" href="urb.php">
+                          <i class="icon_document_alt"></i>
+                          <span>Update URB</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

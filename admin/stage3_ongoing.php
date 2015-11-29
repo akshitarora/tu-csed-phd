@@ -3,6 +3,7 @@ session_start();error_reporting(0);
 if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
 require 'header.php';
     $conn = new mysqli("localhost", "root", "","phd");
+    error_reporting(0);
 ?>
 <body>
   <!-- container section start -->
@@ -11,44 +12,7 @@ require 'header.php';
       <!--header end-->
       <!--sidebar start-->
       <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
-                  <li>
-                      <a class="" href="index.php">
-                          <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu active">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Add People</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li class="active"><a class="" href="student_add.php">Students</a></li>
-                          <li><a class="" href="faculty_add.php">Faculty Members</a></li>
-                          <li><a class="" href="admin_add.php">Admins</a></li>
-                      </ul>
-                      
-                  </li>
-                  <li class="sub-menu">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Research Work</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="journal_add.php">Journal Article</a></li>
-                          <li><a class="" href="book_add.php">Book Chapters</a></li>
-                          <li><a class="" href="conf_add.php">Conference Papers</a></li>
-                      </ul>
-                  </li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
+      <?php require'sidebar.php';?>
       <!--sidebar end-->
 
       <!--main content start-->
@@ -100,23 +64,22 @@ require 'header.php';
                                         </div>
                                       </div>
                                       </div>
-                                      
                                       <div class="form-group ">
                                           <label for="status" class="control-label col-lg-2">Status <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              
                                               <select name="status">
-                                                  
                                                   <option value="Ongoing">Ongoing</option>
-                                                  
                                               </select>
                                           </div>
                                       </div>
-                                      
                                       <div class="form-group ">
                                           <label for="sdob" class="control-label col-lg-2">Date of Birth <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input id="sdob" type="date" name="sdob" size="16" class="form-control" required>
+                                              <input id="sdob" type="date" name="sdob" max=
+                                              <?php 
+                                                 $d = strtotime("-18 Years");
+                                                 echo date("Y-m-d",$d);
+                                              ?> size="16" class="form-control">
                                           </div>
                                       </div>
                                       
@@ -145,14 +108,14 @@ require 'header.php';
                                       </div>
                                       
                                       <div class="form-group ">
-                                          <label for="sdoa" class="control-label col-lg-2">Date of Admission <span class="required">*</span></label>
+                                          <label for="sdoa" class="control-label col-lg-2">Date of Admission<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input id="sdoa" type="date" name="sdoa" size="16" class="form-control">
+                                              <input id="sdoa" type="date" name="sdoa" size="16" max=<?php echo date("Y-m-d");?> class="form-control">
                                           </div>
                                       </div>
                                       
                                       <div class="form-group ">
-                                          <label for="sdurb" class="control-label col-lg-2">Date of URB <span class="required">*</span></label>
+                                          <label for="sdurb" class="control-label col-lg-2">Date of URB<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input id="sdurb" type="date" name="sdurb" size="16" class="form-control">
                                           </div>
@@ -168,7 +131,7 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="sphone" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="sphone" name="sphone" type="text" required />
+                                              <input class="form-control" id="sphone" name="sphone" type="text"/>
                                           </div>
                                       </div>
                                       
@@ -179,21 +142,19 @@ require 'header.php';
                                           </div>
                                       </div>
                                       
-                                      <div class="form-group ">
-                                          <label for="comm_id" class="control-label col-lg-2">Committee Id <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              
+                                <div class="form-group ">
+                                <label for="chair" class="control-label col-lg-2">Chairperson Board of Studies(Ex-officio)<span class="required">*</span></label>
+                                <div class="col-lg-10">
 <?php
-    $sql = "SELECT pno from doc_comm";
+    $sql = "SELECT fname from faculty";
     if ($result=mysqli_query($conn,$sql))
   {
-  // Fetch one and one row
-        echo "<select name='comm_id'>";
+        echo "<select name='chair'>";
   while ($row=mysqli_fetch_row($result))
     {
-      echo "<option value=";
-    printf ("%d",$row[0]);
-       echo ">" ;
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
       echo $row[0];
       echo "</option>";
     }
@@ -202,34 +163,130 @@ require 'header.php';
             echo "</select>";
 }  
 ?>
-                                              
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="slid" class="control-label col-lg-2">Slot Id <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              
+                                  </div>
+                                  </div>
+                                  
+                                  <div class="form-group ">
+                                <label for="supervisor1" class="control-label col-lg-2">First Supervisor<span class="required">*</span></label>
+                                <div class="col-lg-10">
 <?php
-    $sql1 = "SELECT slid from slots";
-    if ($result1=mysqli_query($conn,$sql1))
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
   {
-        
-            echo "<select name='slid'>";
-  // Fetch one and one row
-  while ($row1=mysqli_fetch_row($result1))
+        echo "<select name='supervisor1'>";
+  while ($row=mysqli_fetch_row($result))
     {
-      echo "<option value=";
-    printf ("%d",$row1[0]);
-       echo ">";
-      echo $row1[0];
-      echo"</option>";
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
     }
   // Free result set
-            mysqli_free_result($result1);
+            mysqli_free_result($result);
+            echo "</select>";
 }  
 ?>
-                                              </select>
+                                  </div>
+                                  </div>
+
+                                  <div class="form-group ">
+                                <label for="supervisor2" class="control-label col-lg-2">Second Supervisor (if any)<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='supervisor2'><option value=NULL>none</option>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+
+                                  <div class="form-group ">
+                                <label for="cognate1" class="control-label col-lg-2">Faculty Members in the cognate area from the Department<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='cognate1'>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+                                  <div class="form-group ">
+                                <label for="cognate2" class="control-label col-lg-2">Faculty Members in the cognate area from the Department<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='cognate2'><option value=NULL>none</option>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+                                  <div class="form-group ">
+                                <label for="outside" class="control-label col-lg-2">One faculty Member from outside the Department/School<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='outside'>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+                                  <div class="form-group ">
+                                          <label for="percent" class="control-label col-lg-2">Percentage Completion <span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <input class="form-control" id="percent" name="percent" min=0 max=100 value=0 type="number" required />
                                           </div>
                                       </div>
                                       <div class="form-group">
@@ -240,75 +297,10 @@ require 'header.php';
                                       </div>
                                   </form>
                               </div>
-
                           </div>
                       </section>
                   </div>
               </div>
-              <!--<div class="row">
-                  <div class="col-lg-12">
-                      <section class="panel">
-                          <header class="panel-heading">
-                             Advanced Form validations
-                          </header>
-                          <div class="panel-body">
-                              <div class="form">
-                                  <form class="form-validate form-horizontal " id="register_form" method="get" action="">
-                                      <div class="form-group ">
-                                          <label for="fullname" class="control-label col-lg-2">Full name <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class=" form-control" id="fullname" name="fullname" type="text" />
-                                          </div>
-                                      </div>
-                                      <div class="form-group ">
-                                          <label for="address" class="control-label col-lg-2">Address <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class=" form-control" id="address" name="address" type="text" />
-                                          </div>
-                                      </div>
-                                      <div class="form-group ">
-                                          <label for="username" class="control-label col-lg-2">Username <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control " id="username" name="username" type="text" />
-                                          </div>
-                                      </div>
-                                      <div class="form-group ">
-                                          <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control " id="password" name="password" type="password" />
-                                          </div>
-                                      </div>
-                                      <div class="form-group ">
-                                          <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
-                                          </div>
-                                      </div>
-                                      <div class="form-group ">
-                                          <label for="email" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control " id="email" name="email" type="email" />
-                                          </div>
-                                      </div>
-                                      <div class="form-group ">
-                                          <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy <span class="required">*</span></label>
-                                          <div class="col-lg-10 col-sm-9">
-                                              <input  type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <div class="col-lg-offset-2 col-lg-10">
-                                              <button class="btn btn-primary" type="submit">Save</button>
-                                              <button class="btn btn-default" type="button">Cancel</button>
-                                          </div>
-                                      </div>
-                                  </form>
-                              </div>
-                          </div>
-                      </section>
-                  </div>
-              </div>-->
-              <!-- page end-->
           </section>
       </section>
       <!--main content end-->
@@ -316,20 +308,7 @@ require 'header.php';
   <!-- container section end -->
 
     <!-- javascripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- nice scroll -->
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-    <!-- jquery validate js -->
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-
-    <!-- custom form validation script for this page-->
-    <script src="js/form-validation-script.js"></script>
-    <!--custom script for all page-->
-    <script src="js/scripts.js"></script>    
-
-
+     <?php require'js.php';?>
   </body>
 </html>
 <?php

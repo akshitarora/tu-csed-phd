@@ -21,7 +21,8 @@ require 'header.php';
 					<h3 class="page-header"><i class="fa fa-files-o"></i>New Journal Article</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-						<li><i class="icon_document_alt"></i>Add Journal Article</li>
+            <li><i class="icon_document_alt"></i><a href=#>Research Paper</a></li>
+						<li><i class="icon_document_alt"></i><a href="journal_add.php">Add Journal Article</a></li>
 					</ol>
 				</div>
 			</div>
@@ -36,7 +37,6 @@ require 'header.php';
                               <div class="form">
                                   <form class="form-validate form-horizontal" method="post" action="journal_addprocess.php">
                                       <div class="form-group ">
-                                          
                                           <label for="title" class="control-label col-lg-2">Title of the Article<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input class="form-control" id="title" name="title" type="text" required />
@@ -44,7 +44,6 @@ require 'header.php';
                                       </div>
                                       
                                       <div class="form-group ">
-                                          
                                           <label for="authors" class="control-label col-lg-2">Authors<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input class="form-control" id="authors" name="authors" type="text" placeholder="please enter in comma separated format" required />
@@ -64,7 +63,6 @@ require 'header.php';
                                               <input class="form-control" id="journal_volume" name="journal_volume" type="number" required />
                                           </div>
                                       </div>
-                                      
                                       <div class="form-group ">
                                           <label for="journal_number" class="control-label col-lg-2">Journal Number<span class="required">*</span></label>
                                           <div class="col-lg-10">
@@ -75,7 +73,7 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="publish_date" class="control-label col-lg-2">Publish Date</label>
                                           <div class="col-lg-10">
-                                              <input id="publish_date" type="date" name="publish_date" size="16" class="form-control">
+                                              <input id="publish_date" type="date" name="publish_date" size="16" max=<?php echo date("Y-m-d");?> class="form-control">
                                           </div>
                                       </div>
                                       
@@ -89,16 +87,15 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="status" class="control-label col-lg-2">Status<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              
                                               <select name="status">
-                                                  <option value="Published">
-                                                  <option value="Accepted">
+                                                  <option value="Published">Published</option>
+                                                  <option value="Accepted">Accepted</option>
                                               </select>
                                           </div>
                                       </div>
                                       
                                       <div class="form-group ">
-                                          <label for="sid" class="control-label col-lg-2">Student <span class="required">*</span></label>
+                                          <label for="sid" class="control-label col-lg-2">Student<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               
                                               <select name="sid">
