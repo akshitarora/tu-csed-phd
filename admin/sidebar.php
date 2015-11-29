@@ -52,6 +52,12 @@
                           <span>Update URB</span>
                       </a>
                   </li>
+                  <li>
+                      <a class="" href="sem.php">
+                          <i class="icon_document_alt"></i>
+                          <span>Add Semester</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

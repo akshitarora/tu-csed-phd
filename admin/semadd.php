@@ -9,18 +9,16 @@ function test_input($data) {
         $data = htmlentities($data);
         return $data;
 }
-$regno = test_input($_POST['regno']);
-$date = test_input($_POST['date']);
-$percent = test_input($_POST['percent']);
+$semcode = test_input($_POST['semcode']);
+$year = test_input($_POST['year']);
+$odd = test_input($_POST['odd']);
 
-$sql = "UPDATE student SET sdurb='".$date."' WHERE regno=".$regno.";";
-$sql2 = "INSERT INTO progress(sid,urbdate,percentage) VALUES('$regno','$date','$percent')";
+$sql2 = "INSERT INTO semester(semcode,year,odd) VALUES('$semcode','$year','$odd')";
 
 if(mysqli_query($conn,$sql))
 {
-    mysqli_query($conn,$sql2);
 	$_SESSION["success"]=1;
-	$_SESSION["message"]="URB Progress updated!";
+	$_SESSION["message"]="Semester added!";
 	header('Location: /phd/admin/'); die();
 	mysqli_close($conn);
 }

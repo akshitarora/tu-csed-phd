@@ -24,41 +24,23 @@ require 'connection.php';
                 </header>
                 <div class="panel-body">
                   <div class="form">
-                      <form class="form-validate form-horizontal" method="post" action="urbupdate.php">
-                                    <div class="form-group ">
-                                <label for="regno" class="control-label col-lg-2">Registration Number<span class="required">*</span></label>
-                                <div class="col-lg-10">
-<?php
-    $sql = "SELECT DISTINCT sid from progress";
-    if ($result=mysqli_query($conn,$sql))
-  {
-  // Fetch one and one row
-        echo "<select name='regno'>";
-  while ($row=mysqli_fetch_row($result))
-    {
-      echo "<option value=";
-      printf ("%d",$row[0]);
-      echo ">" ;
-      echo $row[0];
-      echo "</option>";
-    }
-  // Free result set
-            mysqli_free_result($result);
-            echo "</select>";
-}  
-?>
-                                  </div>
-                                  </div>
+                      <form class="form-validate form-horizontal" method="post" action="semadd.php">
                                   <div class="form-group">
-                                    <label for="percent" class="control-label col-lg-2">Percentage Completion<span class="required">*</span></label>
+                                    <label for="semcode" class="control-label col-lg-2">Semester Code<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                          <input class="form-control" name="percent" type="number" min=0 max=100 required />
+                                          <input class="form-control" name="semcode" type="text" placeholder="Eg. 1516ODDSEM" required />
                                         </div>
                                    </div>
                                   <div class="form-group">
-                                    <label for="date" class="control-label col-lg-2">URB Date<span class="required">*</span></label>
+                                    <label for="year" class="control-label col-lg-2">Year<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                          <input class="form-control" name="date" type="date" required />
+                                          <input class="form-control" name="year" type="number" placeholder="Eg. 2015" required />
+                                        </div>
+                                   </div>
+                                   <div class="form-group">
+                                    <label for="odd" class="control-label col-lg-2">Odd Semester?<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                          <input class="form-control" name="odd" type="number" max=1 min=0 placeholder="Eg. 1 if above entered semester code represents odd semester, 0 otherwise" required />
                                         </div>
                                    </div>
                                   <div class="form-group">

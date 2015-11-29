@@ -52,32 +52,29 @@ if(1){
                   
                   <?php
                         $sql1 = "SELECT * from courses where sregno = ".$row["regno"]." ORDER BY timestamp DESC;"; 
-                        $result3 = mysqli_query($conn,$sql1);
+                        if(mysqli_query($conn,$sql1)){
+                          $result3 = mysqli_query($conn,$sql1) ;
                         echo "<br><h3><b>Coursework Information</b></h3>";
                         while($row2 = mysqli_fetch_assoc($result3)) {
-                        $sql2 = "SELECT * from faculty WHERE fid = ".$row2["coordinator_fid"].";";
-                        $result4 = mysqli_query($conn, $sql2);
-                        $row5 = mysqli_fetch_assoc($result4);
-                        echo "<p><b>Course Name</b>: ".$row2["cname"];"</p>";
+                        echo "<p><b>Course Name</b>: ".$row2["cname"]."</p>";
                         echo "<p><b>Semester Code</b>: ".$row2["semcode"];"</p>";
                         echo "<p><b>Course Credits</b>: ".$row2["credits"];"</p>";
                         echo "<p><b>Class</b>: ".$row2["class"];"</p>";
-                        echo "<p><b>Course Co-ordinator</b>: ".$row5["fname"];"</p>";
+                        echo "<p><b>Course Co-ordinator</b>: ".$row2["coordinator"];"</p>";
+                        echo "<p><b>Department</b>: ".$row2["department"];"</p>";
+                        echo "<p><b>Grade Obtained</b>: ".$row2["grade"];"</p>";
                         }
+                      }
                   ?>
                   
                   <?php
-                        if($row["comm_id"] != 0 && isset($row["comm_id"])) {
-                            $sql4 = "SELECT * from STUDENT, doc_comm where student.comm_id = doc_comm.pno AND regno=".$_GET["regno"].";";
-                            
-                            $result2 = mysqli_query($conn,$sql4);
-                            $row1 = mysqli_fetch_assoc($result2);
                             echo "<br><h3><b>Doctoral Committee Information</b></h3>";
-                            echo "<p><b>Chairman</b>: ".$row1["chairman_fid"];"</p>";
-                            echo "<p><b>Supervisor 1</b>: ".$row1["supervisor_1_fid"];"</p>";
-                            echo "<p><b>Supervisor 2</b>: ".$row1["supervisor_2_fid"];"</p>";
-                            echo "<p><b></b>: ".$row1["inside_1_fid"];"</p>";
-                        }
+                            echo "<p><b>Chairperson Board of Studies(Ex-officio)</b>: ".$row["chair"];"</p>";
+                            echo "<p><b>Supervisor(s)</b>: ".$row["supervisor1"].",&nbsp;&nbsp;&nbsp;&nbsp;";
+                            echo $row["supervisor2"]."</p>";
+                            echo "<p><b>Two Faculty Members in the cognate area from the Department</b>: ".$row["cognate1"].",&nbsp;&nbsp;&nbsp;&nbsp;";
+                            echo $row["cognate2"]."</p>";
+                            echo "<p><b>One faculty Member from outside the Department/School</b>: ".$row["outside"];"</p>";
                   ?>
                   
                   <br><br><h3><b>Contact Information</b></h3>
