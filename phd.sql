@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2015 at 01:57 AM
+-- Generation Time: Nov 29, 2015 at 12:00 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -40,7 +40,14 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `department` varchar(4) NOT NULL,
   `class` varchar(10) NOT NULL,
   `grade` varchar(4) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`cid`, `timestamp`, `sregno`, `cname`, `coordinator`, `credits`, `L`, `T`, `P`, `semcode`, `department`, `class`, `grade`) VALUES
+(1, '2015-11-29 08:37:23', 1000000004, 'Web Technologies', 'Dr. Sushma Jain', 5, 1, 2, 2, '1516ODDSEM', 'COE', 'UG', 'C');
 
 -- --------------------------------------------------------
 
@@ -90,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `full_name` varchar(200) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `email` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
@@ -98,9 +105,9 @@ CREATE TABLE IF NOT EXISTS `login` (
 
 INSERT INTO `login` (`sno`, `role`, `_id`, `password`, `full_name`, `phone`, `email`) VALUES
 (2, 'admin', 'akshit', '$1$sa5.FC/.$5mbA2ZielWm5uOkkhy7ZA0', 'Akshit Arora', '+917696061995', ''),
-(19, 'student', '1000000081', '$1$60..Vc3.$k/znCgj3Y4qlunDH9kCX51', 'aksfd', '+91859684959', 'dsfklj@gmail.com'),
-(20, 'student', '1000000089', '$1$tQ5.y33.$SUIY.rwHlISqZI0uBMh/s/', 'kirti aggarwal', '+91859684959', 'testing@testing.com'),
-(21, 'student', '1000000040', '$1$4t/.5U4.$BH6B9bgK4Shxc7.4FYVuT0', 'testing', '+91859684959', 'testing@testing.com');
+(22, 'student', '1000000004', '$1$tW1.yH1.$HhtwYqkNp8vctMrUs7HcP0', 'akshit', '+91859684959', 'aks@gm.com'),
+(23, 'student', '1000000012', '$1$SE/.zH4.$.IcfHKB2JXg5rhWuMDVlv.', 'test1234', '+91859684959', 'testing@testing.com'),
+(24, 'student', '1000000005', '$1$A94.JY4.$6KRm1A7gBcuv1quabdbJj/', 'test', '+91859684959', 'akshit.arora1995@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -113,16 +120,16 @@ CREATE TABLE IF NOT EXISTS `progress` (
   `sid` int(11) NOT NULL,
   `urbdate` date DEFAULT NULL,
   `percentage` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `progress`
 --
 
 INSERT INTO `progress` (`sno`, `sid`, `urbdate`, `percentage`) VALUES
-(1, 1000000081, NULL, 44),
-(2, 1000000089, NULL, 33),
-(3, 1000000040, NULL, 66);
+(4, 1000000004, '2012-02-01', 0),
+(5, 1000000012, '2013-10-30', 33),
+(6, 1000000005, '2013-12-29', 4);
 
 -- --------------------------------------------------------
 
@@ -140,14 +147,7 @@ CREATE TABLE IF NOT EXISTS `research_book` (
   `book_isbn` int(14) NOT NULL,
   `sid` int(11) NOT NULL,
   `status` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `research_book`
---
-
-INSERT INTO `research_book` (`rid`, `chapter_title`, `authors`, `publisher`, `page_numbers`, `book_publish_year`, `book_isbn`, `sid`, `status`) VALUES
-(1, 'sfkdljs', 'njkf', 'dsjfk', 'kslnfj', 2004, 0, 950903030, 'dmsfakj');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -164,14 +164,7 @@ CREATE TABLE IF NOT EXISTS `research_conference` (
   `conference_location` varchar(500) NOT NULL,
   `status` varchar(100) NOT NULL,
   `sid` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `research_conference`
---
-
-INSERT INTO `research_conference` (`rid`, `title`, `people`, `conference_name`, `conference_date`, `conference_location`, `status`, `sid`) VALUES
-(1, 'dsfdg', 'fjkg', 'dfkljk', '0000-00-00', 'dsmf,dk', 'Accepted', 950903030);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -191,17 +184,7 @@ CREATE TABLE IF NOT EXISTS `research_journal` (
   `status` varchar(500) NOT NULL,
   `sid` int(11) NOT NULL,
   `journal_impact` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `research_journal`
---
-
-INSERT INTO `research_journal` (`rid`, `title`, `authors`, `journal_name`, `journal_volume`, `journal_no`, `publish_date`, `journal_pages`, `status`, `sid`, `journal_impact`) VALUES
-(1, 'haha', 'testihgdso', 'dksjakf', 1, 3, '0000-00-00', '1203', 'Accepted', 1000000002, 1.23),
-(2, 'haha', 'testihgdso', 'dksjakf', 1, 3, '2015-02-01', '1203', 'Accepted', 1000000002, 1.23),
-(3, 'hdhh', 'lsdkfaj', 'kdjfkg', 1, 3, '2014-11-29', 'dsklfjh', 'Published', 1000000003, 1.34),
-(4, 'hdhh', 'lsdkfaj', 'kdjfkg', 1, 3, '2014-11-29', 'dsklfjh', 'Published', 1000000003, 1.34);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -224,7 +207,10 @@ INSERT INTO `semester` (`semcode`, `year`, `odd`) VALUES
 ('1415ODDSEM', 2014, 1),
 ('1516EVESEM', 2016, 0),
 ('1516ODDSEM', 2015, 1),
-('1617ODDSEM', 2016, 1);
+('1617ODDSEM', 2016, 1),
+('1718EVESEM', 2018, 0),
+('1920EVESEM', 2020, 0),
+('1920ODDSEM', 2019, 1);
 
 -- --------------------------------------------------------
 
@@ -253,16 +239,16 @@ CREATE TABLE IF NOT EXISTS `student` (
   `cognate2` varchar(500) NOT NULL,
   `outside` varchar(500) NOT NULL,
   `def` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
 --
 
 INSERT INTO `student` (`sid`, `timestamp`, `regno`, `sname`, `full_part`, `status`, `sdob`, `semail`, `sbranch`, `sdoa`, `sdurb`, `sthesis`, `sphone`, `chair`, `supervisor1`, `supervisor2`, `cognate1`, `cognate2`, `outside`, `def`) VALUES
-(10, '2015-11-28 23:56:51', 1000000081, 'aksfd', 'full', 'Ongoing', '1995-03-02', 'dsfklj@gmail.com', 'ECE', '2013-09-30', '2014-10-30', 'fk.jdgsh', '+91859684959', 'Dr. Deepak Garg', '', 'Tarunpreet Bhatia', 'Karamjeet Kaur Cheema', 'Ashish Girdhar', 'Dr. Parteek Bhatia', 1),
-(11, '2015-11-28 23:58:52', 1000000089, 'kirti aggarwal', 'full', 'Ongoing', '1997-10-30', 'testing@testing.com', 'COE', '2014-10-30', '2015-10-30', 'klfje', '+91859684959', 'Dr. Deepak Garg', '', 'NULL', 'Dr. Deepak Garg', 'NULL', 'Dr. Deepak Garg', 1),
-(12, '2015-11-29 00:02:09', 1000000040, 'testing', 'full', 'Ongoing', '1992-10-30', 'testing@testing.com', 'MTX', '2014-10-30', '2015-11-30', 'sdlsklj', '+91859684959', 'Dr. Parteek Bhatia', 'Dr. Deepak Garg', 'NULL', 'Dr. Deepak Garg', 'NULL', 'Dr. Deepak Garg', 1);
+(13, '2015-11-29 08:36:45', 1000000004, 'akshit', 'full', 'Synopsis Submitted', '1996-03-01', 'aks@gm.com', 'COE', '2012-02-01', '2014-10-29', 'dksjkh', '+91859684959', 'Dr. Deepak Garg', 'Dr. Deepak Garg', 'NULL', 'Dr. Deepak Garg', 'NULL', 'Dr. Sushma Jain', 1),
+(14, '2015-11-29 10:14:05', 1000000012, 'test1234', 'full', 'Synopsis Submitted', '1987-11-30', 'testing@testing.com', 'COE', '2012-10-30', '2013-10-30', 'Mobile Application Development', '+91859684959', 'Dr. Deepak Garg', 'Ashish Girdhar', 'Dr. Parteek Bhatia', 'Dr. Sushma Jain', 'Dr. Sushma Jain', 'Ashish Girdhar', 1),
+(15, '2015-11-29 10:23:14', 1000000005, 'test', 'full', 'Synopsis Submitted', '1997-03-01', 'akshit.arora1995@gmail.com', 'COE', '2012-10-28', '2013-12-29', 'MAPREDUCE', '+91859684959', 'Dr. Deepak Garg', 'Dr. Sushma Jain', 'Karamjeet Kaur Cheema', 'Harkiran Kaur', 'Tarunpreet Bhatia', 'Karamjeet Kaur Cheema', 1);
 
 --
 -- Indexes for dumped tables
@@ -330,7 +316,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `faculty`
 --
@@ -340,32 +326,32 @@ ALTER TABLE `faculty`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `progress`
 --
 ALTER TABLE `progress`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `research_book`
 --
 ALTER TABLE `research_book`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `research_conference`
 --
 ALTER TABLE `research_conference`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `research_journal`
 --
 ALTER TABLE `research_journal`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

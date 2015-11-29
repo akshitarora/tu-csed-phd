@@ -5,7 +5,7 @@
 - http://www.phpmyadmin.net
 -
 - Host: 127.0.0.1
-- Generation Time: Nov 29, 2015 at 01:58 AM
+- Generation Time: Nov 29, 2015 at 12:00 PM
 - Server version: 5.6.24
 - PHP Version: 5.6.8
 -->
@@ -33,7 +33,7 @@
                   `grade` varchar(4) DEFAULT NULL,
                   PRIMARY KEY (`cid`),
                   UNIQUE KEY `sregno` (`sregno`,`cname`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="faculty">
                 CREATE TABLE `faculty` (
@@ -63,7 +63,7 @@
                   `email` varchar(300) NOT NULL,
                   PRIMARY KEY (`sno`),
                   UNIQUE KEY `_id` (`_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="progress">
                 CREATE TABLE `progress` (
@@ -72,7 +72,7 @@
                   `urbdate` date DEFAULT NULL,
                   `percentage` int(11) NOT NULL,
                   PRIMARY KEY (`sno`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_book">
                 CREATE TABLE `research_book` (
@@ -86,7 +86,7 @@
                   `sid` int(11) NOT NULL,
                   `status` varchar(100) NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_conference">
                 CREATE TABLE `research_conference` (
@@ -99,7 +99,7 @@
                   `status` varchar(100) NOT NULL,
                   `sid` int(11) NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_journal">
                 CREATE TABLE `research_journal` (
@@ -115,7 +115,7 @@
                   `sid` int(11) NOT NULL,
                   `journal_impact` double NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="semester">
                 CREATE TABLE `semester` (
@@ -149,7 +149,7 @@
                   `def` int(11) NOT NULL DEFAULT '1',
                   PRIMARY KEY (`sid`),
                   UNIQUE KEY `regno` (`regno`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
@@ -159,6 +159,21 @@
     -->
     <database name="phd">
         <!-- Table courses -->
+        <table name="courses">
+            <column name="cid">1</column>
+            <column name="timestamp">2015-11-29 14:07:23</column>
+            <column name="sregno">1000000004</column>
+            <column name="cname">Web Technologies</column>
+            <column name="coordinator">Dr. Sushma Jain</column>
+            <column name="credits">5</column>
+            <column name="L">1</column>
+            <column name="T">2</column>
+            <column name="P">2</column>
+            <column name="semcode">1516ODDSEM</column>
+            <column name="department">COE</column>
+            <column name="class">UG</column>
+            <column name="grade">C</column>
+        </table>
         <!-- Table faculty -->
         <table name="faculty">
             <column name="fid">1</column>
@@ -275,127 +290,54 @@
             <column name="email"></column>
         </table>
         <table name="login">
-            <column name="sno">19</column>
+            <column name="sno">22</column>
             <column name="role">student</column>
-            <column name="_id">1000000081</column>
-            <column name="password">$1$60..Vc3.$k/znCgj3Y4qlunDH9kCX51</column>
-            <column name="full_name">aksfd</column>
+            <column name="_id">1000000004</column>
+            <column name="password">$1$tW1.yH1.$HhtwYqkNp8vctMrUs7HcP0</column>
+            <column name="full_name">akshit</column>
             <column name="phone">+91859684959</column>
-            <column name="email">dsfklj@gmail.com</column>
+            <column name="email">aks@gm.com</column>
         </table>
         <table name="login">
-            <column name="sno">20</column>
+            <column name="sno">23</column>
             <column name="role">student</column>
-            <column name="_id">1000000089</column>
-            <column name="password">$1$tQ5.y33.$SUIY.rwHlISqZI0uBMh/s/</column>
-            <column name="full_name">kirti aggarwal</column>
+            <column name="_id">1000000012</column>
+            <column name="password">$1$SE/.zH4.$.IcfHKB2JXg5rhWuMDVlv.</column>
+            <column name="full_name">test1234</column>
             <column name="phone">+91859684959</column>
             <column name="email">testing@testing.com</column>
         </table>
         <table name="login">
-            <column name="sno">21</column>
+            <column name="sno">24</column>
             <column name="role">student</column>
-            <column name="_id">1000000040</column>
-            <column name="password">$1$4t/.5U4.$BH6B9bgK4Shxc7.4FYVuT0</column>
-            <column name="full_name">testing</column>
+            <column name="_id">1000000005</column>
+            <column name="password">$1$A94.JY4.$6KRm1A7gBcuv1quabdbJj/</column>
+            <column name="full_name">test</column>
             <column name="phone">+91859684959</column>
-            <column name="email">testing@testing.com</column>
+            <column name="email">akshit.arora1995@gmail.com</column>
         </table>
         <!-- Table progress -->
         <table name="progress">
-            <column name="sno">1</column>
-            <column name="sid">1000000081</column>
-            <column name="urbdate">NULL</column>
-            <column name="percentage">44</column>
+            <column name="sno">4</column>
+            <column name="sid">1000000004</column>
+            <column name="urbdate">2012-02-01</column>
+            <column name="percentage">0</column>
         </table>
         <table name="progress">
-            <column name="sno">2</column>
-            <column name="sid">1000000089</column>
-            <column name="urbdate">NULL</column>
+            <column name="sno">5</column>
+            <column name="sid">1000000012</column>
+            <column name="urbdate">2013-10-30</column>
             <column name="percentage">33</column>
         </table>
         <table name="progress">
-            <column name="sno">3</column>
-            <column name="sid">1000000040</column>
-            <column name="urbdate">NULL</column>
-            <column name="percentage">66</column>
+            <column name="sno">6</column>
+            <column name="sid">1000000005</column>
+            <column name="urbdate">2013-12-29</column>
+            <column name="percentage">4</column>
         </table>
         <!-- Table research_book -->
-        <table name="research_book">
-            <column name="rid">1</column>
-            <column name="chapter_title">sfkdljs</column>
-            <column name="authors">njkf</column>
-            <column name="publisher">dsjfk</column>
-            <column name="page_numbers">kslnfj</column>
-            <column name="book_publish_year">2004</column>
-            <column name="book_isbn">0</column>
-            <column name="sid">950903030</column>
-            <column name="status">dmsfakj</column>
-        </table>
         <!-- Table research_conference -->
-        <table name="research_conference">
-            <column name="rid">1</column>
-            <column name="title">dsfdg</column>
-            <column name="people">fjkg</column>
-            <column name="conference_name">dfkljk</column>
-            <column name="conference_date">0000-00-00</column>
-            <column name="conference_location">dsmf,dk</column>
-            <column name="status">Accepted</column>
-            <column name="sid">950903030</column>
-        </table>
         <!-- Table research_journal -->
-        <table name="research_journal">
-            <column name="rid">1</column>
-            <column name="title">haha</column>
-            <column name="authors">testihgdso</column>
-            <column name="journal_name">dksjakf</column>
-            <column name="journal_volume">1</column>
-            <column name="journal_no">3</column>
-            <column name="publish_date">0000-00-00</column>
-            <column name="journal_pages">1203</column>
-            <column name="status">Accepted</column>
-            <column name="sid">1000000002</column>
-            <column name="journal_impact">1.23</column>
-        </table>
-        <table name="research_journal">
-            <column name="rid">2</column>
-            <column name="title">haha</column>
-            <column name="authors">testihgdso</column>
-            <column name="journal_name">dksjakf</column>
-            <column name="journal_volume">1</column>
-            <column name="journal_no">3</column>
-            <column name="publish_date">2015-02-01</column>
-            <column name="journal_pages">1203</column>
-            <column name="status">Accepted</column>
-            <column name="sid">1000000002</column>
-            <column name="journal_impact">1.23</column>
-        </table>
-        <table name="research_journal">
-            <column name="rid">3</column>
-            <column name="title">hdhh</column>
-            <column name="authors">lsdkfaj</column>
-            <column name="journal_name">kdjfkg</column>
-            <column name="journal_volume">1</column>
-            <column name="journal_no">3</column>
-            <column name="publish_date">2014-11-29</column>
-            <column name="journal_pages">dsklfjh</column>
-            <column name="status">Published</column>
-            <column name="sid">1000000003</column>
-            <column name="journal_impact">1.34</column>
-        </table>
-        <table name="research_journal">
-            <column name="rid">4</column>
-            <column name="title">hdhh</column>
-            <column name="authors">lsdkfaj</column>
-            <column name="journal_name">kdjfkg</column>
-            <column name="journal_volume">1</column>
-            <column name="journal_no">3</column>
-            <column name="publish_date">2014-11-29</column>
-            <column name="journal_pages">dsklfjh</column>
-            <column name="status">Published</column>
-            <column name="sid">1000000003</column>
-            <column name="journal_impact">1.34</column>
-        </table>
         <!-- Table semester -->
         <table name="semester">
             <column name="semcode">1415EVESEM</column>
@@ -422,71 +364,86 @@
             <column name="year">2016</column>
             <column name="odd">1</column>
         </table>
+        <table name="semester">
+            <column name="semcode">1718EVESEM</column>
+            <column name="year">2018</column>
+            <column name="odd">0</column>
+        </table>
+        <table name="semester">
+            <column name="semcode">1920EVESEM</column>
+            <column name="year">2020</column>
+            <column name="odd">0</column>
+        </table>
+        <table name="semester">
+            <column name="semcode">1920ODDSEM</column>
+            <column name="year">2019</column>
+            <column name="odd">1</column>
+        </table>
         <!-- Table student -->
         <table name="student">
-            <column name="sid">10</column>
-            <column name="timestamp">2015-11-29 05:26:51</column>
-            <column name="regno">1000000081</column>
-            <column name="sname">aksfd</column>
+            <column name="sid">13</column>
+            <column name="timestamp">2015-11-29 14:06:45</column>
+            <column name="regno">1000000004</column>
+            <column name="sname">akshit</column>
             <column name="full_part">full</column>
-            <column name="status">Ongoing</column>
-            <column name="sdob">1995-03-02</column>
-            <column name="semail">dsfklj@gmail.com</column>
-            <column name="sbranch">ECE</column>
-            <column name="sdoa">2013-09-30</column>
-            <column name="sdurb">2014-10-30</column>
-            <column name="sthesis">fk.jdgsh</column>
-            <column name="sphone">+91859684959</column>
-            <column name="chair">Dr. Deepak Garg</column>
-            <column name="supervisor1"></column>
-            <column name="supervisor2">Tarunpreet Bhatia</column>
-            <column name="cognate1">Karamjeet Kaur Cheema</column>
-            <column name="cognate2">Ashish Girdhar</column>
-            <column name="outside">Dr. Parteek Bhatia</column>
-            <column name="def">1</column>
-        </table>
-        <table name="student">
-            <column name="sid">11</column>
-            <column name="timestamp">2015-11-29 05:28:52</column>
-            <column name="regno">1000000089</column>
-            <column name="sname">kirti aggarwal</column>
-            <column name="full_part">full</column>
-            <column name="status">Ongoing</column>
-            <column name="sdob">1997-10-30</column>
-            <column name="semail">testing@testing.com</column>
+            <column name="status">Synopsis Submitted</column>
+            <column name="sdob">1996-03-01</column>
+            <column name="semail">aks@gm.com</column>
             <column name="sbranch">COE</column>
-            <column name="sdoa">2014-10-30</column>
-            <column name="sdurb">2015-10-30</column>
-            <column name="sthesis">klfje</column>
+            <column name="sdoa">2012-02-01</column>
+            <column name="sdurb">2014-10-29</column>
+            <column name="sthesis">dksjkh</column>
             <column name="sphone">+91859684959</column>
             <column name="chair">Dr. Deepak Garg</column>
-            <column name="supervisor1"></column>
-            <column name="supervisor2">NULL</column>
-            <column name="cognate1">Dr. Deepak Garg</column>
-            <column name="cognate2">NULL</column>
-            <column name="outside">Dr. Deepak Garg</column>
-            <column name="def">1</column>
-        </table>
-        <table name="student">
-            <column name="sid">12</column>
-            <column name="timestamp">2015-11-29 05:32:09</column>
-            <column name="regno">1000000040</column>
-            <column name="sname">testing</column>
-            <column name="full_part">full</column>
-            <column name="status">Ongoing</column>
-            <column name="sdob">1992-10-30</column>
-            <column name="semail">testing@testing.com</column>
-            <column name="sbranch">MTX</column>
-            <column name="sdoa">2014-10-30</column>
-            <column name="sdurb">2015-11-30</column>
-            <column name="sthesis">sdlsklj</column>
-            <column name="sphone">+91859684959</column>
-            <column name="chair">Dr. Parteek Bhatia</column>
             <column name="supervisor1">Dr. Deepak Garg</column>
             <column name="supervisor2">NULL</column>
             <column name="cognate1">Dr. Deepak Garg</column>
             <column name="cognate2">NULL</column>
-            <column name="outside">Dr. Deepak Garg</column>
+            <column name="outside">Dr. Sushma Jain</column>
+            <column name="def">1</column>
+        </table>
+        <table name="student">
+            <column name="sid">14</column>
+            <column name="timestamp">2015-11-29 15:44:05</column>
+            <column name="regno">1000000012</column>
+            <column name="sname">test1234</column>
+            <column name="full_part">full</column>
+            <column name="status">Synopsis Submitted</column>
+            <column name="sdob">1987-11-30</column>
+            <column name="semail">testing@testing.com</column>
+            <column name="sbranch">COE</column>
+            <column name="sdoa">2012-10-30</column>
+            <column name="sdurb">2013-10-30</column>
+            <column name="sthesis">Mobile Application Development</column>
+            <column name="sphone">+91859684959</column>
+            <column name="chair">Dr. Deepak Garg</column>
+            <column name="supervisor1">Ashish Girdhar</column>
+            <column name="supervisor2">Dr. Parteek Bhatia</column>
+            <column name="cognate1">Dr. Sushma Jain</column>
+            <column name="cognate2">Dr. Sushma Jain</column>
+            <column name="outside">Ashish Girdhar</column>
+            <column name="def">1</column>
+        </table>
+        <table name="student">
+            <column name="sid">15</column>
+            <column name="timestamp">2015-11-29 15:53:14</column>
+            <column name="regno">1000000005</column>
+            <column name="sname">test</column>
+            <column name="full_part">full</column>
+            <column name="status">Synopsis Submitted</column>
+            <column name="sdob">1997-03-01</column>
+            <column name="semail">akshit.arora1995@gmail.com</column>
+            <column name="sbranch">COE</column>
+            <column name="sdoa">2012-10-28</column>
+            <column name="sdurb">2013-12-29</column>
+            <column name="sthesis">MAPREDUCE</column>
+            <column name="sphone">+91859684959</column>
+            <column name="chair">Dr. Deepak Garg</column>
+            <column name="supervisor1">Dr. Sushma Jain</column>
+            <column name="supervisor2">Karamjeet Kaur Cheema</column>
+            <column name="cognate1">Harkiran Kaur</column>
+            <column name="cognate2">Tarunpreet Bhatia</column>
+            <column name="outside">Karamjeet Kaur Cheema</column>
             <column name="def">1</column>
         </table>
     </database>
