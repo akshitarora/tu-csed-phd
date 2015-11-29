@@ -247,7 +247,7 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                                   $d = strtotime("-18 Years");
                                   echo date("Y-m-d",$d);
                                   ?>
-                                  class="form-control" required>
+                                  class="form-control" >
                               </div>
                           </div>
                           

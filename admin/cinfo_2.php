@@ -1,7 +1,8 @@
-<?php session_start();error_reporting(0);
+<?php session_start();error_reporting(1);
 require 'auth.php';
 if(1){
     require 'header.php';
+    require 'connection.php';
 ?>
   <body>
   <!-- container section start -->
@@ -23,7 +24,7 @@ if(1){
                     <!--No alerts here-->
                     <!--ALERTS END -->
                     <?php
-                        $sql = "SELECT * FROM FACULTY WHERE faculty_code=".$_GET["f_code"].";";
+                        $sql = "SELECT * FROM FACULTY WHERE faculty_code='".$_GET["f_code"]."';";
                         $result = mysqli_query($conn,$sql);
                         $row = mysqli_fetch_assoc($result);
                     ?>
@@ -32,8 +33,17 @@ if(1){
               </div>
               <div class="row jumbotron">
                   <center>
-                      <h1></h1>
+                      <h1><?php echo row["fname"];?></h1>
                   </center>
+                  <br><h3><b>Faculty Information</b></h3>
+                  <p><b>Designation</b>: <?php echo $row["designation"];?></p>
+                  <p><b>Department</b>: <?php echo $row["department"];?></p>
+                  <p><b>E-mail</b>: <?php echo $row["email"];?></p>
+                  <p><b>Research Interests</b>: <?php echo $row["r_int"];?></p>
+                  <p><b>Website</b>: <?php echo $row["url"];?></p>
+                  <p><b>Faculty Code</b>: <?php echo $row["faculty_code"];?></p>
+                  <p><b>Phone Number</b>: <?php echo $row["phone"];?></p>
+                  <p><b>Date of Birth</b>: <?php echo $row["dob"];?></p>
               </div>
           </section>
       </section>

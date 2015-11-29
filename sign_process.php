@@ -30,7 +30,27 @@ if(!isset($_POST['uname']) || !isset($_POST['password'])) {
     }
     $uname = test_input($_POST['uname']);
     $password = test_input($_POST['password']);
-    require '/phd/admin/connection.php';
+    require '/admin/connection.php';
+    if(!function_exists('hash_equals')) //for servers with older versions of PHP
+{
+    function hash_equals($str1, $str2)
+    {
+        if(strlen($str1) != strlen($str2))
+        {
+            return false;
+        }
+        else
+        {
+            $res = $str1 ^ $str2;
+            $ret = 0;
+            for($i = strlen($res) - 1; $i >= 0; $i--)
+            {
+                $ret |= ord($res[$i]);
+            }
+            return !$ret;
+        }
+    }
+}
     $sql = "SELECT * FROM login WHERE _id='$uname'";
     if(mysqli_query($conn,$sql)) {
         $result1 = mysqli_query($conn,$sql);
