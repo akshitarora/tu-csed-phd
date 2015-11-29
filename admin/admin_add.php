@@ -12,7 +12,6 @@ require 'header.php';
       <!--sidebar start-->
       <?php require 'sidebar.php';?>
       <!--sidebar end-->
-
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
