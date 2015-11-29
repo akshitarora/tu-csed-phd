@@ -24,10 +24,10 @@ $sql = "INSERT INTO research_journal(title,authors,journal_name,journal_volume,j
 if(mysqli_query($conn,$sql)) {
 	$_SESSION["success"]=1;
 	$_SESSION["message"]="Journal added";
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 	mysqli_close($conn);
 } else {
 	$_SESSION["success"]=2;
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 }
 ?>

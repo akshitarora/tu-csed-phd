@@ -28,11 +28,11 @@ if(mysqli_query($conn,$sql))
 		mysqli_query($conn,$sql1);
 	}
 	$_SESSION["success_grade_added"]=1;
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 	mysqli_close($conn);
 }
 else {
     $_SESSION["success_grade_added"]=2;
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 }
 ?>

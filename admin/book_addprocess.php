@@ -23,10 +23,10 @@ $sql = "INSERT INTO research_book(`chapter_title`, `authors`, `publisher`, `page
 if(mysqli_query($conn,$sql)) {
 	$_SESSION["success"]=1;
 	$_SESSION["message"]="Book Added!";
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 	mysqli_close($conn);
 } else {
 	$_SESSION["success"]=2;
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 }
 ?>

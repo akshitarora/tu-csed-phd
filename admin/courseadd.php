@@ -25,12 +25,12 @@ VALUES(".$regno.",'".$cname."','".$coordinator."',".$credits.",'".$semcode."','"
 if(mysqli_query($conn,$sql))
 {
 $_SESSION["success_course_added"]=1;
-header('Location: /phd/admin/'); die();
+echo "<script>window.location.href='/phd/admin/'</script>";
 mysqli_close($conn);
 }
 else {
     $_SESSION["success_course_added"]=2;
     //echo $sql;
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 }
 ?>

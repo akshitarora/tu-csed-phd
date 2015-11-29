@@ -33,11 +33,11 @@ if(mysqli_query($conn,$sql))
 $sql1 = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('faculty','$faculty_code','$password','$fname','$phone','$email')";
 mysqli_query($conn,$sql1);
 $_SESSION["success_faculty_added"]=1;
-header('Location: /phd/admin/'); die();
+echo "<script>window.location.href='/phd/admin/'</script>";
 mysqli_close($conn);
 }
 else {
     $_SESSION["success_faculty_added"]=2;
-header('Location: /phd/admin/'); die();
+echo "<script>window.location.href='/phd/admin/'</script>";
 }
 ?>

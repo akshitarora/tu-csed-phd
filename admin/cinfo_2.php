@@ -33,7 +33,7 @@ if(1){
               </div>
               <div class="row jumbotron">
                   <center>
-                      <h1><?php echo row["fname"];?></h1>
+                      <h1><?php echo $row["fname"];?></h1>
                   </center>
                   <br><h3><b>Faculty Information</b></h3>
                   <p><b>Designation</b>: <?php echo $row["designation"];?></p>

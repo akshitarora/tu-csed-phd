@@ -21,11 +21,11 @@ if(mysqli_query($conn,$sql))
     mysqli_query($conn,$sql2);
 	$_SESSION["success"]=1;
 	$_SESSION["message"]="URB Progress updated!";
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 	mysqli_close($conn);
 }
 else {
     $_SESSION["success"]=2;
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 }
 ?>

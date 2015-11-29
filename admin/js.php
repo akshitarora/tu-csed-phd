@@ -9,20 +9,15 @@
     <script src="js/jquery.scrollTo.min.js"></script>
     <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
     <!-- charts scripts -->
-    <script src="assets/jquery-knob/js/jquery.knob.js"></script>
     <script src="js/jquery.sparkline.js" type="text/javascript"></script>
-    <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
-	<script src="assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+    <<script src="js/fullcalendar.min.js"></script> 
     <!--script for this page only-->
     <script src="js/calendar-custom.js"></script>
 	<script src="js/jquery.rateit.min.js"></script>
     <!-- custom select -->
     <script src="js/jquery.customSelect.min.js" ></script>
-	<script src="assets/chart-master/Chart.js"></script>
-   
     <!--custom script for all page-->
     <script src="js/scripts.js"></script>
     <!-- custom script for this page-->

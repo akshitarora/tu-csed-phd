@@ -45,11 +45,11 @@ if($status=="Coursework"){
 } else {
     $sql2 = "INSERT INTO progress(sid,percentage,urbdate) VALUES('$regno',".$percent.",'$sdurb');";
     mysqli_query($conn,$sql2);
-header('Location: /phd/admin/'); die();
+echo "<script>window.location.href='/phd/admin/'</script>";
 }
 mysqli_close($conn);
 } else {
     $_SESSION["success_student_added"]=2;
-	header('Location: /phd/admin/'); die();
+	echo "<script>window.location.href='/phd/admin/'</script>";
 }
 ?>
