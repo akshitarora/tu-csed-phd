@@ -5,7 +5,7 @@
 - http://www.phpmyadmin.net
 -
 - Host: 127.0.0.1
-- Generation Time: Nov 29, 2015 at 01:38 AM
+- Generation Time: Nov 29, 2015 at 01:58 AM
 - Server version: 5.6.24
 - PHP Version: 5.6.8
 -->
@@ -151,12 +151,6 @@
                   UNIQUE KEY `regno` (`regno`)
                 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
             </pma:table>
-            <pma:procedure name="simpleproc">
-                CREATE DEFINER=`root`@`localhost` PROCEDURE `simpleproc`()
-                BEGIN
-                SELECT COUNT(*) FROM login;
-                END
-            </pma:procedure>
         </pma:database>
     </pma:structure_schemas>
 

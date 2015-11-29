@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2015 at 01:38 AM
+-- Generation Time: Nov 29, 2015 at 01:57 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -19,17 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `phd`
 --
-
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `simpleproc`()
-BEGIN
-SELECT COUNT(*) FROM login;
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
