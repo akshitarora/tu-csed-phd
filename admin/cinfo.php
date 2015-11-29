@@ -2,7 +2,7 @@
 require 'auth.php';
 if(1){
     require 'header.php';
-    $conn = new mysqli("localhost", "root", "","phd");
+    require 'connection.php';
 ?>
   <body>
   <!-- container section start -->

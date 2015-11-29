@@ -1,6 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
+require 'connection.php';
 function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -20,7 +21,7 @@ $phone = test_input($_POST['phone']);
 $faculty_code = test_input($_POST['faculty_code']);
 $password = test_input($_POST['password']);
 $password = crypt($password);
-$conn = new mysqli("localhost", "root", "","phd");
+
 $hod = $_POST['hod'];
 if(!empty($hod)) {
     $designation .= " and Head of Department";

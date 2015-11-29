@@ -2,7 +2,7 @@
 session_start();error_reporting(0);
 if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
 require 'header.php';
-    $conn = new mysqli("localhost", "root", "","phd");
+    require 'connection.php';
     error_reporting(0);
 ?>
 <body>

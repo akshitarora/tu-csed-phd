@@ -30,7 +30,7 @@ if(!isset($_POST['uname']) || !isset($_POST['password'])) {
     }
     $uname = test_input($_POST['uname']);
     $password = test_input($_POST['password']);
-    $conn = new mysqli("localhost", "root", "","phd");
+    require '/phd/admin/connection.php';
     $sql = "SELECT * FROM login WHERE _id='$uname'";
     if(mysqli_query($conn,$sql)) {
         $result1 = mysqli_query($conn,$sql);

@@ -1,6 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
+require 'connection.php';
 function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -29,7 +30,7 @@ $cognate1 = test_input($_POST['cognate1']);
 $cognate2 = test_input($_POST['cognate2']);
 $outside = test_input($_POST['outside']);
 $percent = test_input($_POST['percent']);
-$conn = new mysqli("localhost", "root", "","phd");
+
 $sql = "INSERT INTO student(regno,sname,full_part,status,sdob,semail,sbranch,sdoa,sdurb,sthesis,sphone,chair,supervisor1,supervisor2,cognate1,cognate2,outside)    VALUES('$regno','$sname','$full_part','$status','$sdob','$semail','$sbranch','$sdoa','$sdurb','$sthesis','$sphone','$chair','$supervisor1','$supervisor2','$cognate1','$cognate2','$outside');";
 if(mysqli_query($conn,$sql)){
 $sql1 = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('student','$regno','$spassword','$sname','$sphone','$semail')";

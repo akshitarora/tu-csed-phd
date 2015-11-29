@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="description" content="Thapar University Ph.D. Portal">
     <meta name="author" content="Akshit Arora">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India">
     <link rel="shortcut icon" href="img/favicon.png">
     <title>Admin Panel</title>
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-desktop.min.css" rel="stylesheet">
@@ -23,12 +23,7 @@
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
-      
+    <!--
+    For Suggestions contact -> Akshit Arora (akshit.arora1995@gmail.com)
+    -->  
   </head>
