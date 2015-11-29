@@ -24,7 +24,7 @@ require 'header.php';
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
 						<li><i class="icon_document_alt"></i><a href="student_add.php">Add Student</a></li>
-						<li><i class="icon_document_alt"></i><a href="stage3_ongoing.php">STAGE 3: Ongoing Ph.D.</a></li>
+						<li><i class="icon_document_alt"></i><a href="stage3_ongoing.php">STAGE 3: Ongoing Ph.D. / Thesis Submitted / Synopsis submitted</a></li>
 					</ol>
 				</div>
 			</div>
@@ -69,6 +69,8 @@ require 'header.php';
                                           <div class="col-lg-10">
                                               <select name="status">
                                                   <option value="Ongoing">Ongoing</option>
+                                                  <option value="Synopsis Submitted">Synopsis Submitted</option>
+                                                  <option value="Thesis Submitted">Thesis Submitted</option>
                                               </select>
                                           </div>
                                       </div>

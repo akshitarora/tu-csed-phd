@@ -58,6 +58,12 @@
                           <span>Add Semester</span>
                       </a>
                   </li>
+                  <li>
+                      <a class="" href="statusupdate.php">
+                          <i class="icon_document_alt"></i>
+                          <span>Update Ph.D. Status</span>
+                      </a>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>

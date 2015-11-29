@@ -34,7 +34,7 @@ require 'connection.php';
                                   <div class="form-group">
                                     <label for="year" class="control-label col-lg-2">Year<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                          <input class="form-control" name="year" type="number" placeholder="Eg. 2015" required />
+                                          <input class="form-control" name="year" type="number" placeholder="Eg. 2015" min=2000 max=3000 required/>
                                         </div>
                                    </div>
                                    <div class="form-group">

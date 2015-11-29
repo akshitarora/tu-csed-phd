@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_unset();
-header('Location: /phd/');
+echo "<script>window.location.href='/phd/'</script>";
 session_destroy();
 
 ?>

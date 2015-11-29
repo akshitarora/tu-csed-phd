@@ -36,11 +36,8 @@ require 'header.php';
                               <div class="form">
                                   <h2>
                                       <a href="stage1_coursework.php">STAGE 1: Coursework</a><br><br>
-                                  <!--<a href="stage2_urbpending.php">STAGE 2: URB Pending</a><br><br>-->
-                                      <a href="stage3_ongoing.php">STAGE 3: Ongoing Ph.D.</a><br><br>
-                                      <a href="stage4_synopsissubmitted.php">STAGE 4: Synopsis Submitted</a><br><br>
-                                      <a href="stage5_thesissubmitted.php">STAGE 5: Thesis Submitted</a><br><br>
-                                      <a href="stage6_phdcompleted.php">STAGE 6: Ph.D. Completed</a><br><br>
+                                      <a href="stage3_ongoing.php">STAGE 2: Ongoing Ph.D. / Synopsis Submitted / Thesis submitted</a><br><br>
+                                      <a href="stage6_phdcompleted.php">STAGE 3: Ph.D. Completed</a><br><br>
                                   </h2>
                               </div>
                           </div>

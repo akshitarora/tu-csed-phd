@@ -63,13 +63,13 @@ if(!isset($_POST['uname']) || !isset($_POST['password'])) {
             $_SESSION["name"]=$row["full_name"];
             if($row["role"]=="admin"){
                 $_SESSION["role"]="admin";
-                header('Location: /phd/admin');die();}
+                echo "<script>window.location.href='/phd/admin/'</script>";die();}
             else if($row["role"]=="student"){
                 $_SESSION["role"]="student";
-                header('Location: /phd/student/');die();}
+                echo "<script>window.location.href='/phd/student/'</script>";die();}
             else if($row["role"]=="faculty"){
                 $_SESSION["role"]="faculty";
-                header('Location: /phd/faculty/');die();}
+                echo "<script>window.location.href='/phd/faculty/'</script>";die();}
             else {
                 ?>
 <html>

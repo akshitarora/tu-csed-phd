@@ -11,6 +11,23 @@ require 'connection.php';
 	<section id="main-content">
 	<section class="wrapper">
 		<div id="row">
+        <!--Generalizing dashboard alerts-->
+                    <?php 
+    if($_SESSION["success"]==1){ ?>
+                    <div class="alert alert-success">
+                        <strong>Alert!</strong> <?php echo $_SESSION["message"];?>
+                    </div>
+                    <?php 
+                    unset($_SESSION["success"]); unset($_SESSION["message"]);
+                    }
+    else if($_SESSION["success"]==2){ ?>
+                    <div class="alert alert-danger">
+                        <strong>Sorry!</strong> Unable to process information right now. Please contact the administrator at akshit [dot] arora1995 [at] gmail [dot] com .
+                    </div>
+                    <?php
+        unset($_SESSION["success"]);unset($_SESSION["message"]);
+    }
+                    ?>
 			<h3 class="page-header"><i class="fa fa-files-o"></i>Update Grade</h3>
 			<ol class="breadcrumb">
 				<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>

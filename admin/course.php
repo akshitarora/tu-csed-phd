@@ -32,6 +32,7 @@ require 'connection.php';
 if(isset($_SESSION["regno"])&& !empty($_SESSION["regno"])) {
 	echo "<input class='form-control hidden' name='regno' type='text' value=".$_SESSION["regno"]." required>";
 	echo $_SESSION["regno"];
+  unset($_SESSION["regno"]);
 } else {
     $sql = "SELECT regno from student";
     if ($result=mysqli_query($conn,$sql))
