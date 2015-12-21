@@ -41,6 +41,12 @@
                       </a>
                   </li>
                   <li>
+                      <a class="" href="department.php">
+                          <i class="icon_document_alt"></i>
+                          <span>Add Department</span>
+                      </a>
+                  </li>
+                  <li>
                       <a class="" href="grade.php">
                           <i class="icon_document_alt"></i>
                           <span>Update Grades</span>

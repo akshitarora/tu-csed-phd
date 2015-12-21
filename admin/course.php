@@ -84,15 +84,15 @@ $sql = "SELECT DISTINCT cname from courses";
                                 <label for="department" class="control-label col-lg-2">Branch <span class="required">*</span></label>
                                 <div class="col-lg-10">
                                     <select name="department">
-                                        <option value="COE">Computer Engineering</option>
-                                        <option value="ECE">Electronics and Communication</option>
-                                        <option value="MECH">Mechanical</option>
-                                        <option value="MTX">Mechatronix</option>
-                                        <option value="CHE">Chemical</option>
-                                        <option value="CIV">Civil</option>
-                                        <option value="EIC">Electronics and Instrumentation</option>
-                                        <option value="ELE">Electrical</option>
-                                    </select>
+                                                  <?php
+                                                  $sqldept = "SELECT * from department";
+                                                  $resultdept = mysqli_query($conn,$sqldept);
+                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
+                                                    echo "<option value='"; echo $rowdept["dpt_code"]; echo "'>";
+                                                    echo $rowdept["dpt_name"]; echo "</option>";
+                                                  }
+                                                  ?>
+                                              </select>
                                 </div>
                             </div>
                             <div class="form-group ">
