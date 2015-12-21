@@ -5,7 +5,7 @@
 - http://www.phpmyadmin.net
 -
 - Host: 127.0.0.1
-- Generation Time: Nov 29, 2015 at 12:00 PM
+- Generation Time: Dec 21, 2015 at 01:33 PM
 - Server version: 5.6.24
 - PHP Version: 5.6.8
 -->
@@ -35,6 +35,14 @@
                   UNIQUE KEY `sregno` (`sregno`,`cname`)
                 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
             </pma:table>
+            <pma:table name="department">
+                CREATE TABLE `department` (
+                  `sno` int(11) NOT NULL AUTO_INCREMENT,
+                  `dpt_name` varchar(300) NOT NULL,
+                  `dpt_code` varchar(100) NOT NULL,
+                  PRIMARY KEY (`sno`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
             <pma:table name="faculty">
                 CREATE TABLE `faculty` (
                   `fid` int(11) NOT NULL AUTO_INCREMENT,
@@ -63,7 +71,7 @@
                   `email` varchar(300) NOT NULL,
                   PRIMARY KEY (`sno`),
                   UNIQUE KEY `_id` (`_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="progress">
                 CREATE TABLE `progress` (
@@ -86,7 +94,7 @@
                   `sid` int(11) NOT NULL,
                   `status` varchar(100) NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_conference">
                 CREATE TABLE `research_conference` (
@@ -99,7 +107,7 @@
                   `status` varchar(100) NOT NULL,
                   `sid` int(11) NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_journal">
                 CREATE TABLE `research_journal` (
@@ -115,7 +123,7 @@
                   `sid` int(11) NOT NULL,
                   `journal_impact` double NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="semester">
                 CREATE TABLE `semester` (
@@ -173,6 +181,17 @@
             <column name="department">COE</column>
             <column name="class">UG</column>
             <column name="grade">C</column>
+        </table>
+        <!-- Table department -->
+        <table name="department">
+            <column name="sno">1</column>
+            <column name="dpt_name">Department of Computer Science and Engineering</column>
+            <column name="dpt_code">CSED</column>
+        </table>
+        <table name="department">
+            <column name="sno">2</column>
+            <column name="dpt_name">Department of Electrical Engineering</column>
+            <column name="dpt_code">ELE</column>
         </table>
         <!-- Table faculty -->
         <table name="faculty">
@@ -316,6 +335,15 @@
             <column name="phone">+91859684959</column>
             <column name="email">akshit.arora1995@gmail.com</column>
         </table>
+        <table name="login">
+            <column name="sno">26</column>
+            <column name="role">admin</column>
+            <column name="_id">sujata</column>
+            <column name="password">$1$IcDHpKM7$Jui1OqBn.7NLsPMpbaR0Y/</column>
+            <column name="full_name">Sujata Singla</column>
+            <column name="phone">+92478924893</column>
+            <column name="email">sujata.singla@thapar.edu</column>
+        </table>
         <!-- Table progress -->
         <table name="progress">
             <column name="sno">4</column>
@@ -336,8 +364,55 @@
             <column name="percentage">4</column>
         </table>
         <!-- Table research_book -->
+        <table name="research_book">
+            <column name="rid">1</column>
+            <column name="chapter_title">sample</column>
+            <column name="authors">sample11</column>
+            <column name="publisher">sample13</column>
+            <column name="page_numbers">1-23</column>
+            <column name="book_publish_year">2003</column>
+            <column name="book_isbn">18</column>
+            <column name="sid">1000000005</column>
+            <column name="status">Published</column>
+        </table>
         <!-- Table research_conference -->
+        <table name="research_conference">
+            <column name="rid">1</column>
+            <column name="title">ACM</column>
+            <column name="people">k, l, m, n</column>
+            <column name="conference_name">ACM ICPC</column>
+            <column name="conference_date">2015-10-12</column>
+            <column name="conference_location">London, UK</column>
+            <column name="status">Accepted</column>
+            <column name="sid">1000000005</column>
+        </table>
         <!-- Table research_journal -->
+        <table name="research_journal">
+            <column name="rid">1</column>
+            <column name="title">ACM</column>
+            <column name="authors">sample1</column>
+            <column name="journal_name">sample13</column>
+            <column name="journal_volume">12</column>
+            <column name="journal_no">14</column>
+            <column name="publish_date">2015-11-12</column>
+            <column name="journal_pages">1-2,3-4</column>
+            <column name="status">Accepted</column>
+            <column name="sid">1000000005</column>
+            <column name="journal_impact">1.234</column>
+        </table>
+        <table name="research_journal">
+            <column name="rid">2</column>
+            <column name="title">whfdsk</column>
+            <column name="authors">me</column>
+            <column name="journal_name">mdsjkfh</column>
+            <column name="journal_volume">5</column>
+            <column name="journal_no">3</column>
+            <column name="publish_date">2012-03-01</column>
+            <column name="journal_pages">s,amfkn</column>
+            <column name="status">Accepted</column>
+            <column name="sid">1000000012</column>
+            <column name="journal_impact">1.34</column>
+        </table>
         <!-- Table semester -->
         <table name="semester">
             <column name="semcode">1415EVESEM</column>
