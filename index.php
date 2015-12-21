@@ -8,6 +8,20 @@
 		<title>CSED Research</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Akshit Arora, Abhinav Garg and Chahak Gupta">
+		<meta name="description" content="Thapar University Ph.D. Portal">
+		<!--
+    For Suggestions contact -> Akshit Arora (akshit.arora1995@gmail.com)
+    --> 
+    <meta property="og:url" content="http://onlinehostelj.in/phd" />
+<meta property="og:title" content="TU CSED Ph.D. Portal" />
+<meta property="og:description" content="Information about ongoing research in various departments at Thapar University, Patiala. Young, motivated and dedicated faculty with a good ratio of faculty with Ph.D. Degree. Many faculty have certifications in cutting edge technology areas of Computer Science and Engineering. Department has Produced 30 PhDs in niche areas of Computer Engineering including Machine Learning, Data Mining and Cloud Computing. " />
+<meta property="og:type" content="Organization" />
+<!--
+<meta property="og:image" content="cgpcc12.jpg" />-->
+        <meta property="og:site_name" content="Ph.D. Portal for Thapar University, Patiala"/>
+    	<meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University, 
+    	Academic, Institution, Study, computer science and engineeing department, department, schools, computer, science, CSED">
        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">

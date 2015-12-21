@@ -125,9 +125,9 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                       <center><h4>Search Student</h4></center><br>
                       <form class="form-validate form-horizontal" method="get" action="search_student.php">
                           <div class="form-group">
-                              <label for="rweegno" class="control-label col-lg-2">Registration Number</label>
+                              <label for="regno" class="control-label col-lg-2">Registration Number</label>
                               <div class="col-lg-10">
-                                  <input class="form-control" id="regno" name="regno" min=1000000000 type="number"/>  
+                                  <input class="form-control" id="regno" name="regno" type="number"/>  
                               </div>
                           </div>
                           
