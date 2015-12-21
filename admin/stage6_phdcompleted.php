@@ -77,7 +77,7 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="regno" class="control-label col-lg-2">Registration Number <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="regno" name="regno" min=1000000000 type="number" required />
+                                              <input class="form-control" id="regno" name="regno" type="number" required />
                                           </div>
                                       </div>
                                       <div class="form-group ">
