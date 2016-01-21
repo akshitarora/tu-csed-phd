@@ -6,6 +6,7 @@
 <html>
 	<head>
 		<title>CSED Research</title>
+		
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Akshit Arora, Abhinav Garg and Chahak Gupta">
@@ -47,6 +48,9 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="assets/css/main.css" />
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     </head>
 	<body>
 		<div id="page-wrapper">
@@ -62,7 +66,7 @@
 							<header id="header">
                                 <h1><a id = "logo" href="#">Computer Science and Engineering Department</a></h1>
 								<nav id="nav">
-									<a href="index.php" class="current-page-item">Home</a>
+									<a href="index.php">Home</a>
 									<a href="browse.php" >Browse</a>
 									<a href="contact.php" >Contact Us</a>
 								</nav>
@@ -71,58 +75,61 @@
 					</div>
 				</div>
 			</div>
-			<div id="banner-wrapper">
-				<div class="container">
-					<div id="banner">
-						<h2 style="text-transform: capitalize">Welcome to Ph.D. Portal!</h2>
-					</div>
-				</div>
-			</div>
 			<div id="main">
 				<div class="container">
-					<div class="row main-row">
-						<div class="4u 12u(mobile)">
+					<div class="row">
+						
 							<section>
-								<h2 style="text-transform: capitalize">About Us</h2>
-								<p>Young, motivated and dedicated faculty with a good ratio of faculty with Ph.D. Degree. Many faculty have certifications in cutting edge technology areas of Computer Science and Engineering. Department has Produced 30 PhDs in niche areas of Computer Engineering including Machine Learning, Data Mining and Cloud Computing. Department produces excellent quality PG Thesis by ensuring Quality through Plagiarism tools and mandatory quality publications. Weekly Research Seminar on Every Wednesday on latest topics by experts/researchers and academicians.</p>
-							</section>
-						</div>
-						<div class="4u 12u(mobile)">
-							<section>
-								<h2 style="text-transform: capitalize">Faculty</h2>
+								<h2 style="text-transform: capitalize">Ph.D Portal Developers</h2>
+								<div class="row">
+								<div class="4u">
 								<ul class="small-image-list">
 									<li>
-										<a href=#><img src="images/deepak.jpg" alt="" class="left" /></a>
-										<h4>Dr. Deepak Garg</h4>
-										<p>dgarg@thapar.edu<br>
-                                        Associate Professor & Head of Department</p>
-									</li>
-									<li>
-										<a href="#"><img src="images/parteek.jpg" alt="" class="left" /></a>
-										<h4>Dr. Parteek Bhatia</h4>
-										<p>parteek.bhatia@thapar.edu<br>
-                                        Assistant Professor and Admin (Ph.D. Portal)</p>
+										<a href="https://in.linkedin.com/in/akshitarora1995"><img src="images/akshit.jpg" alt="" class="left" /></a><br><br>
+										<h4>Akshit Arora</h4>
+										<p><br><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;<a href="mailto:akshit.arora1995@gmail.com">akshit.arora1995@gmail.com</a><br>
+                                        <i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;Pre-Final Year, B.E. Computer Science and Engineering<br>
+                                        </p>
+                                        <a href="http://akshitarora.github.io"><i class="fa fa-external-link fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://in.linkedin.com/in/akshitarora1995"><i class="fa fa-linkedin-square fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://github.com/akshitarora"><i class="fa fa-2x fa-github-square"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://www.facebook.com/AkshitArora1995"><i class="fa fa-facebook-official fa-2x"></i></a>
 									</li>
 								</ul>
+								</div>
+								<div class="4u">
+									<ul class="small-image-list">
+									<li>
+										<a href="https://www.linkedin.com/in/chahak-gupta-206a36106"><img src="images/chahak.jpg" alt="" class="left" /></a><br><br>
+										<h4>Chahak Gupta</h4>
+										<p><br><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;<a href="mailto:chahakgupta4@gmail.com">chahakgupta4@gmail.com</a><br>
+										<i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;Pre-Final Year, B.E. Computer Science and Engineering<br>
+										
+                                        </p>
+                                        <a href="https://www.linkedin.com/in/chahak-gupta-206a36106"><i class="fa fa-linkedin-square fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://github.com/chahak"><i class="fa fa-2x fa-github-square"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://www.facebook.com/chahak.gupta.16"><i class="fa fa-facebook-official fa-2x"></i></a>
+									</li>
+								</ul>
+								</div>
+								<div class="4u">
+								<ul class="small-image-list">
+									<li>
+										<a href="https://in.linkedin.com/in/abhinav-garg-45587176"><img src="images/abhinav.jpg" alt="" class="left" /></a><br><br>
+										<h4>Abhinav Garg</h4>
+										<p><br><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;<a href="mailto:abhinavgarg017@gmail.com">abhinavgarg017@gmail.com</a><br>
+										<i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;Pre-Final Year, B.E. Computer Science and Engineering<br>
+                                        </p>
+                                        <a href="https://in.linkedin.com/in/abhinav-garg-45587176"><i class="fa fa-linkedin-square fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://github.com/abhi017"><i class="fa fa-2x fa-github-square"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="https://facebook.com/abhinavgarg01"><i class="fa fa-facebook-official fa-2x"></i></a>
+									</li>
+									</ul>
+									</div>
+									
+								</div>
 							</section>
-						</div>
-						<div class="4u 12u(mobile)">
-							<section class="jumbotron">
-                                <center><h2 style="text-transform: capitalize">Log In</h2></center>
-                                <form class="form-group" role="form" method="post" name="form1" action="sign_process.php">
-                                    <div class="form-group">
-                                        <label for="usr">username:</label>
-                                        <input type="text" class="form-control" id="usr" name="uname"><br>
-                                        <label for="pwd">password:</label>
-                                        <input type="password" class="form-control" id="pwd" name="password">
-                                        <br>
-                                        <center>
-                                        <button type='submit' class="btn btn-primary btn-lg" name="Submit">Log In</button>
-                                        </center>
-                                    </div>
-                                </form>
-							</section>
-						</div>
+						
 					</div>
 				</div>
 			</div>
