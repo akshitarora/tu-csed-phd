@@ -3,9 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thapar University Ph.D. Portal">
-    <meta name="author" content="Akshit Arora">
-    <meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Akshit Arora, Abhinav Garg and Chahak Gupta">
+        <meta name="description" content="Thapar University Ph.D. Portal">
+        <!--
+    For Suggestions contact -> Akshit Arora (akshit.arora1995@gmail.com)
+    --> 
+    <meta property="og:url" content="http://onlinehostelj.in/phd/" />
+<meta property="og:title" content="TU CSED Ph.D. Portal" />
+<meta property="og:description" content="Information about ongoing research in various departments at Thapar University, Patiala. Young, motivated and dedicated faculty with a good ratio of faculty with Ph.D. Degree. Many faculty have certifications in cutting edge technology areas of Computer Science and Engineering. Department has Produced 30 PhDs in niche areas of Computer Engineering including Machine Learning, Data Mining and Cloud Computing. " />
+<meta property="og:type" content="website" />
+<!--
+<meta property="og:image" content="cgpcc12.jpg" />-->
+        <meta property="og:site_name" content="Ph.D. Portal for Thapar University, Patiala"/>
+        <meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University, 
+        Academic, Institution, Study, computer science and engineeing department, department, schools, computer, science, CSED">
     <link rel="shortcut icon" href="img/favicon.png">
     <title>Admin Panel</title>
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-desktop.min.css" rel="stylesheet">

@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(1);
 session_start();
 if(!isset($_POST['uname']) || !isset($_POST['password'])) {
 ?>
@@ -30,7 +30,7 @@ if(!isset($_POST['uname']) || !isset($_POST['password'])) {
     }
     $uname = test_input($_POST['uname']);
     $password = test_input($_POST['password']);
-    require '/admin/connection.php';
+    require 'admin/connection.php';
     if(!function_exists('hash_equals')) //for servers with older versions of PHP
 {
     function hash_equals($str1, $str2)
