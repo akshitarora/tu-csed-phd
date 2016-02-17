@@ -8,7 +8,7 @@
 		<meta name="description" content="Thapar University Ph.D. Portal">
 		<!--
     For Suggestions contact -> Akshit Arora (akshit.arora1995@gmail.com)
-    --> 
+    -->
     <meta property="og:url" content="http://onlinehostelj.in/phd/" />
 <meta property="og:title" content="TU CSED Ph.D. Portal" />
 <meta property="og:description" content="Information about ongoing research in various departments at Thapar University, Patiala. Young, motivated and dedicated faculty with a good ratio of faculty with Ph.D. Degree. Many faculty have certifications in cutting edge technology areas of Computer Science and Engineering. Department has Produced 30 PhDs in niche areas of Computer Engineering including Machine Learning, Data Mining and Cloud Computing. " />
@@ -33,7 +33,7 @@
 <!--
 <meta property="og:image" content="cgpcc12.jpg" />-->
         <meta property="og:site_name" content="Ph.D. Portal for Thapar University, Patiala"/>
-    	<meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University, 
+    	<meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University,
     	Academic, Institution, Study, computer science and engineeing department, department, schools, computer, science, CSED">
        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -59,7 +59,7 @@
                                 <h1><a id = "logo" href="#">Computer Science and Engineering Department</a></h1>
 								<nav id="nav">
 									<a href="index.php">Home</a>
-									<a href="browse.php">Browse</a>
+									<a href="browse_2.php">Browse</a>
 									<a href="contact.php" class="current-page-item">Contact Us</a>
 								</nav>
 							</header>
@@ -75,7 +75,7 @@
 								<!--<h2>Two Column #2 (left-hand sidebar)</h2>
 								<a href=#><img src='images/pic2.jpg' alt='' class='left' /></a>-->
 								<div class="jumbotron">
-        <h1 class="text-center"><i class="fa fa-paper-plane-o"></i>Contact Us</h1><br> 
+        <!--<h1 class="text-center"><i class="fa fa-paper-plane-o"></i>Contact Us</h1><br>
         <form role="form" method="post" action="contact_process.php" id = form1 name="form1">
             <div class="form-group">
         <label>Name:</label>
@@ -88,8 +88,14 @@
   <textarea class="form-control" rows="5" id="comment" name = body required></textarea>
 </div>
             <input type='submit' class="btn btn-primary btn-lg" style="position:relative; left:50%" name="Send" value="Send">
-        </form>
-    </div></div>
+        </form>-->
+<ul>
+<li><p>Dr. Prateek Bhatia</p><br>parteek.bhatia@thapar.edu</p><br></li>
+<li><p>Akshit Arora&nbsp;</p><br>akshit.arora1995@gmail.com</p><br></li>
+<li><p>Sujata Singla&nbsp;</p><br>sujata.singla@thapar.edu</p></li>
+</ul>
+    </div>
+</div>
 							</section>
 
 						</div>

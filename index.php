@@ -11,8 +11,8 @@
 		<meta name="author" content="Akshit Arora, Abhinav Garg and Chahak Gupta">
 		<meta name="description" content="Thapar University Ph.D. Portal">
 		<!--
-    For Suggestions contact -> Akshit Arora (akshit.arora1995@gmail.com)
-    --> 
+    For Suggestions/Complaints contact -> Akshit Arora (akshit.arora1995@gmail.com) http://akshitarora.github.io/home
+    -->
     <meta property="og:url" content="http://onlinehostelj.in/phd/" />
 <meta property="og:title" content="TU CSED Ph.D. Portal" />
 <meta property="og:description" content="Information about ongoing research in various departments at Thapar University, Patiala. Young, motivated and dedicated faculty with a good ratio of faculty with Ph.D. Degree. Many faculty have certifications in cutting edge technology areas of Computer Science and Engineering. Department has Produced 30 PhDs in niche areas of Computer Engineering including Machine Learning, Data Mining and Cloud Computing. " />
@@ -37,7 +37,7 @@
 <!--
 <meta property="og:image" content="cgpcc12.jpg" />-->
         <meta property="og:site_name" content="Ph.D. Portal for Thapar University, Patiala"/>
-    	<meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University, 
+    	<meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University,
     	Academic, Institution, Study, computer science and engineeing department, department, schools, computer, science, CSED">
        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -63,7 +63,7 @@
                                 <h1><a id = "logo" href="#">Computer Science and Engineering Department</a></h1>
 								<nav id="nav">
 									<a href="index.php" class="current-page-item">Home</a>
-									<a href="browse.php" >Browse</a>
+									<a href="browse_2.php" >Browse</a>
 									<a href="contact.php" >Contact Us</a>
 								</nav>
 							</header>
@@ -92,13 +92,13 @@
 								<h2 style="text-transform: capitalize">Faculty</h2>
 								<ul class="small-image-list">
 									<li>
-										<a href=#><img src="images/deepak.jpg" alt="" class="left" /></a>
+										<!--<a href=#><img src="images/deepak.jpg" alt="" class="left" /></a>-->
 										<h4>Dr. Deepak Garg</h4>
 										<p>dgarg@thapar.edu<br>
                                         Associate Professor & Head of Department</p>
 									</li>
 									<li>
-										<a href="#"><img src="images/parteek.jpg" alt="" class="left" /></a>
+										<!--<a href="#"><img src="images/parteek.jpg" alt="" class="left" /></a>-->
 										<h4>Dr. Parteek Bhatia</h4>
 										<p>parteek.bhatia@thapar.edu<br>
                                         Assistant Professor and Admin (Ph.D. Portal)</p>
