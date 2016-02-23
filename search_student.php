@@ -141,7 +141,7 @@
             $sql .= " AND status='".$_GET["status"]."'";
         }
         if(!empty($_GET["sthesis"]) && isset($_GET["sthesis"])) {
-            $sql .= " AND sthesis LIKE '%".$_GET["sthesis"]."%'";
+            $sql .= " AND lower(sthesis) LIKE '%".$_GET["sthesis"]."%'";
         }
         if(!empty($_GET["semail"]) && isset($_GET["semail"])) {
             $sql .= " AND semail LIKE '%".$_GET["semail"]."%'";
@@ -153,6 +153,7 @@
             $sql .= " AND sdob='".$_GET["sdob"]."'";
         }
 
+
     if ($result=mysqli_query($conn,$sql))
     {
         echo "<div class='panel panel-default'>";
@@ -160,11 +161,18 @@
   // Fetch one and one row
   while ($row=mysqli_fetch_assoc($result))
     {
+      $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by urbdate DESC";
+      $resultpro = mysqli_query($conn,$sqlpro);
+      $rowpro = mysqli_fetch_assoc($resultpro);
       echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";
-
       echo "<img src='admin/img/now/avatar1.png' class='img-rounded pull-left'/>
-        <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["semail"]; echo "</p><br>";
+        <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3><br>";
+      echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Registration No.: "; echo $row["regno"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Supervisor: "; echo $row["supervisor1"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; PhD Stage: "; echo $row["status"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Percentage progress: "; echo $rowpro["percentage"]; echo "</p>";
       echo "</a>";
     }
         echo "</div>";
