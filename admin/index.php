@@ -1,6 +1,7 @@
 <?php session_start();error_reporting(0);
 if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
     require 'header.php';
+    require "connection.php"
 ?>
   <body>
   <!-- container section start -->
@@ -168,11 +169,24 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                           </div>
                           
                           <div class="form-group ">
-                              <label for="semail" class="control-label col-lg-2">E-Mail</label>
+                              <label for="status" class="control-label col-lg-2">Supervisor</label>
                               <div class="col-lg-10">
-                                  <input class="form-control " id="semail" type="email" name="semail"  />
+                                  <select name="supervisor">
+                                      <option value="">--</option>
+                                      <?php 
+                                      $sqlsup = "SELECT * from faculty";
+                                      $resultsup = mysqli_query($conn,$sqlsup);
+                                      
+                                      while($rowsup = mysqli_fetch_assoc($resultsup)){
+
+                                      echo "<option value='".$rowsup["fname"]."'>".$rowsup["fname"]."</option>";
+                                      }
+                                      ?>
+                                  </select>
                               </div>
                           </div>
+
+                      
                           
                           <div class="form-group ">
                               <label for="sthesis" class="control-label col-lg-2">Thesis Title</label>
@@ -181,24 +195,7 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                               </div>
                           </div>
                           
-                          <div class="form-group ">
-                              <label for="sphone" class="control-label col-lg-2">Phone Number</label>
-                              <div class="col-lg-10">
-                                  <input class="form-control" id="sphone" name="sphone" type="text" />
-                              </div>
-                          </div>
-                          
-                          <div class="form-group ">
-                              <label for="sdob" class="control-label col-lg-2">Date of Birth</label>
-                              <div class="col-lg-10">
-                                  <input id="sdob" type="date" name="sdob" size="16" max=
-                                  <?php 
-                                  $d = strtotime("-18 Years");
-                                  echo date("Y-m-d",$d);
-                                  ?>
-                                  class="form-control">
-                              </div>
-                          </div>
+                         
                           
                           <div class="form-group">
                               <div class="col-lg-12">
@@ -225,7 +222,7 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                               </div>
                           </div>
                           
-                          <div class="form-group ">
+                         <!--  <div class="form-group ">
                               <label for="semail" class="control-label col-lg-2">E-Mail</label>
                               <div class="col-lg-10">
                                   <input class="form-control " id="email" type="email" name="semail"  />
@@ -244,12 +241,12 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                               <div class="col-lg-10">
                               <input id="dob" type="date" name="dob" size="16" max=
                                   <?php 
-                                  $d = strtotime("-18 Years");
-                                  echo date("Y-m-d",$d);
+                          //        $d = strtotime("-18 Years");
+                           //       echo date("Y-m-d",$d);
                                   ?>
                                   class="form-control" >
                               </div>
-                          </div>
+                          </div> -->
                           
                           <div class="form-group ">
                               <label for="designation" class="control-label col-lg-2">Designation</label>

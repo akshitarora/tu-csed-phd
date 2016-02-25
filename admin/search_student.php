@@ -76,11 +76,12 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                   
                           
 <?php
-    if((!isset($_GET["regno"]) && !isset($_GET["sname"]) && !isset($_GET["full_part"]) &&  !isset($_GET["status"]) && !isset($_GET["sthesis"]) && !isset($_GET["semail"]) && !isset($_GET["sphone"]) && !isset($_GET["sdob"])) || ( empty($_GET["regno"]) && empty($_GET["sname"]) && empty($_GET["full_part"]) &&  empty($_GET["status"]) && empty($_GET["sthesis"]) && empty($_GET["semail"]) && empty($_GET["sphone"]) && empty($_GET["sdob"]) ) ) {
+    if((!isset($_GET["regno"])  && !isset($_GET["supervisor"]) && !isset($_GET["sname"]) && !isset($_GET["full_part"]) &&  !isset($_GET["status"]) && !isset($_GET["sthesis"]) && !isset($_GET["semail"]) && !isset($_GET["sphone"]) && !isset($_GET["sdob"])) || 
+      ( empty($_GET["regno"]) && empty($_GET["supervisor"]) && empty($_GET["sname"]) && empty($_GET["full_part"]) &&  empty($_GET["status"]) && empty($_GET["sthesis"]) && empty($_GET["semail"]) && empty($_GET["sphone"]) && empty($_GET["sdob"]) ) ) {
         echo "<h4>&nbsp;&nbsp;&nbsp;&nbsp;No parameters to search</h4>";
 } else {
         echo "<div class='col-sm-12 bootcards-list' id='list' data-title='students'>";
-        $sql="SELECT * from student WHERE def=1";
+        $sql="SELECT * from student WHERE def=1"; 
         if(!empty($_GET["regno"]) && isset($_GET["regno"])) {
             $sql .= " AND regno=".$_GET["regno"];
         }
@@ -105,7 +106,9 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
         if(!empty($_GET["sdob"]) && isset($_GET["sdob"])) {
             $sql .= " AND sdob='".$_GET["sdob"]."'";
         }
-        
+        if(!empty($_GET["supervisor"]) && isset($_GET["supervisor"])) {
+            $sql .= " AND supervisor1='".$_GET["supervisor"]."' OR supervisor2='".$_GET["supervisor"]."'";
+        }
     if ($result=mysqli_query($conn,$sql))
     {
         echo "<div class='panel panel-default'>";
@@ -113,11 +116,19 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
   // Fetch one and one row
   while ($row=mysqli_fetch_assoc($result))
     {
+      $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by urbdate DESC";
+      $resultpro = mysqli_query($conn,$sqlpro);
+      $rowpro = mysqli_fetch_assoc($resultpro);
       echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";
-      
-      echo "<img src='img/now/avatar1.png' class='img-rounded pull-left'/>
-        <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3>";
-      echo "<p class='list-group-item-text'>&nbsp;"; echo $row["semail"]; echo "</p><br>";
+      echo "<img src='admin/img/now/avatar1.png' class='img-rounded pull-left'/>
+        <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3><br>";
+      echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Registration No.: "; echo $row["regno"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Supervisor: "; echo $row["supervisor1"]; 
+      if($row["supervisor2"]!="NULL"){echo ", ".$row["supervisor2"];}echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; PhD Stage: "; echo $row["status"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Percentage progress: "; echo $rowpro["percentage"]; echo "</p>";
       echo "</a>";
     }
         echo "</div>";
