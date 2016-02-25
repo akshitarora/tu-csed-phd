@@ -55,7 +55,9 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
     {
         echo "<div class='panel panel-default'>";
         echo "<div class='list-group'>";
-  
+  if(mysql_num_rows($result)==0){
+  echo "NO RESULTS FOUND";
+}
   while ($row=mysqli_fetch_assoc($result))
     {
       echo "<a class='list-group-item' href='cinfo_2.php?f_code="; echo $row["faculty_code"]; echo "'>";

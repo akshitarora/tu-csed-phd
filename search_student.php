@@ -164,6 +164,9 @@
         echo "<div class='panel panel-default'>";
         echo "<div class='list-group'>";
   // Fetch one and one row
+        if(mysql_num_rows($result)==0){
+  echo "NO RESULTS FOUND";
+}
   while ($row=mysqli_fetch_assoc($result))
     {
       $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by urbdate DESC";

@@ -114,7 +114,9 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
         echo "<div class='panel panel-default'>";
         echo "<div class='list-group'>";
   // Fetch one and one row
-
+if(mysql_num_rows($result)==0){
+  echo "NO RESULTS FOUND";
+}
 
 //echo $sql;
   while ($row=mysqli_fetch_assoc($result))
