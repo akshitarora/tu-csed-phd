@@ -107,15 +107,20 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
             $sql .= " AND sdob='".$_GET["sdob"]."'";
         }
         if(!empty($_GET["supervisor"]) && isset($_GET["supervisor"])) {
-            $sql .= " AND supervisor1='".$_GET["supervisor"]."' OR supervisor2='".$_GET["supervisor"]."'";
+            $sql .= " AND ( supervisor1='".$_GET["supervisor"]."' OR supervisor2='".$_GET["supervisor"]."') ";
         }
     if ($result=mysqli_query($conn,$sql))
     {
         echo "<div class='panel panel-default'>";
         echo "<div class='list-group'>";
   // Fetch one and one row
+
+
+//echo $sql;
   while ($row=mysqli_fetch_assoc($result))
     {
+      
+//      echo var_dump($row);
       $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by urbdate DESC";
       $resultpro = mysqli_query($conn,$sqlpro);
       $rowpro = mysqli_fetch_assoc($resultpro);
