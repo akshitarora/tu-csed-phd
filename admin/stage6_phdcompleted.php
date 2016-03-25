@@ -10,45 +10,7 @@ require 'header.php';
       <?php require 'topbar.php';?>      
       <!--header end-->
       <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
-                  <li>
-                      <a class="" href="index.php">
-                          <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu active">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Add People</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li class="active"><a class="" href="student_add.php">Students</a></li>
-                          <li><a class="" href="faculty_add.php">Faculty Members</a></li>
-                          <li><a class="" href="admin_add.php">Admins</a></li>
-                      </ul>
-                      
-                  </li>
-                  <li class="sub-menu">
-                      <a class="" href="javascript:;">
-                          <i class="icon_document_alt"></i>
-                          <span>Research Work</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="journal_add.php">Journal Article</a></li>
-                          <li><a class="" href="book_add.php">Book Chapters</a></li>
-                          <li><a class="" href="conf_add.php">Conference Papers</a></li>
-                      </ul>
-                  </li>
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
+      <?php require 'sidebar.php';?>
       <!--sidebar end-->
 
       <!--main content start-->
@@ -113,12 +75,17 @@ require 'header.php';
                                           </div>
                                       </div>
                                       
-                                      <div class="form-group ">
+                                     <div class="form-group ">
                                           <label for="sdob" class="control-label col-lg-2">Date of Birth <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input id="sdob" type="date" name="sdob" size="16" class="form-control" required>
+                                              <input id="sdob" type="date" name="sdob" max=
+                                              <?php 
+                                                 $d = strtotime("-18 Years");
+                                                 echo date("Y-m-d",$d);
+                                              ?> size="16" class="form-control">
                                           </div>
                                       </div>
+                                      
                                       
                                       <div class="form-group ">
                                           <label for="semail" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
@@ -132,14 +99,14 @@ require 'header.php';
                                           <div class="col-lg-10">
                                               
                                               <select name="sbranch">
-                                                  <option value="COE">Computer Engineering</option>
-                                                  <option value="ECE">Electronics and Communication</option>
-                                                  <option value="MECH">Mechanical</option>
-                                                  <option value="MTX">Mechatronix</option>
-                                                  <option value="CHE">Chemical</option>
-                                                  <option value="CIV">Civil</option>
-                                                  <option value="EIC">Electronics and Instrumentation</option>
-                                                  <option value="ELE">Electrical</option>
+                                                  <?php
+                                                  $sqldept = "SELECT * from department";
+                                                  $resultdept = mysqli_query($conn,$sqldept);
+                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
+                                                    echo "<option value='"; echo $rowdept["dpt_code"]; echo "'>";
+                                                    echo $rowdept["dpt_name"]; echo "</option>";
+                                                  }
+                                                  ?>
                                               </select>
                                           </div>
                                       </div>
@@ -152,7 +119,7 @@ require 'header.php';
                                       </div>
                                       
                                       <div class="form-group ">
-                                          <label for="sdurb" class="control-label col-lg-2">Date of URB <span class="required">*</span></label>
+                                          <label for="sdurb" class="control-label col-lg-2">Date of Last URB / Date of Ph.D. Completion <span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input id="sdurb" type="date" name="sdurb" size="16" class="form-control">
                                           </div>
@@ -168,7 +135,7 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="sphone" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="sphone" name="sphone" type="text" required />
+                                              <input class="form-control" id="sphone" name="sphone" type="number" max="9999999999" min="1000000000" required />
                                           </div>
                                       </div>
                                       
@@ -180,20 +147,18 @@ require 'header.php';
                                       </div>
                                       
                                       <div class="form-group ">
-                                          <label for="comm_id" class="control-label col-lg-2">Committee Id <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              
+                                <label for="chair" class="control-label col-lg-2">Chairperson Board of Studies(Ex-officio)<span class="required">*</span></label>
+                                <div class="col-lg-10">
 <?php
-    $sql = "SELECT pno from doc_comm";
+    $sql = "SELECT fname from faculty";
     if ($result=mysqli_query($conn,$sql))
   {
-  // Fetch one and one row
-        echo "<select name='comm_id'>";
+        echo "<select name='chair'>";
   while ($row=mysqli_fetch_row($result))
     {
-      echo "<option value=";
-    printf ("%d",$row[0]);
-       echo ">" ;
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
       echo $row[0];
       echo "</option>";
     }
@@ -202,34 +167,130 @@ require 'header.php';
             echo "</select>";
 }  
 ?>
-                                              
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="slid" class="control-label col-lg-2">Slot Id <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              
+                                  </div>
+                                  </div>
+                                  
+                                  <div class="form-group ">
+                                <label for="supervisor1" class="control-label col-lg-2">First Supervisor<span class="required">*</span></label>
+                                <div class="col-lg-10">
 <?php
-    $sql1 = "SELECT slid from slots";
-    if ($result1=mysqli_query($conn,$sql1))
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
   {
-        
-            echo "<select name='slid'>";
-  // Fetch one and one row
-  while ($row1=mysqli_fetch_row($result1))
+        echo "<select name='supervisor1'>";
+  while ($row=mysqli_fetch_row($result))
     {
-      echo "<option value=";
-    printf ("%d",$row1[0]);
-       echo ">";
-      echo $row1[0];
-      echo"</option>";
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
     }
   // Free result set
-            mysqli_free_result($result1);
+            mysqli_free_result($result);
+            echo "</select>";
 }  
 ?>
-                                              </select>
+                                  </div>
+                                  </div>
+
+                                  <div class="form-group ">
+                                <label for="supervisor2" class="control-label col-lg-2">Second Supervisor (if any)<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='supervisor2'><option value=NULL>none</option>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+
+                                  <div class="form-group ">
+                                <label for="cognate1" class="control-label col-lg-2">Faculty Members in the cognate area from the Department<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='cognate1'>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+                                  <div class="form-group ">
+                                <label for="cognate2" class="control-label col-lg-2">Faculty Members in the cognate area from the Department<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='cognate2'><option value=NULL>none</option>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+                                  <div class="form-group ">
+                                <label for="outside" class="control-label col-lg-2">One faculty Member from outside the Department/School<span class="required">*</span></label>
+                                <div class="col-lg-10">
+<?php
+    $sql = "SELECT fname from faculty";
+    if ($result=mysqli_query($conn,$sql))
+  {
+        echo "<select name='outside'>";
+  while ($row=mysqli_fetch_row($result))
+    {
+      echo "<option value='";
+      echo $row[0];
+      echo "'>" ;
+      echo $row[0];
+      echo "</option>";
+    }
+  // Free result set
+            mysqli_free_result($result);
+            echo "</select>";
+}  
+?>
+                                  </div>
+                                  </div>
+                                  <div class="form-group ">
+                                          <label for="percent" class="control-label col-lg-2">Percentage Completion <span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <input class="form-control" id="percent" name="percent" min=0 max=100 value=100 type="number" required />
                                           </div>
                                       </div>
                                       <div class="form-group">
