@@ -58,7 +58,7 @@ require 'header.php';
                                       <div class="form-group">
                                           <label for="phone" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="phone" name="phone" type="text" placeholder="+91xxxxxxxxxx" required />
+                                              <input class="form-control" id="phone" name="phone" type="number" max="9999999999" required />
                                           </div>
                                       </div>
                                       

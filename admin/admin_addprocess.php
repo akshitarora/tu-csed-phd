@@ -18,7 +18,7 @@ $phone = test_input($_POST['phone']);
 $password = test_input($_POST['password']);
 $password = crypt($password);
 
-$sql = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('admin','$_id','$password','$full_name','$phone','$email');";
+$sql = "INSERT INTO login(role,_id,password,full_name,phone,email) VALUES('admin','$_id','$password','$full_name','$phone','$email');";
 if(mysqli_query($conn,$sql))
 {
 $_SESSION["success_admin_added"]=1;
