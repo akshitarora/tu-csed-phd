@@ -101,7 +101,7 @@
 										<!--<a href="#"><img src="images/parteek.jpg" alt="" class="left" /></a>-->
 										<h4>Dr. Parteek Bhatia</h4>
 										<p>parteek.bhatia@thapar.edu<br>
-                                        Assistant Professor and Admin (Ph.D. Portal)</p>
+                                        Associate Professor and Admin (Ph.D. Portal)</p>
 									</li>
 								</ul>
 							</section>

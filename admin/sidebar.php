@@ -61,7 +61,7 @@
                   <li>
                       <a class="" href="sem.php">
                           <i class="icon_document_alt"></i>
-                          <span>Add Semester</span>
+                          <span>Edit Semester</span>
                       </a>
                   </li>
                   <li>
