@@ -114,7 +114,7 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
         echo "<div class='panel panel-default'>";
         echo "<div class='list-group'>";
   // Fetch one and one row
-if(mysql_num_rows($result)==0){
+if(mysql_num_rows($result)=="FALSE"){
   echo "NO RESULTS FOUND";
 }
 
@@ -127,7 +127,7 @@ if(mysql_num_rows($result)==0){
       $resultpro = mysqli_query($conn,$sqlpro);
       $rowpro = mysqli_fetch_assoc($resultpro);
       echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";
-      echo "<img src='admin/img/now/avatar1.png' class='img-rounded pull-left'/>
+      echo "<img src='img/now/avatar1.png' class='img-rounded pull-left'/>
         <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3><br>";
       echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
