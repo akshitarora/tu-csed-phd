@@ -43,7 +43,7 @@
                   <li>
                       <a class="" href="department.php">
                           <i class="icon_document_alt"></i>
-                          <span>Add Department</span>
+                          <span>Edit Departments</span>
                       </a>
                   </li>
                   <li>

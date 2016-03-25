@@ -37,26 +37,42 @@ require 'connection.php';
     <div class="row">
       <section class="panel">
         <header class="panel-heading">
-                    Add New Department
+                    Edit Existing Department
                 </header>
                 <div class="panel-body">
                   <div class="form">
-                    <form class="form-validate form-horizontal" method="post" action="departmentprocess.php">
-                            <div class="form-group ">
-                                  <label for="dpt_name" class="control-label col-lg-2">Full Department Name<span class="required">*</span></label>
+                    <form class="form-validate form-horizontal" method="post" action="department_editprocess.php">
+                    <div class="form-group">
+                                          <label for="sbranch" class="control-label col-lg-2">Department to be edited<span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              
+                                              <select name="sbranch">
+                                                  <?php
+                                                  $sqldept = "SELECT * from department";
+                                                  $resultdept = mysqli_query($conn,$sqldept);
+                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
+                                                    echo "<option value='"; echo $rowdept["dpt_code"]; echo "'>";
+                                                    echo $rowdept["dpt_name"]; echo "</option>";
+                                                  }
+                                                  ?>
+                                              </select>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                  <label for="dpt_name" class="control-label col-lg-2">New Full Department Name<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input class="form-control" id="dpt_name" name="dpt_name" type="text" placeholder="Eg. Department of Computer Science and Engineering" required />
                                           </div>
                                       </div>
                                     <div class="form-group ">
-                                          <label for="dpt_code" class="control-label col-lg-2">Department Code<span class="required">*</span></label>
+                                          <label for="dpt_code" class="control-label col-lg-2">New Department Code<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input class="form-control" id="dpt_code" name="dpt_code" type="text" placeholder="CSED" required />
                                           </div>
                                       </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                <button class="btn btn-primary" type="submit">Add Department</button>
+                                <button class="btn btn-primary" type="submit">Save</button>
                                 <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
                                 </div>
                             </div>
@@ -65,29 +81,6 @@ require 'connection.php';
                 </div>
       </section>
     </div>
-    <div class="row">
-    <section class="panel">
-    <header class="panel-heading">Current Departments List</header>
-    <div class="panel-body">
-    <table cellpadding="10">
-      <tr>
-        <td><b>Department Name</b></td>
-        <td><b>Department Code</b></td>
-        <td><a href='edit_department.php'><button type='button' class='btn btn-warning'>Edit</button></a></td>
-      </tr>
-      <?php
-                                                  $sqldept = "SELECT * from department";
-                                                  $resultdept = mysqli_query($conn,$sqldept);
-                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
-                                                    echo "<tr><td>"; echo $rowdept["dpt_name"]; echo "</td><td>";
-                                                    echo $rowdept["dpt_code"]; echo "</td></tr>";
-                                                  }
-                                                  ?>
-    </table>
-    </div>
-    </section>
-    </div>
-		
 	</section>
 	</section>
 	</section>
