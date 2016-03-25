@@ -17,10 +17,47 @@ require 'connection.php';
 				<li><i class="icon_document_alt"></i><a href="course.php">Add Course</a></li>
 			</ol>
 		</div>
+    <div class="row">
+    <div class="panel">
+    <header class="panel-heading">
+                    Current Course Allocation
+                </header>
+                <div class="panel-body">
+                <table cellpadding="5">
+                <tr>
+                  <td><b>Student Registration Number</b></td>
+                  <td><b>Course Name</b></td>
+                  <td><b>Course Coordinator</b></td>
+                  <td><b>Course Credits (L T P)</b></td>
+                  <td><b>Semester Code</b></td>
+                  <td><b>Department Code</b></td>
+                  <td><b>Undergraduate (UG) / Postgraduate (PG)</b></td>
+                  <td><b>Grade Obtained</b></td>
+                </tr>
+                <?php
+                 $sqldept = "SELECT * from courses";
+                                                  $resultdept = mysqli_query($conn,$sqldept);
+                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
+                                                    echo "<tr><td>"; echo $rowdept["sregno"]; echo "</td><td>";
+                                                    echo $rowdept["cname"]; echo "</td><td>"; 
+                                                    echo $rowdept["coordinator"]; echo "</td><td>";
+                                                    echo $rowdept["credits"]." (".$rowdept["L"]." ".$rowdept["T"]." ".$rowdept["P"].")"; echo "</td><td>";
+                                                    echo $rowdept["semcode"];echo "</td><td>";
+                                                    echo $rowdept["department"];echo "</td><td>";
+                                                    echo $rowdept["class"]; echo "</td><td>";
+                                                    if($rowdept["grade"]==NULL) {echo "grade not updated yet";} else {
+                                                    echo $rowdept["grade"];}
+                                                    echo "</td></tr>";
+                                                  }
+                ?>
+                </table>
+                </div>
+    </div>
+    </div>
 		<div class="row">
 			<section class="panel">
 				<header class="panel-heading">
-                    Course Details
+                    New Course Details
                 </header>
                 <div class="panel-body">
                 	<div class="form">
@@ -183,6 +220,7 @@ $sql = "SELECT DISTINCT cname from courses";
                 </div>
 			</section>
 		</div>
+    
 	</section>
 	</section>
 	</section>

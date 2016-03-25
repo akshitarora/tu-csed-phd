@@ -37,7 +37,7 @@
                   <li>
                       <a class="" href="course.php">
                           <i class="icon_document_alt"></i>
-                          <span>Add Courses</span>
+                          <span>Edit Courses</span>
                       </a>
                   </li>
                   <li>
