@@ -10,16 +10,14 @@ function test_input($data) {
         return $data;
 }
 
-$dpt_name = test_input($_POST['dpt_name']);
-$dpt_code = stripslashes($_POST['dpt_code']);
-$sbranch = stripslashes($_POST['sbranch']);
+$dpt_code = stripslashes($_POST['sbranch']);
 
-$sql = "UPDATE department SET dpt_name='$dpt_name',dpt_code='$dpt_code' WHERE dpt_code='$sbranch';";
+$sql = "DELETE from department WHERE dpt_code='$dpt_code';";
 
 if(mysqli_query($conn,$sql))
 {
 	$_SESSION["success"]=1;
-	$_SESSION["message"]="Edited Department. New department name = '".$dpt_name."' and code = '".$dpt_code."' !";
+	$_SESSION["message"]="Deleted Department. Code = '".$dpt_code."' !";
 	echo "<script>window.location.href='/phd/admin/'</script>";
 	mysqli_close($conn);
 }

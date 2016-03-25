@@ -31,48 +31,32 @@ require 'connection.php';
 			<h3 class="page-header"><i class="fa fa-files-o"></i>Edit Departments</h3>
 			<ol class="breadcrumb">
 				<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-				<li><i class="icon_document_alt"></i><a href="grade.php">Edit Departments</a></li>
+				<li><i class="icon_document_alt"></i><a href="department.php">Edit Departments</a></li>
 			</ol>
 		</div>
     <div class="row">
       <section class="panel">
         <header class="panel-heading">
-                    Edit Existing Department
+                    Add New Department
                 </header>
                 <div class="panel-body">
                   <div class="form">
-                    <form class="form-validate form-horizontal" method="post" action="department_editprocess.php">
-                    <div class="form-group">
-                                          <label for="sbranch" class="control-label col-lg-2">Department to be edited<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              
-                                              <select name="sbranch">
-                                                  <?php
-                                                  $sqldept = "SELECT * from department";
-                                                  $resultdept = mysqli_query($conn,$sqldept);
-                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
-                                                    echo "<option value='"; echo $rowdept["dpt_code"]; echo "'>";
-                                                    echo $rowdept["dpt_name"]; echo "</option>";
-                                                  }
-                                                  ?>
-                                              </select>
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                  <label for="dpt_name" class="control-label col-lg-2">New Full Department Name<span class="required">*</span></label>
+                    <form class="form-validate form-horizontal" method="post" action="department_addprocess.php">
+                            <div class="form-group ">
+                                  <label for="dpt_name" class="control-label col-lg-2">Full Department Name<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input class="form-control" id="dpt_name" name="dpt_name" type="text" placeholder="Eg. Department of Computer Science and Engineering" required />
                                           </div>
                                       </div>
                                     <div class="form-group ">
-                                          <label for="dpt_code" class="control-label col-lg-2">New Department Code<span class="required">*</span></label>
+                                          <label for="dpt_code" class="control-label col-lg-2">Department Code<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <input class="form-control" id="dpt_code" name="dpt_code" type="text" placeholder="CSED" required />
                                           </div>
                                       </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                <button class="btn btn-primary" type="submit">Save</button>
+                                <button class="btn btn-primary" type="submit">Add Department</button>
                                 <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
                                 </div>
                             </div>

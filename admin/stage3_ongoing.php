@@ -24,7 +24,7 @@ require 'header.php';
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
 						<li><i class="icon_document_alt"></i><a href="student_add.php">Add Student</a></li>
-						<li><i class="icon_document_alt"></i><a href="stage3_ongoing.php">STAGE 3: Ongoing Ph.D. / Thesis Submitted / Synopsis submitted</a></li>
+						<li><i class="icon_document_alt"></i><a href="stage3_ongoing.php">STAGE 3: Ongoing Ph.D.</a></li>
 					</ol>
 				</div>
 			</div>
@@ -95,16 +95,15 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="sbranch" class="control-label col-lg-2">Branch <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              
                                               <select name="sbranch">
-                                                  <option value="COE">Computer Engineering</option>
-                                                  <option value="ECE">Electronics and Communication</option>
-                                                  <option value="MECH">Mechanical</option>
-                                                  <option value="MTX">Mechatronix</option>
-                                                  <option value="CHE">Chemical</option>
-                                                  <option value="CIV">Civil</option>
-                                                  <option value="EIC">Electronics and Instrumentation</option>
-                                                  <option value="ELE">Electrical</option>
+                                                  <?php
+                                                  $sqldept = "SELECT * from department";
+                                                  $resultdept = mysqli_query($conn,$sqldept);
+                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
+                                                    echo "<option value='"; echo $rowdept["dpt_code"]; echo "'>";
+                                                    echo $rowdept["dpt_name"]; echo "</option>";
+                                                  }
+                                                  ?>
                                               </select>
                                           </div>
                                       </div>
@@ -112,7 +111,7 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="sdoa" class="control-label col-lg-2">Date of Admission<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input id="sdoa" type="date" name="sdoa" size="16" max=<?php echo date("Y-m-d");?> class="form-control">
+                                              <input id="sdoa" type="date" name="sdoa" size="16" class="form-control">
                                           </div>
                                       </div>
                                       
@@ -133,7 +132,7 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="sphone" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="sphone" name="sphone" type="text"/>
+                                              <input class="form-control" id="sphone" name="sphone" type="number" max="9999999999" min="1000000000" required />
                                           </div>
                                       </div>
                                       

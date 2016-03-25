@@ -31,49 +31,22 @@ require 'connection.php';
 			<h3 class="page-header"><i class="fa fa-files-o"></i>Edit Departments</h3>
 			<ol class="breadcrumb">
 				<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-				<li><i class="icon_document_alt"></i><a href="grade.php">Edit Departments</a></li>
+				<li><i class="icon_document_alt"></i><a href="department.php">Edit Departments</a></li>
 			</ol>
 		</div>
-    <div class="row">
-      <section class="panel">
-        <header class="panel-heading">
-                    Add New Department
-                </header>
-                <div class="panel-body">
-                  <div class="form">
-                    <form class="form-validate form-horizontal" method="post" action="departmentprocess.php">
-                            <div class="form-group ">
-                                  <label for="dpt_name" class="control-label col-lg-2">Full Department Name<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="dpt_name" name="dpt_name" type="text" placeholder="Eg. Department of Computer Science and Engineering" required />
-                                          </div>
-                                      </div>
-                                    <div class="form-group ">
-                                          <label for="dpt_code" class="control-label col-lg-2">Department Code<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="dpt_code" name="dpt_code" type="text" placeholder="CSED" required />
-                                          </div>
-                                      </div>
-                            <div class="form-group">
-                                <div class="col-lg-offset-2 col-lg-10">
-                                <button class="btn btn-primary" type="submit">Add Department</button>
-                                <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
-                                </div>
-                            </div>
-                    </form>
-                  </div>
-                </div>
-      </section>
-    </div>
     <div class="row">
     <section class="panel">
     <header class="panel-heading">Current Departments List</header>
     <div class="panel-body">
+    <a href='department_edit.php'><button type='button' class='btn btn-primary'>Edit Existing Department</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='department_add.php'><button type='button' class='btn btn-primary'>Add New Department</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='department_delete.php'><button type='button' class='btn btn-primary'>Delete Existing Department</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
     <table cellpadding="10">
       <tr>
         <td><b>Department Name</b></td>
         <td><b>Department Code</b></td>
-        <td><a href='edit_department.php'><button type='button' class='btn btn-warning'>Edit</button></a></td>
+        
       </tr>
       <?php
                                                   $sqldept = "SELECT * from department";
