@@ -122,19 +122,19 @@ $sql = "SELECT DISTINCT cname from courses";
                             	</div>
                             </div>
                             <div class="form-group">
-                            	<label for="creditsL" class="control-label col-lg-2">Course Credits(lecture)<span class="required">*</span></label>
+                            	<label for="creditsL" class="control-label col-lg-2">Course Credits (lecture)<span class="required">*</span></label>
                             	<div class="col-lg-10">
                             		<input class="form-control" name="creditsL" min=0.0 type="number" step=0.5 required>
                             	</div>
                             </div>
                             <div class="form-group">
-                            	<label for="creditsT" class="control-label col-lg-2">Course Credits(tutorial)<span class="required">*</span></label>
+                            	<label for="creditsT" class="control-label col-lg-2">Course Credits (tutorial)<span class="required">*</span></label>
                             	<div class="col-lg-10">
                             		<input class="form-control" name="creditsT" min=0.0 type="number" step=0.5 required>
                             	</div>
                             </div>
                             <div class="form-group">
-                            	<label for="creditsP" class="control-label col-lg-2">Course Credits(practical)<span class="required">*</span></label>
+                            	<label for="creditsP" class="control-label col-lg-2">Course Credits (practical)<span class="required">*</span></label>
                             	<div class="col-lg-10">
                             		<input class="form-control" name="creditsP" min=0.0 type="number" step=0.5 required>
                             	</div>
