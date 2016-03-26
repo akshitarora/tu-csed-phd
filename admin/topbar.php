@@ -7,8 +7,8 @@
                 <ul class="nav pull-right top-menu">
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="img/now/<?php      $path = "img/now/".$_SESSION["id"]."1_small.jpg";  if(file_exists($path)) {    echo $_SESSION["id"];} else {         echo "avatar";     }?>1_small.jpg">
+                            <span class="profile-ava" >
+                                <img alt="" height="30" width="30" src="img/now/<?php      $path = "img/now/".$_SESSION["id"].".jpg";  if(file_exists($path)) {    echo $_SESSION["id"];} else {         echo "avatar";     }?>.jpg">
                             </span>
                             <span class="username"><?php echo $_SESSION["name"];?></span>
                             <b class="caret"></b>
@@ -16,7 +16,7 @@
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> My Profile</a>
+                                <a href="photo_upload.php"><i class="icon_profile"></i> My Profile</a>
                             </li>
                             <li>
                                 <a href="signout.php"><i class="icon_key_alt"></i> Log Out</a>

@@ -2,7 +2,7 @@
 session_start();error_reporting(0);
 if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
 require 'header.php';
-    require'connection.php';
+require'connection.php';
 ?>
 <body>
   <!-- container section start -->
@@ -29,15 +29,27 @@ require 'header.php';
         <td><b>Username</b></td>
         <td><b>Phone Number</b></td>
         <td><b>E-mail</b></td>
+        <td><b>Photo Uploaded</b></td>
       </tr>
       <?php
                                                   $sqldept = "SELECT * from login where role='admin'";
                                                   $resultdept = mysqli_query($conn,$sqldept);
                                                   while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
-                                                    echo "<tr><td>"; echo $rowdept["full_name"]; echo "</td><td>";
+                                                    echo "<tr><td>"; 
+                                                    echo $rowdept["full_name"]; echo "</td><td>";
                                                     echo $rowdept["_id"]; echo "</td><td>";
                                                     echo $rowdept["phone"];echo "</td><td>";
                                                     echo $rowdept["email"];
+
+
+                                                    if($rowdept["photo"]==1){
+                                                      echo "</td><td>";?>
+                                                      <img alt='' <?php echo "src='img/now/".$rowdept["_id"].".jpg'";?> height=80 width="60">
+                                                      <?php
+                                                    } else { echo"</td><td>";
+                                                      echo "No photo uploaded";
+                                                    }
+
                                                     echo "</td></tr>";
                                                   }
                                                   ?>
@@ -80,5 +92,4 @@ else {
 <?php
 session_destroy();
 }
-
 ?>
