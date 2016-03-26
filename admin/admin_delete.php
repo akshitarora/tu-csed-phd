@@ -34,44 +34,26 @@ require 'header.php';
                           </header>
                           <div class="panel-body">
                               <div class="form">
-                                  <form class="form-validate form-horizontal" method="post" action="admin_addprocess.php">
-                                      <div class="form-group ">
-                                          <label for="full_name" class="control-label col-lg-2">Full Name<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="full_name" name="full_name" type="text" required />
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="_id" class="control-label col-lg-2">Username<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="_id" name="_id" type="text" placeholder="for portal login" required />
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="email" class="control-label col-lg-2">E-Mail<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control " id="email" type="email" name="email" required />
-                                          </div>
-                                      </div>
-                                      
+                                  <form class="form-validate form-horizontal" method="post" action="admin_deleteprocess.php">
                                       <div class="form-group">
-                                          <label for="phone" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
+                                          <label for="admin" class="control-label col-lg-2">Admin to be deleted<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="phone" name="phone" type="number" max="9999999999" min="1000000000" required />
-                                          </div>
-                                      </div>
-                                      
-                                      <div class="form-group ">
-                                          <label for="password" class="control-label col-lg-2">Password<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="password" name="password" type="password" required />
+                                              
+                                              <select name="admin">
+                                                  <?php
+                                                  $sqldept = "SELECT * from login where role='admin'";
+                                                  $resultdept = mysqli_query($conn,$sqldept);
+                                                  while($rowdept = mysqli_fetch_array($resultdept,MYSQL_ASSOC)) {
+                                                    echo "<option value='"; echo $rowdept["sno"]; echo "'>";
+                                                    echo $rowdept["full_name"].' ('.$rowdept["_id"].')'; echo "</option>";
+                                                  }
+                                                  ?>
+                                              </select>
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
-                                              <button class="btn btn-success" type="submit">Save</button>
+                                              <button class="btn btn-danger" type="submit">Delete</button>
                                               <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
                                           </div>
                                       </div>

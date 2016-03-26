@@ -25,7 +25,7 @@ require 'connection.php';
                 <div class="panel-body">
                   <a href='sem_edit.php'><button type='button' class='btn btn-primary'>Edit Existing Semester</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='sem_add.php'><button type='button' class='btn btn-primary'>Add New Semester</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href='sem_delete.php'><button type='button' class='btn btn-primary'>Delete Existing Semester</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='sem_delete.php'><button type='button' class='btn btn-danger'>Delete Existing Semester</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <br>
     <table cellpadding="10">
       <tr>

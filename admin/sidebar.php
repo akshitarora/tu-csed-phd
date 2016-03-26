@@ -12,13 +12,13 @@
                   <li class="sub-menu">
                       <a class="" href="javascript:;">
                           <i class="icon_document_alt"></i>
-                          <span>Add People</span>
+                          <span>Manage People</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
                           <li><a class="" href="student_add.php">Students</a></li>
                           <li><a class="" href="faculty_add.php">Faculty Members</a></li>
-                          <li><a class="" href="admin_add.php">Admins</a></li>
+                          <li><a class="" href="admin.php">Admins</a></li>
                       </ul>
                       
                   </li>

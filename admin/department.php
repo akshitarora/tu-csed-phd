@@ -40,7 +40,7 @@ require 'connection.php';
     <div class="panel-body">
     <a href='department_edit.php'><button type='button' class='btn btn-primary'>Edit Existing Department</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='department_add.php'><button type='button' class='btn btn-primary'>Add New Department</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href='department_delete.php'><button type='button' class='btn btn-primary'>Delete Existing Department</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='department_delete.php'><button type='button' class='btn btn-danger'>Delete Existing Department</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <br>
     <table cellpadding="10">
       <tr>

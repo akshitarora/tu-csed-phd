@@ -124,7 +124,7 @@ require 'header.php';
                                       </div>
                                       <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
-                                              <button class="btn btn-primary" type="submit">Save</button>
+                                              <button class="btn btn-success" type="submit">Save</button>
                                               <a href="index.php"><button class="btn btn-default" type="button">Cancel</button></a>
                                           </div>
                                       </div>
@@ -188,7 +188,7 @@ require 'header.php';
                                       </div>
                                       <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
-                                              <button class="btn btn-primary" type="submit">Save</button>
+                                              <button class="btn btn-success" type="submit">Save</button>
                                               <button class="btn btn-default" type="button">Cancel</button>
                                           </div>
                                       </div>
