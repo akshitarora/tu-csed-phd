@@ -30,7 +30,7 @@ $sql = "INSERT INTO faculty(fname,department,email,designation,r_int,url,dob,pho
 
 if(mysqli_query($conn,$sql))
 {
-$sql1 = "INSERT INTO login(role,_id,password,full_name,phone,email) VALUES('faculty','$faculty_code','$password','$fname','$phone','$email')";
+$sql1 = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('faculty','$faculty_code','$password','$fname','$phone','$email')";
 mysqli_query($conn,$sql1);
 $_SESSION["success_faculty_added"]=1;
 echo "<script>window.location.href='/phd/admin/'</script>";

@@ -19,7 +19,7 @@ require 'header.php';
           <section class="wrapper">
 		  <div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-files-o"></i>Add new Faculty Member</h3>
+					<h3 class="page-header"><i class="fa fa-files-o"></i>Edit Existing Faculty Details</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
 						<li><i class="icon_document_alt"></i><a href='faculty.php'> Faculty</a></li>
@@ -33,19 +33,29 @@ require 'header.php';
                           <header class="panel-heading">
                               Faculty Details
                           </header>
+<?php 
+ 
+$fid1=$_GET["fid"];
+$sqlfac = "SELECT * from faculty where fid='$fid1'";
+$resultfac = mysqli_query($conn,$sqlfac);
+$row = mysqli_fetch_assoc($resultfac);
+
+?>
                           <div class="panel-body">
                               <div class="form">
-                                  <form class="form-validate form-horizontal" method="post" action="faculty_addprocess.php">
+                               
+                                  <form class="form-validate form-horizontal" method="post" action="faculty_editprocess.php">
+                                  <input class="form-control hidden" id="fid" name="fid" type="number" value="<?php echo $_GET["fid"]; ?>" required />
                                       <div class="form-group ">
-                                          <label for="fname" class="control-label col-lg-2">Full Name<span class="required">*</span></label>
+                                          <label for="fname" class="control-label col-lg-2" >Full Name<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="fname" name="fname" type="text" required />
+                                              <input class="form-control" id="fname" name="fname" value="<?php echo $row["fname"];?>" type="text" required />
                                           </div>
                                       </div>
                                       <div class="form-group ">
                                           <label for="faculty_code" class="control-label col-lg-2">Faculty Id<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="faculty_code" name="faculty_code" type="text" placeholder="Example: KJK, PBH, SJ, SGO etc. It must be unique for every faculty member" required />
+                                              <input class="form-control" id="faculty_code" name="faculty_code" type="text" value="<?php echo $row["faculty_code"];?>" placeholder="Example: KJK, PBH, SJ, SGO etc. It must be unique for every faculty member" required />
                                           </div>
                                       </div>
                                       <div class="form-group">
@@ -56,8 +66,14 @@ require 'header.php';
                                                   $sqldept = "SELECT * from department";
                                                   $resultdept = mysqli_query($conn,$sqldept);
                                                   while($rowdept = mysqli_fetch_array($resultdept,MYSQLI_ASSOC)) {
-                                                    echo "<option value='"; echo $rowdept["dpt_code"]; echo "'>";
-                                                    echo $rowdept["dpt_name"]; echo "</option>";
+                                                    echo "<option value='"; echo $rowdept["dpt_code"];
+                                                    if($rowdept["dpt_code"]==$row["department"])
+                                                       echo "' selected='selected";
+                                                     echo "'>";
+                                                    echo $rowdept["dpt_name"]; 
+                                                    
+                                                     
+                                                    echo "</option>";
                                                   }
                                                   ?>
                                               </select>
@@ -66,7 +82,7 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="email" class="control-label col-lg-2">Official E-Mail<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control " id="email" type="email" name="email" required />
+                                              <input class="form-control " id="email" type="email" name="email" value="<?php echo $row["email"];?>" required />
                                           </div>
                                       </div> 
                                       
@@ -74,14 +90,20 @@ require 'header.php';
                                           <label for="designation" class="control-label col-lg-2">Designation<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <select id="designation" name="designation">
-                                                  <option value="Associate Professor">Associate Professor</option>
-                                                  <option value="Assistant Professor">Assistant Professor</option>
-                                                  <option value="Lecturer">Lecturer</option>
+                                                  <option value="Associate Professor" <?php
+                                                  if($row["designation"]=="Associate Professor")
+                                                       echo "' selected='selected'"; ?>>Associate Professor</option>
+                                                  <option value="Assistant Professor"<?php
+                                                  if($row["designation"]=="Assistant Professor")
+                                                       echo "' selected='selected'"; ?>>Assistant Professor</option>
+                                                  <option value="Lecturer" <?php
+                                                  if($row["designation"]=="Lecturer")
+                                                       echo "' selected='selected'"; ?>>Lecturer</option>
                                               </select>
                                           </div>
                                       </div>
                                       
-                                      <div class="form-group ">
+                                      <div class="form-group">
                                           <label for="hod" class="control-label col-lg-2">Head of Department</label>
                                           <div class="col-lg-10">
                                               <input type="checkbox" name="hod" />
@@ -91,37 +113,32 @@ require 'header.php';
                                       <div class="form-group ">
                                           <label for="url" class="control-label col-lg-2">Website</label>
                                           <div class="col-lg-10">
-                                              <input class="form-control " id="url" type="url" name="url" />
+                                              <input class="form-control " id="url" type="url" name="url" value="<?php echo $row["url"];?>"/>
                                           </div>
                                       </div>
                                       
                                       <div class="form-group ">
                                           <label for="dob" class="control-label col-lg-2">Date of Birth <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input id="dob" type="date" name="dob" size="16" class="form-control" required>
+                                              <input id="dob" type="date" name="dob" size="16" class="form-control"value="<?php echo $row["dob"];?>" required>
                                           </div>
                                       </div>
                                       
                                       <div class="form-group ">
                                           <label for="r_int" class="control-label col-lg-2">Research Interests<span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="r_int" name="r_int" type="text" placeholder="please enter comma separated values" required />
+                                              <input class="form-control" id="r_int" name="r_int" type="text" placeholder="please enter comma separated values" value="<?php echo $row["r_int"];?>" required />
                                           </div>
                                       </div>
                                       
                                       <div class="form-group">
                                           <label for="phone" class="control-label col-lg-2">Phone Number <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="phone" name="phone" type="text" placeholder="+91xxxxxxxxxx" required />
+                                              <input class="form-control" id="phone" name="phone" value="<?php echo $row["phone"];?>" type="text" placeholder="+91xxxxxxxxxx" required />
                                           </div>
                                       </div>
                                       
-                                      <div class="form-group ">
-                                          <label for="password" class="control-label col-lg-2">Password<span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="password" name="password" type="password" required />
-                                          </div>
-                                      </div>
+                                     
                                       <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
                                               <button class="btn btn-primary" type="submit">Save</button>
