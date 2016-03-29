@@ -5,7 +5,7 @@
 - http://www.phpmyadmin.net
 -
 - Host: 127.0.0.1
-- Generation Time: Mar 25, 2016 at 04:09 PM
+- Generation Time: Mar 29, 2016 at 01:26 PM
 - Server version: 5.6.24
 - PHP Version: 5.6.8
 -->
@@ -41,7 +41,7 @@
                   `dpt_name` varchar(300) NOT NULL,
                   `dpt_code` varchar(100) NOT NULL,
                   PRIMARY KEY (`sno`)
-                ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+                ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="faculty">
                 CREATE TABLE `faculty` (
@@ -69,9 +69,10 @@
                   `full_name` varchar(200) NOT NULL,
                   `phone` varchar(20) NOT NULL,
                   `email` varchar(300) NOT NULL,
+                  `photo` int(11) NOT NULL DEFAULT '0',
                   PRIMARY KEY (`sno`),
                   UNIQUE KEY `_id` (`_id`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="progress">
                 CREATE TABLE `progress` (
@@ -81,7 +82,7 @@
                   `urbdate` date DEFAULT NULL,
                   `percentage` int(11) NOT NULL,
                   PRIMARY KEY (`sno`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_book">
                 CREATE TABLE `research_book` (
@@ -108,7 +109,7 @@
                   `status` varchar(100) NOT NULL,
                   `sid` int(11) NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_journal">
                 CREATE TABLE `research_journal` (
@@ -158,7 +159,7 @@
                   `def` int(11) NOT NULL DEFAULT '1',
                   PRIMARY KEY (`sid`),
                   UNIQUE KEY `regno` (`regno`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
             </pma:table>
         </pma:database>
     </pma:structure_schemas>
@@ -215,8 +216,8 @@
         </table>
         <!-- Table department -->
         <table name="department">
-            <column name="sno">1</column>
-            <column name="dpt_name">Computer Science and Engineering Department</column>
+            <column name="sno">15</column>
+            <column name="dpt_name">Department of Computer Science and Engineering</column>
             <column name="dpt_code">CSED</column>
         </table>
         <table name="department">
@@ -1001,46 +1002,11 @@
             <column name="sno">2</column>
             <column name="role">admin</column>
             <column name="_id">akshit</column>
-            <column name="password">$1$sa5.FC/.$5mbA2ZielWm5uOkkhy7ZA0</column>
+            <column name="password">$1$C2..jQ4.$SFL2EVPAlbG.xFyQdmQdO.</column>
             <column name="full_name">Akshit Arora</column>
-            <column name="phone">+917696061995</column>
-            <column name="email"></column>
-        </table>
-        <table name="login">
-            <column name="sno">22</column>
-            <column name="role">student</column>
-            <column name="_id">1000000004</column>
-            <column name="password">$1$tW1.yH1.$HhtwYqkNp8vctMrUs7HcP0</column>
-            <column name="full_name">akshit</column>
-            <column name="phone">+91859684959</column>
-            <column name="email">aks@gm.com</column>
-        </table>
-        <table name="login">
-            <column name="sno">23</column>
-            <column name="role">student</column>
-            <column name="_id">1000000012</column>
-            <column name="password">$1$SE/.zH4.$.IcfHKB2JXg5rhWuMDVlv.</column>
-            <column name="full_name">test1234</column>
-            <column name="phone">+91859684959</column>
-            <column name="email">testing@testing.com</column>
-        </table>
-        <table name="login">
-            <column name="sno">24</column>
-            <column name="role">student</column>
-            <column name="_id">1000000005</column>
-            <column name="password">$1$A94.JY4.$6KRm1A7gBcuv1quabdbJj/</column>
-            <column name="full_name">test</column>
-            <column name="phone">+91859684959</column>
+            <column name="phone">7696061995</column>
             <column name="email">akshit.arora1995@gmail.com</column>
-        </table>
-        <table name="login">
-            <column name="sno">26</column>
-            <column name="role">admin</column>
-            <column name="_id">sujata</column>
-            <column name="password">$1$ZLGrGkfs$GV/BLGMR4QQ9OlS4nnAoS.</column>
-            <column name="full_name">Sujata Singla</column>
-            <column name="phone">+917696061995</column>
-            <column name="email">sujata.singla@thapar.edu</column>
+            <column name="photo">1</column>
         </table>
         <table name="login">
             <column name="sno">27</column>
@@ -1050,15 +1016,7 @@
             <column name="full_name">Parteek Bhatia</column>
             <column name="phone">9873644848</column>
             <column name="email">parteek.bhatia@thapar.edu</column>
-        </table>
-        <table name="login">
-            <column name="sno">29</column>
-            <column name="role">student</column>
-            <column name="_id">12345</column>
-            <column name="password">$1$zO2.A4..$pFPu20b7Pmo0XZF60yGLM0</column>
-            <column name="full_name">Test Student</column>
-            <column name="phone">9872638384</column>
-            <column name="email">test@gmail.com</column>
+            <column name="photo">0</column>
         </table>
         <!-- Table progress -->
         <table name="progress">
@@ -1889,7 +1847,30 @@
         </table>
         <!-- Table research_book -->
         <!-- Table research_conference -->
+        <table name="research_conference">
+            <column name="rid">1</column>
+            <column name="title">test ILS tool</column>
+            <column name="people">A, B, C, D, F</column>
+            <column name="conference_name">AHFE</column>
+            <column name="conference_date">2016-02-25</column>
+            <column name="conference_location">Austin, TX, USA</column>
+            <column name="status">Published</column>
+            <column name="sid">900903007</column>
+        </table>
         <!-- Table research_journal -->
+        <table name="research_journal">
+            <column name="rid">1</column>
+            <column name="title">testjournal</column>
+            <column name="authors">akshit, chahak, abhinav</column>
+            <column name="journal_name">ijcai</column>
+            <column name="journal_volume">3</column>
+            <column name="journal_no">23</column>
+            <column name="publish_date">2016-03-01</column>
+            <column name="journal_pages">2-3</column>
+            <column name="status">Accepted</column>
+            <column name="sid">950903036</column>
+            <column name="journal_impact">2.3</column>
+        </table>
         <!-- Table semester -->
         <table name="semester">
             <column name="semcode">1415EVESEM</column>
@@ -3121,28 +3102,6 @@
             <column name="def">1</column>
         </table>
         <table name="student">
-            <column name="sid">82</column>
-            <column name="timestamp">2016-03-02 13:21:12</column>
-            <column name="regno">0</column>
-            <column name="sname"></column>
-            <column name="full_part"></column>
-            <column name="status"></column>
-            <column name="sdob">0000-00-00</column>
-            <column name="semail"></column>
-            <column name="sbranch"></column>
-            <column name="sdoa">0000-00-00</column>
-            <column name="sdurb">0000-00-00</column>
-            <column name="sthesis"></column>
-            <column name="sphone"></column>
-            <column name="chair"></column>
-            <column name="supervisor1"></column>
-            <column name="supervisor2"></column>
-            <column name="cognate1"></column>
-            <column name="cognate2"></column>
-            <column name="outside"></column>
-            <column name="def">1</column>
-        </table>
-        <table name="student">
             <column name="sid">84</column>
             <column name="timestamp">2016-03-02 13:42:58</column>
             <column name="regno">951303002</column>
@@ -3294,28 +3253,6 @@
             <column name="cognate1">Dr. Seema Bawa</column>
             <column name="cognate2">Dr. Shalini Batra</column>
             <column name="outside">Dr. M.D. Singh</column>
-            <column name="def">1</column>
-        </table>
-        <table name="student">
-            <column name="sid">92</column>
-            <column name="timestamp">2016-03-25 20:35:40</column>
-            <column name="regno">12345</column>
-            <column name="sname">Test Student</column>
-            <column name="full_part">full</column>
-            <column name="status">Synopsis Submitted</column>
-            <column name="sdob">1998-03-20</column>
-            <column name="semail">test@gmail.com</column>
-            <column name="sbranch">CSED</column>
-            <column name="sdoa">2016-03-10</column>
-            <column name="sdurb">2016-04-02</column>
-            <column name="sthesis">teat23234</column>
-            <column name="sphone">9872638384</column>
-            <column name="chair">Dr. Deepak Garg</column>
-            <column name="supervisor1">Dr. Deepak Garg</column>
-            <column name="supervisor2">Dr. Jhilik Bhattacharya</column>
-            <column name="cognate1">Dr. Deepak Garg</column>
-            <column name="cognate2">Dr. Inderveer Chana</column>
-            <column name="outside">Dr. Deepak Garg</column>
             <column name="def">1</column>
         </table>
     </database>

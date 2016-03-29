@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2016 at 04:08 PM
+-- Generation Time: Mar 29, 2016 at 01:25 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -61,14 +61,14 @@ CREATE TABLE IF NOT EXISTS `department` (
   `sno` int(11) NOT NULL,
   `dpt_name` varchar(300) NOT NULL,
   `dpt_code` varchar(100) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `department`
 --
 
 INSERT INTO `department` (`sno`, `dpt_name`, `dpt_code`) VALUES
-(1, 'Computer Science and Engineering Department', 'CSED'),
+(15, 'Department of Computer Science and Engineering', 'CSED'),
 (2, 'Electronics and Telecommunication Department', 'E&CE'),
 (3, 'School of Mathematics', 'SOM'),
 (5, 'Electronics and Communication Engineering Department', 'ECED'),
@@ -173,21 +173,17 @@ CREATE TABLE IF NOT EXISTS `login` (
   `password` varchar(100) NOT NULL,
   `full_name` varchar(200) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `email` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+  `email` varchar(300) NOT NULL,
+  `photo` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`sno`, `role`, `_id`, `password`, `full_name`, `phone`, `email`) VALUES
-(2, 'admin', 'akshit', '$1$sa5.FC/.$5mbA2ZielWm5uOkkhy7ZA0', 'Akshit Arora', '+917696061995', ''),
-(22, 'student', '1000000004', '$1$tW1.yH1.$HhtwYqkNp8vctMrUs7HcP0', 'akshit', '+91859684959', 'aks@gm.com'),
-(23, 'student', '1000000012', '$1$SE/.zH4.$.IcfHKB2JXg5rhWuMDVlv.', 'test1234', '+91859684959', 'testing@testing.com'),
-(24, 'student', '1000000005', '$1$A94.JY4.$6KRm1A7gBcuv1quabdbJj/', 'test', '+91859684959', 'akshit.arora1995@gmail.com'),
-(26, 'admin', 'sujata', '$1$ZLGrGkfs$GV/BLGMR4QQ9OlS4nnAoS.', 'Sujata Singla', '+917696061995', 'sujata.singla@thapar.edu'),
-(27, 'admin', 'parteek', '$1$CI9brp9v$G2f00AiW1Xk476efkS3Ou/', 'Parteek Bhatia', '9873644848', 'parteek.bhatia@thapar.edu'),
-(29, 'student', '12345', '$1$zO2.A4..$pFPu20b7Pmo0XZF60yGLM0', 'Test Student', '9872638384', 'test@gmail.com');
+INSERT INTO `login` (`sno`, `role`, `_id`, `password`, `full_name`, `phone`, `email`, `photo`) VALUES
+(2, 'admin', 'akshit', '$1$C2..jQ4.$SFL2EVPAlbG.xFyQdmQdO.', 'Akshit Arora', '7696061995', 'akshit.arora1995@gmail.com', 1),
+(27, 'admin', 'parteek', '$1$CI9brp9v$G2f00AiW1Xk476efkS3Ou/', 'Parteek Bhatia', '9873644848', 'parteek.bhatia@thapar.edu', 0);
 
 -- --------------------------------------------------------
 
@@ -201,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `progress` (
   `sid` int(11) NOT NULL,
   `urbdate` date DEFAULT NULL,
   `percentage` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `progress`
@@ -360,7 +356,14 @@ CREATE TABLE IF NOT EXISTS `research_conference` (
   `conference_location` varchar(500) NOT NULL,
   `status` varchar(100) NOT NULL,
   `sid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `research_conference`
+--
+
+INSERT INTO `research_conference` (`rid`, `title`, `people`, `conference_name`, `conference_date`, `conference_location`, `status`, `sid`) VALUES
+(1, 'test ILS tool', 'A, B, C, D, F', 'AHFE', '2016-02-25', 'Austin, TX, USA', 'Published', 900903007);
 
 -- --------------------------------------------------------
 
@@ -381,6 +384,13 @@ CREATE TABLE IF NOT EXISTS `research_journal` (
   `sid` int(11) NOT NULL,
   `journal_impact` double NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `research_journal`
+--
+
+INSERT INTO `research_journal` (`rid`, `title`, `authors`, `journal_name`, `journal_volume`, `journal_no`, `publish_date`, `journal_pages`, `status`, `sid`, `journal_impact`) VALUES
+(1, 'testjournal', 'akshit, chahak, abhinav', 'ijcai', 3, 23, '2016-03-01', '2-3', 'Accepted', 950903036, 2.3);
 
 -- --------------------------------------------------------
 
@@ -435,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `cognate2` varchar(500) NOT NULL,
   `outside` varchar(500) NOT NULL,
   `def` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `student`
@@ -496,15 +506,13 @@ INSERT INTO `student` (`sid`, `timestamp`, `regno`, `sname`, `full_part`, `statu
 (79, '2016-03-02 07:09:46', 901203008, 'Divya Pandove', 'full', 'Ongoing', '1900-01-01', 'dpandove@gmail.com', 'COE', '1900-01-01', '2014-03-05', 'Big Data Clustering Based Recommendation System Model through Correlations', '0123456789', 'Dr. Deepak Garg', 'Dr. Shivani Goel', 'NULL', 'Dr. Rinkle Rani', 'Dr. Sushma Jain', 'Dr. Kulbir Singh', 1),
 (80, '2016-03-02 07:17:48', 901303001, 'MEGHA', 'full', 'Ongoing', '1900-01-01', 'megha@thapar.edu', 'COE', '1900-01-01', '2014-08-14', 'A Generic Framework for Improving Software Product Line using an Ontological Rule based Approach', '0123456789', 'Dr. Deepak Garg', 'Dr. Shivani Goel', 'NULL', 'Dr. Parteek Bhatia', 'Dr. Ashutosh Mishra', 'Dr. Deepak Garg', 1),
 (81, '2016-03-02 07:22:29', 901403009, 'Shaify Kansal', 'full', 'Ongoing', '1900-01-01', 'shaifykansal@gmail.com', 'COE', '1900-01-01', '2015-05-30', 'Developing an Efficient Framework for Image Mining', '0123456789', 'Dr. Deepak Garg', 'Dr. Shivani Goel', 'NULL', 'Dr. Sushma Jain', 'Dr. Jhilik Bhattacharya', 'Dr. Deepak Garg', 1),
-(82, '2016-03-02 07:51:12', 0, '', '', '', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', 1),
 (84, '2016-03-02 08:12:58', 951303002, 'Sukhchandan Randhawa', 'full', 'Ongoing', '1900-01-01', 'Sukhchandan@thapar.edu', 'COE', '1900-01-01', '2014-07-29', 'Efficient Load Balancing and Data Aggregation for Multipath Routing in Wireless Sensor Networks', '0123456789', 'Dr. Deepak Garg', 'Dr. Sushma Jain', 'NULL', 'Dr. Rinkle Rani', 'Dr. Damandeep Kaur', 'Dr. Rakesh Kumar  Gupta', 1),
 (85, '2016-03-02 08:17:17', 901403016, 'Baljit Kaur', 'full', 'Ongoing', '1900-01-01', 'baljitkaur13@gmail.com', 'COE', '1900-01-01', '2015-05-20', 'Augmented Map Based Intelligent Navigation System', '0123456789', 'Dr. Deepak Garg', 'Dr. Jhilik Bhattacharya', 'NULL', 'Dr. Ashutosh Mishra', 'Dr. Singara Singh', 'Dr. Deepak Garg', 1),
 (86, '2016-03-03 06:02:01', 901403006, 'Kuldeep Singh', 'full', 'Ongoing', '1900-01-01', 'kuldeepisp@gmail.com', 'COE', '1900-01-01', '2015-05-04', 'A Secure Framework for Flying Ad-hoc Networks', '0123456789', 'Dr. Deepak Garg', 'Dr. Anil Kumar Verma', 'NULL', 'Dr. Neeraj Kumar', 'Dr. Maninder Singh', 'Dr. Mahesh Kumar Sharma', 1),
 (87, '2016-03-03 06:28:16', 951203010, 'Lohit Kapoor', 'full', 'Ongoing', '1900-01-01', 'lohit.kapoor@thapar.edu', 'COE', '1900-01-01', '2013-07-25', 'An Efficient and Secure Intercloud Framework', '0123456789', 'Dr. Deepak Garg', 'Dr. Seema Bawa', 'Dr. Ankur Gupta', 'Dr. Neeraj Kumar', 'Dr. Inderveer Chana', 'Dr. M.D. Singh', 1),
 (88, '2016-03-03 06:31:33', 901403021, 'Nishtha Hooda', 'full', 'Ongoing', '1900-01-01', '27nishtha@gmail.com', 'COE', '1900-01-01', '2015-12-10', 'Ensemble Machine Learning Framework for Big Data Analytics', '0123456789', 'Dr. Deepak Garg', 'Dr. Seema Bawa', 'Dr. Prashant S Rana', 'Dr. Rinkle Rani', 'Dr. Shalini Batra', 'Dr. Deepak Garg', 1),
 (89, '2016-03-03 08:15:26', 901403007, 'Loveleen Kaur', 'full', 'Ongoing', '1900-01-01', 'loveleen3390@gmail.com', 'COE', '1900-01-01', '0000-00-00', 'Selection of reusable software components using the expertise of Semantic Web and Intelligent Computing Methods', '0123456789', 'Dr. Deepak Garg', 'Dr. Ashutosh Mishra', 'NULL', 'Dr. Parteek Bhatia', 'Dr. Shivani Goel', 'Dr. M.D. Singh', 1),
-(90, '2016-03-03 10:13:14', 951003001, 'Vinay Arora', 'full', 'Ongoing', '1900-01-01', 'vinay.arora@thapar.edu', 'COE', '1900-01-01', '2012-04-27', 'Slicing Technique for Test Path Generation in Concurrent Programs', '0123456789', 'Dr. Deepak Garg', 'Dr. Maninder Singh', 'Dr. Rajesh Bhatia', 'Dr. Seema Bawa', 'Dr. Shalini Batra', 'Dr. M.D. Singh', 1),
-(92, '2016-03-25 15:05:40', 12345, 'Test Student', 'full', 'Synopsis Submitted', '1998-03-20', 'test@gmail.com', 'CSED', '2016-03-10', '2016-04-02', 'teat23234', '9872638384', 'Dr. Deepak Garg', 'Dr. Deepak Garg', 'Dr. Jhilik Bhattacharya', 'Dr. Deepak Garg', 'Dr. Inderveer Chana', 'Dr. Deepak Garg', 1);
+(90, '2016-03-03 10:13:14', 951003001, 'Vinay Arora', 'full', 'Ongoing', '1900-01-01', 'vinay.arora@thapar.edu', 'COE', '1900-01-01', '2012-04-27', 'Slicing Technique for Test Path Generation in Concurrent Programs', '0123456789', 'Dr. Deepak Garg', 'Dr. Maninder Singh', 'Dr. Rajesh Bhatia', 'Dr. Seema Bawa', 'Dr. Shalini Batra', 'Dr. M.D. Singh', 1);
 
 --
 -- Indexes for dumped tables
@@ -583,7 +591,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `faculty`
 --
@@ -593,12 +601,12 @@ ALTER TABLE `faculty`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `progress`
 --
 ALTER TABLE `progress`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=124;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=122;
 --
 -- AUTO_INCREMENT for table `research_book`
 --
@@ -608,7 +616,7 @@ ALTER TABLE `research_book`
 -- AUTO_INCREMENT for table `research_conference`
 --
 ALTER TABLE `research_conference`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `research_journal`
 --
@@ -618,7 +626,7 @@ ALTER TABLE `research_journal`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=93;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=91;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
