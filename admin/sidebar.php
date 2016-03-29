@@ -16,7 +16,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="student_add.php">Students</a></li>
+                          <li><a class="" href="student_choices.php">Students</a></li>
                           <li><a class="" href="faculty.php">Faculty Members</a></li>
                           <li><a class="" href="admin.php">Admins</a></li>
                       </ul>
