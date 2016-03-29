@@ -16,13 +16,14 @@ $name = test_input($_POST['name']);
 $location = test_input($_POST['location']);
 $date = test_input($_POST['cdate']);
 $status = test_input($_POST['status']);
+$rid = test_input($_POST['rid']);
 
-$sql = "INSERT INTO research_conference(`title`, `people`, `conference_name`, `conference_date`, `conference_location`, `status`, `sid`) VALUES('".$title."','".$people."','".$name."','".$date."','".$location."','".$status."',".$sid.");";
+$sql = "UPDATE research_conference SET `title`='".$title."', `people`='".$people."', `conference_name`='".$name."', `conference_date`='".$date."', `conference_location`='".$location."', `status`='".$status."', `sid`=".$sid." WHERE rid='$rid';";
 
 if(mysqli_query($conn,$sql))
 {
 	$_SESSION["success"]=1;
-	$_SESSION["message"]="Conference Paper added!";
+	$_SESSION["message"]="Conference Paper edited!";
 	echo "<script>window.location.href='/phd/admin/conf.php'</script>";
 	mysqli_close($conn);
 }

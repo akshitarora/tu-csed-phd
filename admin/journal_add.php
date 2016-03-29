@@ -21,7 +21,7 @@ require 'header.php';
 					<h3 class="page-header"><i class="fa fa-files-o"></i>New Journal Article</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-            <li><i class="icon_document_alt"></i><a href=#>Research Paper</a></li>
+            
 						<li><i class="icon_document_alt"></i><a href="journal_add.php">Add Journal Article</a></li>
 					</ol>
 				</div>

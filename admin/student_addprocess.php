@@ -33,7 +33,7 @@ $percent = test_input($_POST['percent']);
 
 $sql = "INSERT INTO student(regno,sname,full_part,status,sdob,semail,sbranch,sdoa,sdurb,sphone,chair,supervisor1,supervisor2,cognate1,cognate2,outside,sthesis)    VALUES('$regno','$sname','$full_part','$status','$sdob','$semail','$sbranch','$sdoa','$sdurb','$sphone','$chair','$supervisor1','$supervisor2','$cognate1','$cognate2','$outside','$sthesis');";
 if(mysqli_query($conn,$sql)){
-$sql1 = "INSERT INTO LOGIN(role,_id,password,full_name,phone,email) VALUES('student','$regno','$spassword','$sname','$sphone','$semail')";
+$sql1 = "INSERT INTO login(role,_id,password,full_name,phone,email) VALUES('student','$regno','$spassword','$sname','$sphone','$semail')";
 mysqli_query($conn,$sql1);
 $_SESSION["success_student_added"]=1;
 if($status=="Coursework"){

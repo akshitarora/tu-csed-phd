@@ -29,9 +29,9 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="journal_add.php">Journal Article</a></li>
-                          <li><a class="" href="book_add.php">Book Chapters</a></li>
-                          <li><a class="" href="conf_add.php">Conference Papers</a></li>
+                          <li><a class="" href="journal.php">Journal Article</a></li>
+                          <li><a class="" href="book.php">Book Chapters</a></li>
+                          <li><a class="" href="conf.php">Conference Papers</a></li>
                       </ul>
                   </li>
                   <li>
