@@ -13,7 +13,7 @@ $fid = $_GET["fid"];
 $sqlfac = "SELECT * from faculty where fid='$fid'";
 $resultfac = mysqli_query($conn,$sqlfac);
 $row = mysqli_fetch_assoc($resultfac);
-$sql = "DELETE from faculty WHERE fid='$fid'; DELETE from login where _id='".$row["faculty_code"]."';";
+$sql = "DELETE from faculty WHERE fid='$fid'; DELETE from login where role='faculty' AND _id='".$row["faculty_code"]."';";
 
 if(mysqli_multi_query($conn,$sql))
 {

@@ -12,9 +12,9 @@ function test_input($data) {
 
 $old = $_POST['old_student'];
 
-$sql2 = "DELETE from student WHERE regno='$old'";
+$sql2 = "DELETE from student WHERE regno='$old'; DELETE from login WHERE role='student' AND _id='".$old."';";
 
-if(mysqli_query($conn,$sql2))
+if(mysqli_multi_query($conn,$sql2))
 {
     $_SESSION["success"]=1;
     $_SESSION["message"]="Student with registration number = ".$old." deleted.";

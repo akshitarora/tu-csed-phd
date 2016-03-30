@@ -28,17 +28,17 @@ require 'connection.php';
         unset($_SESSION["success"]);unset($_SESSION["message"]);
     }
                     ?>
-			<h3 class="page-header"><i class="fa fa-files-o"></i>Edit Conference paper Details</h3>
+			<h3 class="page-header"><i class="fa fa-files-o"></i>Edit Conference Paper Details</h3>
 			<ol class="breadcrumb">
 				<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-				<li><i class="icon_document_alt"></i><a href="book.php">Edit Conference paper Details</a></li>
+				<li><i class="icon_document_alt"></i><a href="conf.php">Edit Conference Paper Details</a></li>
 			</ol>
 		</div>
     <div class="row">
     <section class="panel">
-    <header class="panel-heading">Current Conference papers List</header>
+    <header class="panel-heading">Current Conference Papers List</header>
     <div class="panel-body">
-    <a href='conf_add.php'><button type='button' class='btn btn-primary'>Add Conference paper Details</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='conf_add.php'><button type='button' class='btn btn-primary'>Add New Conference Paper</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <br>
     <table cellpadding="10">
       <tr>
@@ -60,8 +60,8 @@ require 'connection.php';
                                                     echo $rowdept["conference_name"]; echo "</td><td>";
                                                     echo $rowdept["conference_date"]; echo "</td><td>";
                                                     echo $rowdept["conference_location"]; echo "</td><td>";
-                                                    echo $rowdept["status"]; echo "</td><td>";
                                                     echo $rowdept["sid"]; echo "</td><td>";
+                                                    echo $rowdept["status"]; echo "</td><td>";
                                                     echo "<a href='conf_edit.php?rid=";
                                                     echo $rowdept["rid"];
                                                     echo "'><button class='btn btn-primary'>Edit</button></a>";
