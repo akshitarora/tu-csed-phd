@@ -41,10 +41,11 @@ $row = mysqli_fetch_assoc($resultfac);
                           </header>
                           <div class="panel-body">
                               <div class="form">
-                                  <form class="form-validate form-horizontal" method="post" action="student_addprocess.php">
+                                  <form class="form-validate form-horizontal" method="post" action="student_editprocess.php">
                                       <div class="form-group ">
                                           <label for="regno" class="control-label col-lg-2">Registration Number <span class="required">*</span></label>
                                           <div class="col-lg-10">
+                                          <input class="form-control hidden" id="sid" name="sid" value="<?php echo $row["sid"];?>">
                                               <input class="form-control" id="regno" name="regno" type="number" value="<?php echo $row["regno"];?>" required />
                                           </div>
                                       </div>
@@ -164,12 +165,7 @@ $row = mysqli_fetch_assoc($resultfac);
                                           </div>
                                       </div>
                                       
-                                      <div class="form-group ">
-                                          <label for="spassword" class="control-label col-lg-2">Password <span class="required">*</span></label>
-                                          <div class="col-lg-10">
-                                              <input class="form-control" id="spassword" name="spassword" type="password" required />
-                                          </div>
-                                      </div>
+                                      
                                       <div class="form-group ">
                                 <label for="chair" class="control-label col-lg-2">Chairperson Board of Studies(Ex-officio)<span class="required">*</span></label>
                                 <div class="col-lg-10">
