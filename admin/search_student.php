@@ -89,7 +89,7 @@ if(mysql_num_rows($result)=="FALSE"){
     {
       
 //      echo var_dump($row);
-      $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by urbdate DESC";
+      $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by timestamp DESC";
       $resultpro = mysqli_query($conn,$sqlpro);
       $rowpro = mysqli_fetch_assoc($resultpro);
       echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";

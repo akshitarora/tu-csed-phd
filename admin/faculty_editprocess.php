@@ -22,7 +22,7 @@ $faculty_code = test_input($_POST['faculty_code']);
 
 
 
-$sql = "UPDATE Faculty SET fname='$fname',department='$dept',email='$email',designation='$designation',r_int='$rint',url='$url',dob='$dob',phone='$phone',faculty_code='$faculty_code' WHERE fid='$fid';";
+$sql = "UPDATE faculty SET fname='$fname',department='$dept',email='$email',designation='$designation',r_int='$rint',url='$url',dob='$dob',phone='$phone',faculty_code='$faculty_code' WHERE fid='$fid';";
 
 if(mysqli_query($conn,$sql))
 {

@@ -35,6 +35,10 @@
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
+    <script src="../assets/polyfiller.js"></script>
+    <script>
+        webshims.polyfill('forms forms-ext');    
+    </script>
     <!--
     For Suggestions contact -> Akshit Arora (akshit.arora1995@gmail.com)
     -->  
