@@ -120,7 +120,7 @@
                     <!--No alerts here-->
                     <!--ALERTS END -->
                     <?php
-                        $sql = "SELECT * FROM FACULTY WHERE faculty_code='".$_GET["f_code"]."';";
+                        $sql = "SELECT * FROM faculty WHERE faculty_code='".$_GET["f_code"]."';";
                         $result = mysqli_query($conn,$sql);
                         $row = mysqli_fetch_assoc($result);
                         $sql1 = "SELECT * FROM student WHERE full_part='full' AND (supervisor1='".$row["fname"]."' OR supervisor2='".$row["fname"]."');";

@@ -118,7 +118,7 @@
                     <!--No alerts here-->
                     <!--ALERTS END -->
                     <?php
-                        $sql = "SELECT * FROM STUDENT WHERE regno=".$_GET["regno"].";";
+                        $sql = "SELECT * FROM student WHERE regno=".$_GET["regno"].";";
                         $result = mysqli_query($conn,$sql);
                         $row = mysqli_fetch_assoc($result);
                     ?>
