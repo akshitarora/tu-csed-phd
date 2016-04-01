@@ -40,14 +40,14 @@ $_SESSION["success"]=1;
 $_SESSION["message"] = "Student Edited!";
 if($status=="Coursework"){
 	
-	echo "<script>window.location.href='/phd/admin/'</script>";
+	echo "<script>window.location.href='/phd/admin/student_choices.php'</script>";
 } else {
     
-echo "<script>window.location.href='/phd/admin/'</script>";
+echo "<script>window.location.href='/phd/admin/student_choices.php'</script>";
 }
 mysqli_close($conn);
 } else {
     $_SESSION["success_student_added"]=2;
-	echo "<script>window.location.href='/phd/admin/'</script>";
+	echo "<script>window.location.href='/phd/admin/student_choices.php'</script>";
 }
 ?>

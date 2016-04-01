@@ -23,7 +23,7 @@
         <meta property="og:site_name" content="Ph.D. Portal for Thapar University, Patiala"/>
         <meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University,
         Academic, Institution, Study, computer science and engineeing department, department, schools, computer, science, CSED">
-    <link rel="shortcut icon" href="admin/img/favicon.png">
+    <link rel="shortcut icon" href="tu_icon.ico">
     <title>Admin Panel</title>
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-desktop.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -123,6 +123,12 @@
                         $sql = "SELECT * FROM FACULTY WHERE faculty_code='".$_GET["f_code"]."';";
                         $result = mysqli_query($conn,$sql);
                         $row = mysqli_fetch_assoc($result);
+                        $sql1 = "SELECT * FROM student WHERE full_part='full' AND (supervisor1='".$row["fname"]."' OR supervisor2='".$row["fname"]."');";
+                        $result1 = mysqli_query($conn,$sql1);
+                        $row_cnt1 = mysqli_num_rows($result1);
+                        $sql2 = "SELECT * FROM student WHERE full_part='part' AND (supervisor1='".$row["fname"]."' OR supervisor2='".$row["fname"]."');";
+                        $result2 = mysqli_query($conn,$sql2);
+                        $row_cnt2 = mysqli_num_rows($result2);
                     ?>
 					<center><h3>COMPLETE INFORMATION OF FACULTY</h3></center><br>
                   </div>
@@ -140,6 +146,8 @@
                   <p><b>Faculty Code</b>: <?php echo $row["faculty_code"];?></p>
                   <p><b>Phone Number</b>: <?php echo $row["phone"];?></p>
                   <p><b>Date of Birth</b>: <?php echo $row["dob"];?></p>
+                  <p><b>Number of full time Ph.D. students</b>: <?php echo $row_cnt1;?> </p>
+                  <p><b>Number of part time Ph.D. students</b>: <?php echo $row_cnt2;?> </p>
               </div>
           </section>
       </section>

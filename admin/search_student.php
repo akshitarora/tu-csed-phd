@@ -6,41 +6,7 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
   <body>
   <!-- container section start -->
   <section id="container" class="">
-      <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
-            </div>
-            <a href="index.php" class="logo"><span class="lite">Admin</span></a>
-           <div class="top-nav notification-row">                
-                <ul class="nav pull-right top-menu">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="img/now/<?php 
-    $path = "img/now/".$_SESSION["id"]."1_small.jpg";
- if(file_exists($path)) {
-   echo $_SESSION["id"];} else {
-        echo "avatar";
-    }?>1_small.jpg">
-                            </span>
-                            <span class="username"><?php echo $_SESSION["name"]; ?></span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> My Profile</a>
-                            </li>
-                            <li>
-                                <a href="signout.php"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!-- notificatoin dropdown end-->
-            </div>
-      </header>      
+      <?php require 'topbar.php';?>   
       <!--header end-->
       
       <!--sidebar start-->
@@ -129,6 +95,7 @@ if(mysql_num_rows($result)=="FALSE"){
       echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";
       echo "<img src='img/now/avatar1.png' class='img-rounded pull-left'/>
         <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3><br>";
+        echo "<p class='list-group-item-text'>&nbsp; <b> "; echo $row["full_part"]; echo " time</b></p>";
       echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Registration No.: "; echo $row["regno"]; echo "</p>";
@@ -136,6 +103,7 @@ if(mysql_num_rows($result)=="FALSE"){
       if($row["supervisor2"]!="NULL"){echo ", ".$row["supervisor2"];}echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; PhD Stage: "; echo $row["status"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Percentage progress: "; echo $rowpro["percentage"]; echo "</p>";
+
       echo "</a>";
     }
         echo "</div>";

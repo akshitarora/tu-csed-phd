@@ -22,7 +22,7 @@ require "admin/connection.php"
         <meta property="og:site_name" content="Ph.D. Portal for Thapar University, Patiala"/>
         <meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University,
         Academic, Institution, Study, computer science and engineeing department, department, schools, computer, science, CSED">
-    <link rel="shortcut icon" href="admin/img/favicon.png">
+    <link rel="shortcut icon" href="tu_icon.ico">
     <title>Admin Panel</title>
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-desktop.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->

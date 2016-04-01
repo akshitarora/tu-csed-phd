@@ -22,7 +22,7 @@
         <meta property="og:site_name" content="Ph.D. Portal for Thapar University, Patiala"/>
         <meta name="keyword" content="Ph.D., Portal, Thapar University, Patiala, India, Doctrate, Graduates, Education, Academia, www.thapar.edu, www.onlinehostelj.in, online, Thapar, University,
         Academic, Institution, Study, computer science and engineeing department, department, schools, computer, science, CSED">
-    <link rel="shortcut icon" href="admin/img/favicon.png">
+    <link rel="shortcut icon" href="tu_icon.ico">
     <title>Admin Panel</title>
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-desktop.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -175,6 +175,7 @@
       echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";
       echo "<img src='admin/img/now/avatar1.png' class='img-rounded pull-left'/>
         <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3><br>";
+        echo "<p class='list-group-item-text'>&nbsp; <b> "; echo $row["full_part"]; echo " time</b></p>";
       echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Registration No.: "; echo $row["regno"]; echo "</p>";

@@ -28,12 +28,12 @@ if(mysqli_query($conn,$sql))
 {
 	$_SESSION["success"]=1;
 	$_SESSION["message"]="Edited Faculty. !";
-	echo "<script>window.location.href='/phd/admin/'</script>";
+	echo "<script>window.location.href='/phd/admin/faculty.php'</script>";
 	mysqli_close($conn);
 }
 else {
-    $_SESSION["success"]=1;
-    $_SESSION["message"]=$sql;
-	echo "<script>window.location.href='/phd/admin/'</script>";
+    $_SESSION["success"]=2;
+    
+	echo "<script>window.location.href='/phd/admin/faculty.php'</script>";
 }
 ?>
