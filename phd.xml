@@ -5,7 +5,7 @@
 - http://www.phpmyadmin.net
 -
 - Host: 127.0.0.1
-- Generation Time: Mar 29, 2016 at 01:26 PM
+- Generation Time: Apr 03, 2016 at 06:43 PM
 - Server version: 5.6.24
 - PHP Version: 5.6.8
 -->
@@ -82,7 +82,7 @@
                   `urbdate` date DEFAULT NULL,
                   `percentage` int(11) NOT NULL,
                   PRIMARY KEY (`sno`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_book">
                 CREATE TABLE `research_book` (
@@ -96,7 +96,7 @@
                   `sid` int(11) NOT NULL,
                   `status` varchar(100) NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_conference">
                 CREATE TABLE `research_conference` (
@@ -109,7 +109,7 @@
                   `status` varchar(100) NOT NULL,
                   `sid` int(11) NOT NULL,
                   PRIMARY KEY (`rid`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
             </pma:table>
             <pma:table name="research_journal">
                 CREATE TABLE `research_journal` (
@@ -258,13 +258,13 @@
         <!-- Table faculty -->
         <table name="faculty">
             <column name="fid">1</column>
-            <column name="department">COE</column>
+            <column name="department">CSED</column>
             <column name="fname">Dr. Deepak Garg</column>
             <column name="email">dgarg@thapar.edu</column>
             <column name="designation">Associate Professor</column>
             <column name="r_int">Machine Learning and Data Analytics, Algorithms and Data Structures, Data Mining and Pattern Discovery</column>
-            <column name="url">www.gdeepak.com</column>
-            <column name="dob">0000-00-00</column>
+            <column name="url">http://www.gdeepak.com</column>
+            <column name="dob">2022-07-21</column>
             <column name="phone">0</column>
             <column name="faculty_code">DG</column>
             <column name="def">1</column>
@@ -1845,6 +1845,13 @@
             <column name="urbdate">2012-04-27</column>
             <column name="percentage">90</column>
         </table>
+        <table name="progress">
+            <column name="timestamp">2016-03-30 07:57:04</column>
+            <column name="sno">122</column>
+            <column name="sid">123</column>
+            <column name="urbdate">2016-03-19</column>
+            <column name="percentage">0</column>
+        </table>
         <!-- Table research_book -->
         <!-- Table research_conference -->
         <table name="research_conference">
@@ -1864,7 +1871,7 @@
             <column name="authors">akshit, chahak, abhinav</column>
             <column name="journal_name">ijcai</column>
             <column name="journal_volume">3</column>
-            <column name="journal_no">23</column>
+            <column name="journal_no">24</column>
             <column name="publish_date">2016-03-01</column>
             <column name="journal_pages">2-3</column>
             <column name="status">Accepted</column>
@@ -2252,11 +2259,11 @@
             <column name="status">Synopsis Submitted</column>
             <column name="sdob">1900-01-01</column>
             <column name="semail">kuldeep.sharma@thapar.edu</column>
-            <column name="sbranch">COE</column>
+            <column name="sbranch">CSED</column>
             <column name="sdoa">2000-01-01</column>
             <column name="sdurb">2011-04-15</column>
             <column name="sthesis">Efficient Randomized Algorithms for Graph Theoretic Applications</column>
-            <column name="sphone">0123456789</column>
+            <column name="sphone">1123456789</column>
             <column name="chair">Dr. Deepak Garg</column>
             <column name="supervisor1">Dr. Deepak Garg</column>
             <column name="supervisor2">NULL</column>

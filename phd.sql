@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2016 at 01:25 PM
+-- Generation Time: Apr 03, 2016 at 06:43 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `faculty` (
 --
 
 INSERT INTO `faculty` (`fid`, `department`, `fname`, `email`, `designation`, `r_int`, `url`, `dob`, `phone`, `faculty_code`, `def`) VALUES
-(1, 'COE', 'Dr. Deepak Garg', 'dgarg@thapar.edu', 'Associate Professor', 'Machine Learning and Data Analytics, Algorithms and Data Structures, Data Mining and Pattern Discovery', 'www.gdeepak.com', '0000-00-00', '0', 'DG', 1),
+(1, 'CSED', 'Dr. Deepak Garg', 'dgarg@thapar.edu', 'Associate Professor', 'Machine Learning and Data Analytics, Algorithms and Data Structures, Data Mining and Pattern Discovery', 'http://www.gdeepak.com', '2022-07-21', '0', 'DG', 1),
 (2, 'COE', 'Dr. Parteek Bhatia', 'parteek.bhatia@thapar.edu', 'Assistant Professor', 'Natural Language Processing, Information Systems, Computing Methodologies', 'https://sites.google.com/site/parteekbhatia/', '0000-00-00', '0', 'PBH', 1),
 (3, 'COE', 'Harkiran Kaur', 'harkiran.kaur@thapar.edu', 'Lecturer', 'Information systems, Web Semantics, Human-centered computing', 'http://thapar.edu/index.php/computer-science-engineering/faculty?pid=151&sid=437:ms-harkiran-kaur', '0000-00-00', '0', 'HK', 1),
 (4, 'COE', 'Tarunpreet Bhatia', 'tarunpreet@thapar.edu', 'Lecturer', 'Wireless Networks, Sensor Networks, Network Routing and Security', 'http://thapar.edu/index.php/computer-science-engineering/faculty?pid=151&sid=440:ms-tarunpreet-bhatia', '0000-00-00', '0', 'TBH', 1),
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `progress` (
   `sid` int(11) NOT NULL,
   `urbdate` date DEFAULT NULL,
   `percentage` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `progress`
@@ -321,7 +321,8 @@ INSERT INTO `progress` (`timestamp`, `sno`, `sid`, `urbdate`, `percentage`) VALU
 ('2016-03-25 15:06:26', 118, 951203010, '2013-07-25', 80),
 ('2016-03-25 15:06:26', 119, 901403021, '2015-12-10', 15),
 ('2016-03-25 15:06:26', 120, 901403007, '0000-00-00', 20),
-('2016-03-25 15:06:26', 121, 951003001, '2012-04-27', 90);
+('2016-03-25 15:06:26', 121, 951003001, '2012-04-27', 90),
+('2016-03-30 02:27:04', 122, 123, '2016-03-19', 0);
 
 -- --------------------------------------------------------
 
@@ -339,7 +340,7 @@ CREATE TABLE IF NOT EXISTS `research_book` (
   `book_isbn` int(14) NOT NULL,
   `sid` int(11) NOT NULL,
   `status` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -356,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `research_conference` (
   `conference_location` varchar(500) NOT NULL,
   `status` varchar(100) NOT NULL,
   `sid` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `research_conference`
@@ -390,7 +391,7 @@ CREATE TABLE IF NOT EXISTS `research_journal` (
 --
 
 INSERT INTO `research_journal` (`rid`, `title`, `authors`, `journal_name`, `journal_volume`, `journal_no`, `publish_date`, `journal_pages`, `status`, `sid`, `journal_impact`) VALUES
-(1, 'testjournal', 'akshit, chahak, abhinav', 'ijcai', 3, 23, '2016-03-01', '2-3', 'Accepted', 950903036, 2.3);
+(1, 'testjournal', 'akshit, chahak, abhinav', 'ijcai', 3, 24, '2016-03-01', '2-3', 'Accepted', 950903036, 2.3);
 
 -- --------------------------------------------------------
 
@@ -467,7 +468,7 @@ INSERT INTO `student` (`sid`, `timestamp`, `regno`, `sname`, `full_part`, `statu
 (40, '2015-12-28 10:23:54', 951003004, 'Vaishali', 'full', 'Ongoing', '1900-01-01', 'wadhwavaishali@gmail.com', 'COE', '2000-01-01', '2011-02-22', 'Improved Approximation Algorithms for Facility Location Problems', '0123456789', 'Dr. Deepak Garg', 'Dr. Deepak Garg', 'NULL', 'Dr. Anil Kumar Verma', 'Dr. V.P.  Singh Kaushal', 'Dr. Rajesh Kumar Gupta', 1),
 (41, '2015-12-28 10:26:56', 951003005, 'Sunita', 'full', 'Ongoing', '1900-01-01', 'sunita.tu@gmail.com', 'COE', '2000-01-01', '2011-02-21', 'Improved Data Structures for Dynamic and Massive Data', '0123456789', 'Dr. Deepak Garg', 'Dr. Deepak Garg', 'NULL', 'Dr. Anil Kumar Verma', 'Dr. V.P.  Singh Kaushal', 'Dr. R.K. Sharma', 1),
 (42, '2015-12-28 10:29:58', 951003006, 'Monika', 'full', 'Ongoing', '1900-01-01', 'manglamona@gmail.com', 'COE', '2000-01-01', '2011-02-24', 'Efficient Geometric Algorithms for Resource Location Models', '0123456789', 'Dr. Deepak Garg', 'Dr. Deepak Garg', 'NULL', 'Dr. Seema Bawa', 'Dr. Inderveer Chana', 'Dr. Kulbir Singh', 1),
-(43, '2015-12-28 10:39:48', 900903007, 'Kuldeep Sharma', 'full', 'Synopsis Submitted', '1900-01-01', 'kuldeep.sharma@thapar.edu', 'COE', '2000-01-01', '2011-04-15', 'Efficient Randomized Algorithms for Graph Theoretic Applications', '0123456789', 'Dr. Deepak Garg', 'Dr. Deepak Garg', 'NULL', 'Dr. Seema Bawa', 'Dr. Anil Kumar Verma', 'Dr. Mahesh Kumar Sharma', 1),
+(43, '2015-12-28 10:39:48', 900903007, 'Kuldeep Sharma', 'full', 'Synopsis Submitted', '1900-01-01', 'kuldeep.sharma@thapar.edu', 'CSED', '2000-01-01', '2011-04-15', 'Efficient Randomized Algorithms for Graph Theoretic Applications', '1123456789', 'Dr. Deepak Garg', 'Dr. Deepak Garg', 'NULL', 'Dr. Seema Bawa', 'Dr. Anil Kumar Verma', 'Dr. Mahesh Kumar Sharma', 1),
 (44, '2015-12-28 10:48:50', 950903034, 'Hari Singh', 'full', 'Ongoing', '1900-01-01', 'harirawat@rediffmail.com', 'COE', '2000-01-01', '2011-09-07', 'Efficient Grid-GIS Framework for Spatial Data', '0123456789', 'Dr. Deepak Garg', 'Dr. Seema Bawa', 'NULL', 'Dr. Anil Kumar Verma', 'Dr. V.P.  Singh Kaushal', 'Dr. Rajesh Khanna', 1),
 (45, '2015-12-28 10:57:31', 950903033, 'Sitender', 'full', 'Ongoing', '1900-01-01', 'sitender007@gmail.com', 'COE', '2000-01-01', '2011-08-09', 'Sanskrit Language En-conversion to Universal Networking Language (UNL)', '0123456789', 'Dr. Deepak Garg', 'Dr. Seema Bawa', 'NULL', 'Dr. V.P.  Singh Kaushal', 'Dr. Rinkle Rani', 'Dr. R.K. Sharma', 1),
 (46, '2015-12-28 11:08:21', 950903044, 'Ajay Kumar', 'full', 'Ongoing', '1900-01-01', 'ajaycpp@gmail.com', 'COE', '2000-01-01', '2011-04-26', 'Dynamic and Scalable Data Access and Interation Services for Cloud Computing Environment', '0123456789', 'Dr. Deepak Garg', 'Dr. Seema Bawa', 'NULL', 'Dr. Inderveer Chana', 'Dr. V.P.  Singh Kaushal', 'Dr. Rajesh Kumar', 1),
@@ -606,17 +607,17 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `progress`
 --
 ALTER TABLE `progress`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=122;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=123;
 --
 -- AUTO_INCREMENT for table `research_book`
 --
 ALTER TABLE `research_book`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `research_conference`
 --
 ALTER TABLE `research_conference`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `research_journal`
 --
