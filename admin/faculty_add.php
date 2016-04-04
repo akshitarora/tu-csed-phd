@@ -74,6 +74,7 @@ require 'header.php';
                                           <label for="designation" class="control-label col-lg-2">Designation<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <select id="designation" name="designation">
+                                                  <option value="Professor">Professor</option>
                                                   <option value="Associate Professor">Associate Professor</option>
                                                   <option value="Assistant Professor">Assistant Professor</option>
                                                   <option value="Lecturer">Lecturer</option>

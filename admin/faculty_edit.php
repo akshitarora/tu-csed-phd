@@ -90,6 +90,9 @@ $row = mysqli_fetch_assoc($resultfac);
                                           <label for="designation" class="control-label col-lg-2">Designation<span class="required">*</span></label>
                                           <div class="col-lg-10">
                                               <select id="designation" name="designation">
+                                                <option value="Professor" <?php
+                                                  if($row["designation"]=="Professor")
+                                                       echo "' selected='selected'"; ?>>Professor</option>
                                                   <option value="Associate Professor" <?php
                                                   if($row["designation"]=="Associate Professor")
                                                        echo "' selected='selected'"; ?>>Associate Professor</option>

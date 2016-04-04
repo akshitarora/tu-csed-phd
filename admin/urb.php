@@ -29,7 +29,7 @@ require 'connection.php';
                                 <label for="regno" class="control-label col-lg-2">Registration Number<span class="required">*</span></label>
                                 <div class="col-lg-10">
 <?php
-    $sql = "SELECT DISTINCT sid from progress";
+    $sql = "SELECT * from student order by sname;";
     if ($result=mysqli_query($conn,$sql))
   {
   // Fetch one and one row
@@ -39,7 +39,7 @@ require 'connection.php';
       echo "<option value=";
       printf ("%d",$row[0]);
       echo ">" ;
-      echo $row[0];
+      echo $row[0]; echo " "; echo $row[1];
       echo "</option>";
     }
   // Free result set

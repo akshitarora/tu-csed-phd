@@ -276,6 +276,7 @@ require "admin/connection.php"
                               <div class="col-lg-10">
                                   <select id="designation" name="designation">
                                       <option value="">--</option>
+                                      <option value="Professor">Professor</option>
                                       <option value="Associate Professor">Associate Professor</option>
                                       <option value="Assistant Professor">Assistant Professor</option>
                                       <option value="Lecturer">Lecturer</option>
