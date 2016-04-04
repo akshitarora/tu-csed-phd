@@ -36,8 +36,8 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
                     <!--No alerts here-->
                     <!--ALERTS END -->
 					<center><h3>SEARCH RESULTS</h3></center><br>
-                  </div>
-              </div>
+</div>
+</div>
               <div class="row">
                   
                           
@@ -75,7 +75,8 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
         if(!empty($_GET["supervisor"]) && isset($_GET["supervisor"])) {
             $sql .= " AND ( supervisor1='".$_GET["supervisor"]."' OR supervisor2='".$_GET["supervisor"]."') ";
         }
-        $sql .= " ORDER BY sname";
+        
+        $sql .= " ORDER by sname";
     if ($result=mysqli_query($conn,$sql))
     {
         echo "<div class='panel panel-default'>";
@@ -84,7 +85,12 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
 if(mysql_num_rows($result)=="FALSE"){
   echo "NO RESULTS FOUND";
 }
+?> 
 
+<?php echo mysql_num_rows($result); ?>
+                  
+              
+<?php
 //echo $sql;
   while ($row=mysqli_fetch_assoc($result))
     {
@@ -99,7 +105,7 @@ if(mysql_num_rows($result)=="FALSE"){
         <h3 class='list-group-item-heading'>&nbsp;";echo $row["sname"]; echo "</h3><br>";
         echo "<p class='list-group-item-text'>&nbsp; <b> "; echo $row["full_part"]; echo " time</b></p>";
       echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
-      echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Thesis: "; echo $row["sthesis"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Registration No.: "; echo $row["regno"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Chair: "; echo $row["chair"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Supervisor: "; echo $row["supervisor1"]; 

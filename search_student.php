@@ -158,7 +158,7 @@
             $sql .= " AND supervisor1='".$_GET["supervisor"]."' OR supervisor2='".$_GET["supervisor"]."'";
         }
 
-
+        $sql .= " ORDER by sname";
     if ($result=mysqli_query($conn,$sql))
     {
         echo "<div class='panel panel-default'>";
