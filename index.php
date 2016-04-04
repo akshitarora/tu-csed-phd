@@ -81,31 +81,43 @@
 			<div id="main">
 				<div class="container">
 					<div class="row main-row">
-						<div class="4u 12u(mobile)">
+						<div class="8u 12u(mobile)">
 							<section>
 								<h2 style="text-transform: capitalize">About Us</h2>
-								<p>Young, motivated and dedicated faculty with a good ratio of faculty with Ph.D. Degree. Many faculty have certifications in cutting edge technology areas of Computer Science and Engineering. Department has Produced 30 PhDs in niche areas of Computer Engineering including Machine Learning, Data Mining and Cloud Computing. Department produces excellent quality PG Thesis by ensuring Quality through Plagiarism tools and mandatory quality publications. Weekly Research Seminar on Every Wednesday on latest topics by experts/researchers and academicians.</p>
+								<p>Computer Science and Engineering Department is a family of dedicated researchers, highly competent teachers and enthusiastic students. Department is proud of synergistic processes, collaborative projects, latest world class curriculum, good industry collaborations and excellent placement records.
+Department is a harmonious community of students belonging to different geographical regions of the country, religious and cultural backgrounds with a variety of skills and hobbies. Students pursue variety of extra-curricular and co-curricular activities with the help of professional chapters and societies. Teaching learning involves
+ various methodologies blended with classical and modern techniques as per the needs of the subject. Together we acquire, gain, develop and generate knowledge to fulfill the program educational objectives through different course and program outcomes. Department stands in top ten computer science departments in the country in terms of research,
+  placements and overall standing as per the preliminary survey done at our end. We are the largest department as far as the number of students are concerned and from the placement data computer science department students has highest average salary packages being offered by the organizations.</p>
+							<br>
+							<h3>Research Groups</h3><br>
+							<li>Cloud and Software Systems Engineering Group</li><br>
+      						<li>Cyber Physical Systems & Security</li><br>
+         					<li>Data Science and Intelligent Systems</li><br>
+         					<li>Fuzzy Based Big Data Analytics</li><br>
+         					<li>Language Technologies and Machine Learning</li><br>
+         					<li>Pervasive And Adaptive System (PAAS) Research Group</li><br>
+         					<li>Wireless Network and Mobile Computing</li><br>
 							</section>
 						</div>
-						<div class="4u 12u(mobile)">
+						<!--<div class="4u 12u(mobile)">
 							<section>
 								<h2 style="text-transform: capitalize">Faculty</h2>
 								<ul class="small-image-list">
 									<li>
 										<!--<a href=#><img src="images/deepak.jpg" alt="" class="left" /></a>-->
-										<h4>Dr. Deepak Garg</h4>
+										<!--<h4>Dr. Deepak Garg</h4>
 										<p>dgarg@thapar.edu<br>
                                         Associate Professor & Head of Department</p>
 									</li>
 									<li>
 										<!--<a href="#"><img src="images/parteek.jpg" alt="" class="left" /></a>-->
-										<h4>Dr. Parteek Bhatia</h4>
+										<!--<h4>Dr. Parteek Bhatia</h4>
 										<p>parteek.bhatia@thapar.edu<br>
                                         Associate Professor and Admin (Ph.D. Portal)</p>
 									</li>
 								</ul>
 							</section>
-						</div>
+						</div> -->
 						<div class="4u 12u(mobile)">
 							<section class="jumbotron">
                                 <center><h2 style="text-transform: capitalize">Log In</h2></center>

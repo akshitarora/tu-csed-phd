@@ -75,6 +75,7 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
         if(!empty($_GET["supervisor"]) && isset($_GET["supervisor"])) {
             $sql .= " AND ( supervisor1='".$_GET["supervisor"]."' OR supervisor2='".$_GET["supervisor"]."') ";
         }
+        $sql .= " ORDER BY sname";
     if ($result=mysqli_query($conn,$sql))
     {
         echo "<div class='panel panel-default'>";
@@ -89,7 +90,8 @@ if(mysql_num_rows($result)=="FALSE"){
     {
       
 //      echo var_dump($row);
-      $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by timestamp DESC";
+      $reg=$row["regno"];
+      $sqlpro = "SELECT * from progress,student WHERE sid=$reg";
       $resultpro = mysqli_query($conn,$sqlpro);
       $rowpro = mysqli_fetch_assoc($resultpro);
       echo "<a class='list-group-item' href='cinfo.php?regno="; echo $row["regno"]; echo "'>";
@@ -99,8 +101,11 @@ if(mysql_num_rows($result)=="FALSE"){
       echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Registration No.: "; echo $row["regno"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Chair: "; echo $row["chair"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Supervisor: "; echo $row["supervisor1"]; 
       if($row["supervisor2"]!="NULL"){echo ", ".$row["supervisor2"];}echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Faculty Members from department:"; echo $row["cognate1"].", ".$row["cognate2"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Faculty Members outside department: "; echo $row["outside"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; PhD Stage: "; echo $row["status"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Percentage progress: "; echo $rowpro["percentage"]; echo "</p>";
 

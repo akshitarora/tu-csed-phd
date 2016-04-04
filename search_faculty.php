@@ -144,7 +144,7 @@
             $sql .= " AND email LIKE '%".$_GET["email"]."%'";
         }
         if(isset($_GET["designation"]) && !empty($_GET["designation"]) ) {
-            $sql .= " AND designation LIKE '%".$_GET["designation"]."%'";
+            $sql .= " AND designation = '".$_GET["designation"]."'";
         }
         if(isset($_GET["dob"]) && !empty($_GET["dob"]) ) {
             $sql .= " AND dob=".$_GET["dob"];

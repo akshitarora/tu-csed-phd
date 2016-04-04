@@ -179,8 +179,11 @@
       echo "<p class='list-group-item-text'>&nbsp; Email: "; echo $row["semail"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Thesis:"; echo $row["sthesis"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Registration No.: "; echo $row["regno"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Chair: "; echo $row["chair"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Supervisor: "; echo $row["supervisor1"]; 
       if($row["supervisor2"]!="NULL"){echo ", ".$row["supervisor2"];}echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Faculty Members from department:"; echo $row["cognate1"].", ".$row["cognate2"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Faculty Members outside department: "; echo $row["outside"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; PhD Stage: "; echo $row["status"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Percentage progress: "; echo $rowpro["percentage"]; echo "</p>";
       echo "</a>";

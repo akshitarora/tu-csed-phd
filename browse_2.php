@@ -228,7 +228,7 @@ require "admin/connection.php"
                       </form><br><br>
                   </div>
                   <div class="col-lg-6 form">
-                      <center><h4>Search Faculty</h4></center><br>
+                      <center><h4>Search CSED</h4></center><br>
                       <form class="form-validate form-horizontal" method="get" action="search_faculty.php">
 
                           <div class="form-group ">
