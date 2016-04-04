@@ -167,6 +167,8 @@
         if(mysql_num_rows($result)=="FALSE"){
   echo "NO RESULTS FOUND";
 }
+echo "<a><center>".mysqli_num_rows($result)." Results</center></a>";
+
   while ($row=mysqli_fetch_assoc($result))
     {
       $sqlpro = "SELECT * from progress WHERE sid=".$row["regno"]." ORDER by urbdate DESC";

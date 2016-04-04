@@ -85,12 +85,11 @@ if($_SESSION["loggedin"]=="yes" && $_SESSION["role"]=="admin"){
 if(mysql_num_rows($result)=="FALSE"){
   echo "NO RESULTS FOUND";
 }
-?> 
 
-<?php echo mysql_num_rows($result); ?>
+
+echo "<a><center>".mysqli_num_rows($result)." Results</center></a>";
                   
               
-<?php
 //echo $sql;
   while ($row=mysqli_fetch_assoc($result))
     {
@@ -110,7 +109,7 @@ if(mysql_num_rows($result)=="FALSE"){
       echo "<p class='list-group-item-text'>&nbsp; Chair: "; echo $row["chair"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Supervisor: "; echo $row["supervisor1"]; 
       if($row["supervisor2"]!="NULL"){echo ", ".$row["supervisor2"];}echo "</p>";
-      echo "<p class='list-group-item-text'>&nbsp; Faculty Members from department:"; echo $row["cognate1"].", ".$row["cognate2"]; echo "</p>";
+      echo "<p class='list-group-item-text'>&nbsp; Faculty Members from department: "; echo $row["cognate1"].", ".$row["cognate2"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Faculty Members outside department: "; echo $row["outside"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; PhD Stage: "; echo $row["status"]; echo "</p>";
       echo "<p class='list-group-item-text'>&nbsp; Percentage progress: "; echo $rowpro["percentage"]; echo "</p>";

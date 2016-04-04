@@ -156,6 +156,8 @@
 if(mysql_num_rows($result)=="FALSE"){
   echo "NO RESULTS FOUND";
 }
+echo "<a><center>".mysqli_num_rows($result)." Results</center></a>";
+
   while ($row=mysqli_fetch_assoc($result))
     {
       echo "<a class='list-group-item' href='cinfo_2.php?f_code="; echo $row["faculty_code"]; echo "'>";
