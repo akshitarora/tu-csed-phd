@@ -29,7 +29,7 @@ require 'connection.php';
                                 <label for="regno" class="control-label col-lg-2">Registration Number<span class="required">*</span></label>
                                 <div class="col-lg-10">
 <?php
-    $sql = "SELECT * from student order by sname;";
+    $sql = "SELECT regno,sname from student order by sname;";
     if ($result=mysqli_query($conn,$sql))
   {
   // Fetch one and one row

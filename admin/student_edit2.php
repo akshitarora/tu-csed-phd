@@ -138,7 +138,7 @@ $row = mysqli_fetch_assoc($resultfac);
                                       </div>
                                       
                                       <div class="form-group ">
-                                          <label for="sdoa" class="control-label col-lg-2">Date of Admission <span class="required">*</span></label>
+                                          <label for="sdoa" class="control-label col-lg-2">Date of Admission </label>
                                           <div class="col-lg-10">
                                               <input id="sdoa" type="date" name="sdoa" size="16" class="form-control" value="<?php echo $row["sdoa"];?>">
                                           </div>
